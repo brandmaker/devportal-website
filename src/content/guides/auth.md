@@ -114,7 +114,7 @@ curl -d "code=oauth2_authorization_code&\
     client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&\
     client_secret=your_client_secret&\
     grant_type=authorization_code&\
-    redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug%0D%0A" -X POST "https://cas.brandmaker.com/api/v1.0/api/token"
+    redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug%0D%0A" -X POST "https://cas.brandmaker.com/api/v1.1/token"
 ```
 
 Now that your application has acquired its access token and refresh token, it can now make requests to the BrandMaker APIs. In order to access such a BrandMaker resource you need to include your access token in each request in the header "authorization". The token must be prefixed with the keyword "bearer " (with whitespace). For more information regarding bearer tokens you can visit the following [site](https://tools.ietf.org/html/rfc6750).
@@ -162,7 +162,7 @@ request against the token refresh endpoint given in step 2 above:
 curl -d "client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&\
     client_secret=your_client_secret&\
     grant_type=refresh_token&\
-    refresh_token=your_refresh_token" -X POST "https://cas.brandmaker.com/api/v1.0/api/token"
+    refresh_token=your_refresh_token" -X POST "https://cas.brandmaker.com/api/v1.1/token"
 ```
 
 If you request a new token with the refresh token, you are automatically issued a completely new pair of tokens. The old refresh token expires.
