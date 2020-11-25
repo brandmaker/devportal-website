@@ -285,6 +285,34 @@ template {
 .cta:hover {
   color: #001a3f;
 }
+.dp_footer {
+  background: #0c0f2c;
+  color: #fff;
+  padding: 1rem 0 1.5rem;
+  border-top: 1px solid #3a3c50;
+}
+.dp_footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+.api .dp_footer__wrapper {
+  max-width: 100%;
+  padding: 1rem 1rem 0;
+}
+.dp_footer__navlist {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dp_footer__navlistitemlink {
+  padding: 0.5rem 0 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -439,6 +467,8 @@ body.guide .hero__description {
 }
 body {
   font-family: "Calibri", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 a {
   color: #f95b02;
@@ -543,7 +573,8 @@ a {
   margin-top: 3rem;
 }
 .teaser {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0;
+  margin: 0;
   color: #252e3d;
 }
 .teaser__wrapper {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry) -%}
+  <url>
+    <loc>https://developers.brandmaker.com{{ entry.url | url }}</loc>
+    <lastmod>{{ page.date }}</lastmod>
+  </url>
+  {%- if entry.children.length -%}
+    {%- for child in entry.children %}
+      <url>
+        <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
+        <lastmod>{{ page.date }}</lastmod>
+      </url>
+      {%- if child.children.length -%}
+        {%- for child in child.children %}
+          <url>
+            <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
+            <lastmod>{{ page.date }}</lastmod>
+          </url>
+          {%- if child.children.length -%}
+            {%- for child in child.children %}
+              <url>
+                <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
+                <lastmod>{{ page.date }}</lastmod>
+              </url>
+            {% endfor -%}
+          {%- endif -%}
+        {% endfor -%}
+      {%- endif -%}
+    {% endfor -%}
+  {%- endif -%}
+{%- endmacro %}
+<url>
+  <loc>https://developers.brandmaker.com</loc>
+  <lastmod>{{ page.date }}</lastmod>
+</url>
+{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</urlset>

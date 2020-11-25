@@ -33,7 +33,7 @@
                     <a class="cta cta--teaser" href="/api/{{ teaser.data.destination }}">Discover {{ teaser.data.title }} API</a>
                 </div>
                 {% if teaser.data.icon %}
-                    <div class="teaser__icon">
+                    <div class="teaser__icon"> 
                         <img src="/assets/{{ teaser.data.icon }}.svg" alt="Logo {{ teaser.data.title }}">
                     </div>
                 {% endif %}
@@ -41,5 +41,6 @@
         </li>
         {% endfor -%}
     </ul>
+    {% include 'components/footer.njk' %}
     </body>
 </html>
