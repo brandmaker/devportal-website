@@ -7,6 +7,7 @@ const markdownIt = require( 'markdown-it' );
 const markdownItAnchor = require( 'markdown-it-anchor' );
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { exit } = require("process");
+const pluginDate = require("eleventy-plugin-date");
 
 //const modulesUnstuctured = fg.sync('api/**', { onlyFiles: false, deep: 4, objectMode: true });
 const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 4, objectMode: true });
@@ -14,6 +15,7 @@ const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 4, objectMo
 
 //const name = fg.sync('name.json', {objectMode: true});
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(pluginDate);
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("main.css");
     eleventyConfig.addPassthroughCopy("swagger");

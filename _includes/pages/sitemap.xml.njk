@@ -4,25 +4,25 @@
 {% macro renderNavListItem(entry) -%}
   <url>
     <loc>https://developers.brandmaker.com{{ entry.url | url }}</loc>
-    <lastmod>{{ page.date }}</lastmod>
+    <lastmod>{{ page.date | isoDate }}</lastmod>
   </url>
   {%- if entry.children.length -%}
     {%- for child in entry.children %}
       <url>
         <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
-        <lastmod>{{ page.date }}</lastmod>
+        <lastmod>{{ page.date | isoDate }}</lastmod>
       </url>
       {%- if child.children.length -%}
         {%- for child in child.children %}
           <url>
             <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
-            <lastmod>{{ page.date }}</lastmod>
+            <lastmod>{{ page.date | isoDate }}</lastmod>
           </url>
           {%- if child.children.length -%}
             {%- for child in child.children %}
               <url>
                 <loc>https://developers.brandmaker.com{{ child.url | url }}</loc>
-                <lastmod>{{ page.date }}</lastmod>
+                <lastmod>{{ page.date | isoDate }}</lastmod>
               </url>
             {% endfor -%}
           {%- endif -%}
@@ -33,7 +33,7 @@
 {%- endmacro %}
 <url>
   <loc>https://developers.brandmaker.com</loc>
-  <lastmod>{{ page.date }}</lastmod>
+  <lastmod>{{ page.date | isoDate }}</lastmod>
 </url>
 {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
 </urlset>
