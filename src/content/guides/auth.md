@@ -86,13 +86,18 @@ Your user will also be prompted with a login challenge at this point.
 
 ### GET Parameters
 
-|Key|Type|Value|
-|--- |--- |--- |
-|client_id|string|Your client ID from the client registration|
-|redirect_uri|string|Redirect Url that was specified during client registration|
-|response_type|string|"code"|
-|response_mode|string|"query"|
-|state|string|[String of 8 characters](https://auth0.com/docs/protocols/state-parameters)|
+|Key|Type|Value|Required|
+|--- |--- |--- |--- |
+|client_id|String|Your client ID from the client registration|true|
+|redirect_uri|String|Redirect Url that was specified during client registration|true|
+|response_type|String|"code"|true|
+|response_mode|String|"query"|true|
+|state|String|String of 8 characters|true|
+
+#### Regarding the state parameter
+The state parameter is usually a random String of at least 8 characters. This String can be generated before you make the request and cached within your OAuth2.0 client application. \
+It can then be validated when the client is redirected to your ``redirect_url``. This redirect will contain the same value for the ``state`` parameter that was initially provided. You can also include state information regarding the request.\
+For more information visit [https://auth0.com/docs/protocols/state-parameters](https://auth0.com/docs/protocols/state-parameters).
 
 ### Example Request
 
@@ -148,13 +153,13 @@ request against the token refresh endpoint given in step 2 above:
 
 ### POST parameters
 
-|Key|Type|Value|
-|--- |--- |--- |
-|code|string|OAuth 2.0 authorization code|
-|client_id|string|Your client ID from the client registration|
-|client_secret|string|Your client secret from the client registration|
-|grant_type|string|"authorization_code"|
-|redirect_uri|string|Redirect Url that was specified during client registration|
+|Key|Type|Value|Required|
+|--- |--- |--- |--- |
+|code|String|OAuth 2.0 authorization code|true|
+|client_id|String|Your client ID from the client registration|true|
+|client_secret|String|Your client secret from the client registration|true|
+|grant_type|String|"authorization_code"|true|
+|redirect_uri|String|Redirect Url that was specified during client registration|true|
 
 ### Example request CURL
 

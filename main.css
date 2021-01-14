@@ -443,7 +443,7 @@ body.guide .hero__description {
   position: sticky;
   top: 50px;
   font-size: 1.25rem;
-  padding: 0 2rem 1rem 0;
+  padding: 0 2rem 1rem;
   max-height: calc(100vh - 80px);
   overflow: auto;
 }
