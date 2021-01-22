@@ -1,0 +1,28 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Mockup for WebCache RESTful API (module core)",
+      "title": "WebCache RESTful API (module core)",
+      "version": "7.0.1.0"
+    },
+    "tags": [
+      {
+        "name": "mock",
+        "description": "Example"
+      }
+    ],
+    "paths": {
+      "/mock": {
+        "post": {
+          "tags": [
+            "mock"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      }
+    }
+  }
