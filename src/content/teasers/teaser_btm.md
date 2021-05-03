@@ -2,7 +2,7 @@
 title: Brand Template Builder
 tags: ['teaser']
 icon: logo_brandportal
-destination: Brand Template Builder
+destination: Web-to-Publish
 shorttext: Brand Template Builder enables the CD-compliant design, adaption, and localization of marketing assets, such as advertisements, brochures, business cards, or posters, without using special applications.  
 ---
 Brand Template Builder enables the CD-compliant design, adaption, and localization of marketing assets, such as advertisements, brochures, business cards, or posters, without using special applications.  
