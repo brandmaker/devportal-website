@@ -58,10 +58,11 @@ ID and a client secret. You get access to these the following way:
 
 1.  Log in to your BrandMaker system.
 2.  Navigate to your Administration space
-3.  On the left, under System Configuration =\> Registered Apps you can
-    register a new app. ![](/assets/guides/auth/clientsecret.png)
-
-4.  After you have successfully registered your app, you will be shown a
+3.  Depending on the version, navigate (on the left) to Registered Apps:
+    - for version ≤ 6.9: *System Configuration* =\> Registered Apps
+    - for version > 7.0: *Fusion* =\> Registered Apps
+4.  There you can register a new app. ![](/assets/guides/auth/clientsecret.png)
+5.  After you have successfully registered your app, you will be shown a
     screen with your client ID and client secret
 
 ### Client Secret
