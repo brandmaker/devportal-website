@@ -302,10 +302,6 @@ template {
   max-width: 100%;
   padding: 1rem 1rem 0;
 }
-.dp_footer__homelink {
-  text-decoration: none;
-  color: #fff;
-}
 .dp_footer__navlist {
   display: flex;
   margin: 0;
@@ -743,6 +739,50 @@ a {
 .mainnav__listitem:hover ul {
   visibility: visible;
   opacity: 1;
+}
+.nav_pageSlots {
+  font-size: 1.25rem;
+  padding: 0 2rem 1rem;
+  max-height: calc(100vh - 80px);
+  overflow: auto;
+}
+.nav_pageSlots__header {
+  font-size: 1rem !important;
+  text-transform: uppercase;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 0.5rem;
+  scroll-margin-top: 75px;
+  line-height: 1.2;
+}
+.nav_pageSlots__list {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0 0 0 0.5rem;
+}
+.nav_pageSlots__list_elem_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_pageSlots__list_elem_body {
+  padding-left: 10%;
+}
+.nav_pageSlots__select {
+  padding-right: 0 !important;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.nav_pageSlots__select_optgroup {
+  background-color: #104;
+  font-size: 1.125rem;
+  font-weight: 150;
+}
+.nav_pageSlots__select__option {
+  background: #104;
+  font-family: "Calibri", sans-serif;
+  font-size: 1rem;
 }
 .nav__selectlabel {
   display: none;

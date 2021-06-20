@@ -10,8 +10,9 @@ const { exit } = require("process");
 const pluginDate = require("eleventy-plugin-date");
 
 //const modulesUnstuctured = fg.sync('api/**', { onlyFiles: false, deep: 4, objectMode: true });
-const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 4, objectMode: true });
-const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 4, objectMode: true });
+const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 5, objectMode: true });
+const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 5, objectMode: true });
+
 
 //const name = fg.sync('name.json', {objectMode: true});
 module.exports = function (eleventyConfig) {
@@ -50,13 +51,15 @@ module.exports = function (eleventyConfig) {
     /* 
         {moduleName, productVersions: {
             productVersion, apiVersions: {
-                apiVersion 
+                apiVersion, pageSlots: {
+                    pageSlot
+                }
             }
         }}
     */
     var modulesStructured = new Map();
     moduleDicts.forEach(({ name, path }) => {
-        const category = path.split("/").length - 1; // if 1: module, if 2: product-version
+        const category = path.split("/").length - 1; // if 1: module, if 2: product-version, if 3: api-version
 
         if (category == 1) {
             modulesStructured.set(name, { moduleName: name, productVersions: new Map() });
@@ -69,14 +72,21 @@ module.exports = function (eleventyConfig) {
             modulesStructured.get(moduleName).productVersions.set(name, { productVersion: name, apiVersions: new Map() });
             return;
         }
+
+        const productVersion = path.split("/")[2]
+
+        if (category == 3) {
+            modulesStructured.get(moduleName).productVersions.get(productVersion).apiVersions.set(name, { apiVersion: name, pageSlots: new Map() });
+            return;
+        }
     });
 
     let displayNames = new Map();
     let info = new Map();
     moduleFiles.forEach(({name, path}) => {
-        const type = path.split("/").length - 1; // if 2: module.json (display name), if 4: swagger.json
+        const type = path.split("/").length - 1; // if 2: module.json (display name), if 4: swagger.json, if 5: pageSlot
         const moduleName = path.split("/")[1];
-        if (type == 2) {
+        if ((type == 2) && (displayNames.get(moduleName) == undefined)) {
             var obj = JSON.parse(fs.readFileSync(path, 'utf8'));
             displayNames.set(moduleName, obj.name);
             info.set(moduleName, obj.info);
@@ -86,8 +96,14 @@ module.exports = function (eleventyConfig) {
         const apiVersion = path.split("/")[3];
 
         if (type == 4) {
-            modulesStructured.get(moduleName).productVersions.get(productVersion).apiVersions.set(apiVersion, { apiVersion: apiVersion, file: name, path: path });
+            modulesStructured.get(moduleName).productVersions.get(productVersion).apiVersions.set(apiVersion, { apiVersion: apiVersion, file: name, path: path, pageSlots: new Map() });
             return;
+        }
+
+        const slotName = path.split("/")[4];
+
+        if (type == 5) {
+            modulesStructured.get(moduleName).productVersions.get(productVersion).apiVersions.get(apiVersion).pageSlots.set(slotName, { pageSlot: slotName, file: name, path: path });
         }
     });
 
@@ -106,11 +122,24 @@ module.exports = function (eleventyConfig) {
         [moduleName, displayModule, productVersion, apiVersion, file]
     */
     let apiVersionPage = [];
+    /*
+        strucutre:
+        [moduleName, displayModule, productVersion, apiVersion, pageSlotName, file]
+    */
+    let pageSlotPage = [];
+    // module, productversion and apiversions as lists as well only containing instances that have pageslot defition underneath them
+    let pageSlotModulePage = [];
+    let pageSlotProductVersionPage = [];
+    let pageSlotApiVersionPage = [];
 
 
     modulesStructured.forEach(({ moduleName, productVersions }) => {
         var lastProductVersion;
         var productVersionJson = "{ \"productVersions\": [";
+        var lastProductVersionWithPageSlot;
+        var lastApiVersions = new Map();
+        var lastApiVersionWithPageSlot = new Map();
+        var lastPageSlots = new Map();
         productVersions.forEach(({ productVersion, apiVersions }) => {
             var lastApiVersion;
             var apiVersionJson = "{ \"apiVersions\": [";
@@ -123,16 +152,24 @@ module.exports = function (eleventyConfig) {
                     lastProductVersion = productVersion;
                 }
             }
-            apiVersions.forEach(({ apiVersion, file }) => {
+            lastPageSlots.set(productVersion, { apiVersion: new Map() });
+            apiVersions.forEach(({ apiVersion, file, pageSlots }) => {
                 apiVersionJson = apiVersionJson + "\"" + apiVersion + "\",";
                 if (lastApiVersion == null) {
                     lastApiVersion = apiVersion;
+                    lastApiVersions.set(productVersion, apiVersion)
                 } else {
                     if ((parseInt(apiVersion[4]) > parseInt(lastApiVersion[4])) ||
                         ((parseInt(apiVersion[4]) == parseInt(lastApiVersion[4])) && (parseInt(apiVersion[6]) > parseInt(lastApiVersion[6])))) {
                         lastApiVersion = apiVersion;
+                        lastApiVersions.set(productVersion, apiVersion);
                     }
                 }
+                pageSlots.forEach(({ pageSlot }) => {
+                    lastProductVersionWithPageSlot = productVersion;
+                    lastApiVersionWithPageSlot.set(productVersion, apiVersion);
+                    lastPageSlots.get(productVersion).apiVersion.set(apiVersion, pageSlot);
+                });
                 apiVersionPage.push([moduleName, displayNames.get(moduleName), productVersion, apiVersion, file]);
             });
             if (lastApiVersion == null) {
@@ -157,6 +194,28 @@ module.exports = function (eleventyConfig) {
             if(err) console.log('error', err);
         });
         modulePage.push([moduleName, displayNames.get(moduleName), lastProductVersion, info.get(moduleName) || ""]);
+        var addModule = false;
+        productVersions.forEach(({ productVersion, apiVersions }) => {
+            var addProductVersion = false;
+            apiVersions.forEach(({ apiVersion, pageSlots }) => {
+                var addApiVersion = false;
+                pageSlots.forEach(({ pageSlot, file }) => {
+                    addApiVersion = true;
+                    addProductVersion = true;
+                    addModule = true;
+                    pageSlotPage.push([moduleName, displayNames.get(moduleName), productVersion, apiVersion, pageSlot, file]);
+                });
+                if (addApiVersion) {
+                    pageSlotApiVersionPage.push([moduleName, productVersion, apiVersion, lastPageSlots.get(productVersion).apiVersion.get(apiVersion)]);
+                }
+            });
+            if (addProductVersion) {
+                pageSlotProductVersionPage.push([moduleName, productVersion, lastApiVersionWithPageSlot.get(productVersion)]);
+            }
+        });
+        if (addModule) {
+            pageSlotModulePage.push([moduleName, displayNames.get(moduleName), lastProductVersionWithPageSlot]);
+        }
     });
 
     eleventyConfig.addCollection('modules', function (collection) {
@@ -168,9 +227,18 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('apiVersions', function (collection) {
         return apiVersionPage;
     });
-
-
-
+    eleventyConfig.addCollection('pageSlots', function (collection) {
+        return pageSlotPage;
+    });
+    eleventyConfig.addCollection('pageSlotModules', function (collection) {
+        return pageSlotModulePage;
+    });
+    eleventyConfig.addCollection('pageSlotProductVersions', function (collection) {
+        return pageSlotProductVersionPage;
+    });
+    eleventyConfig.addCollection('pageSlotApiVersions', function (collection) {
+        return pageSlotApiVersionPage;
+    });
 
     
     eleventyConfig.addPassthroughCopy("api");
