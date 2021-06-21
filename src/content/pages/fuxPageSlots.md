@@ -1,6 +1,6 @@
 ---
 layout: pages/fuxPageSlots.njk
-pageTitle: Fusion UX Logic Guide
+pageTitle: Brandmaker Dev Portal
 pagination:
     data: collections.pageSlots
     size: 1
@@ -18,5 +18,5 @@ eleventyComputed:
     setProductVersion: "{{ pageSlots[2] }}"
     setApiVersion: "{{ pageSlots[3] }}"
     setPageSlot: "{{ pageSlots[4] }}"
-    descriptionFile: "{{ pageSlots[5] }}"
+    content: "{{ pageSlots[5] }}"
 ---

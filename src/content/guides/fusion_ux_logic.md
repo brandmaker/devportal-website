@@ -15,9 +15,9 @@ bodyClass: "guide"
 title: "Fusion UX Logic Guide"
 ---
 
-With Fusion UX Logic, clients can now integrate **custom UI components** into **predefined places** in their BrandMaker system. 
+With Fusion UX Logic, clients can now integrate **custom UI components** into [**predefined places**](#page-slots) in their BrandMaker system. 
 Possible functionalities that can easily be implemented with custom components are:
-- pulling additional information form 3rd party applications and displaying them
+- pulling additional information from 3rd party applications and displaying them
   - showing that Fusion UX Apps can execute lookups e.g. in external databases
 - intergrating a Lickert Scale, or other evaluation questionnaires
   - showing that Fusion UX Apps can write back results
@@ -25,24 +25,20 @@ Possible functionalities that can easily be implemented with custom components a
   - as charts etc.
 
 
-[Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest). \
-In the [administration](#administration) of the BrandMaker system, Fusion UX Apps are both registered and managed.
-
-<div id="administration"></div>
+[Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest-file). \
+In the [administration](#structure-of-the-administration) of the BrandMaker system, Fusion UX Apps are both registered and managed.
 
 ## Structure of the administration
 Within the administration module, custom components are managed under 'Fusion/UX Logic'. There they can be registered, installed, and adapted. 
 
 ![](/assets/guides/fusion-ux-logic/navigation.png)
 
-<div id="component_administration"></div>
-
 ### (1) Component Administration
 The **scripts** for the Fusion UX Apps are managed in the section 'Component Administration', meaning new component scripts can be registered and already existing ones can be altered.
 
  ![](/assets/guides/fusion-ux-logic/admin_overview.png)
 
-(a): To register a new Fusion UX App, click on 'Create new component'. In the opened dialog, upload the corresponding [ZIP file](#zip-file) containing the source files. \
+(a): To register a new Fusion UX App, click on 'Create new component'. In the opened dialog, upload the corresponding [ZIP file](#structure-of-zip-file) containing the source files. \
 The component is now checked by the BrandMaker system. If the validation passes, the system generates a unique ID and a URL, under which the component will be available. The Fusion UX App can now be integrated into the system.
 
 ![](/assets/guides/fusion-ux-logic/admin_upload_new_component.png)
@@ -70,9 +66,8 @@ Configure the attributes of the chosen component by setting a default value and/
 
 ## Development of own custom component
 
-<div id="web-component-basics"></div>
 
-### Web Components Basics
+### Web Component Basics
 
 The components use [Web Components](https://www.webcomponents.org/introduction) as a technical foundation. \
 A minimal component, only displaying `HELLO WORLD!`, would look like this:
@@ -100,7 +95,6 @@ export default class HelloWorldComponent extends HTMLElement {
 Components will not be completely static. Instead, they will have a set of configuration values, e.g. target URLs of REST API to fetch data that will be displayed, credentials to log in, UI settings like colors, images, etc.\
 Instead of hard-coding the settings into the component, they will be described in a Manifest file and can be edited in the administration.
 
-<dic id="zip-file"></div>
 
 #### Structure of ZIP file
 A Fusion UX App consists of:
@@ -113,7 +107,6 @@ A Fusion UX App consists of:
 These constituents are bundled into one ZIP file (flat list of files, o nesting) and uploaded at once when registering a new component.\
 <span style="color:gray">*To create the ZIP file, use a framework like [Webpack](#https://webpack.js.org/), which compresses the constituents into one single file.*</span>
 
-<div id="manifest"></div>
 
 #### Manifest file
 
@@ -148,7 +141,7 @@ By creating a Usage, a page slot configuration will be created, which assigns th
 
 An examplary mapping of the component attributes might look like this:
 ![](/assets/guides/fusion-ux-logic/mapping_attributes.png)
-The actual assignment of values happens, when the component is rendered.
+The values are actually assigned, when the component is rendered.
 
 
 
@@ -158,7 +151,7 @@ This example app will be integrated into the system in the timeline slot (in MAP
 
 The component displays two attributes:
 - title (greeting and name)
-- number (increasible via counter, so by clicking on it)
+- number (increasable via a counter, by clicking on it)
 
 
 #### Code for the component (Javascript)
@@ -247,7 +240,7 @@ export default class HelloWorldComponent extends HTMLElement {
 
 
 #### Installation and Integration
-After registering the bundled App like shown under [Component Administration](#component_administration), the detail page should look like this:
+After registering the bundled App like shown under [Component Administration](#(1)-component-administration), the detail page should look like this:
 
 ![](/assets/guides/fusion-ux-logic/hello_world_detail_page.png)
 
@@ -264,7 +257,7 @@ Some notes about the attributes and their assignments:
 - the timeline slot provides two arguments itself:
     - `timelineId` and `nodeId`
     - both are of the type NUMBER and thus can only be assigned to a NUMBER attribute
-    - in this example, it can be assigned ot the `fux-start-number`
+    - in this example, it can be assigned to `fux-start-number`
 
 
 The code for the rendered component (inside MAPL) will look like this:

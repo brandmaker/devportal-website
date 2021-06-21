@@ -23,7 +23,7 @@
             </div>
             </aside>
             <article class="guide__article">
-                {{ descriptionFile }}
+                {{ content | safe }}
             </section>
         </main>
         {% include 'components/footer.njk' %}

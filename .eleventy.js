@@ -16,6 +16,7 @@ const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 5, objectMo
 
 //const name = fg.sync('name.json', {objectMode: true});
 module.exports = function (eleventyConfig) {
+    
     eleventyConfig.addPlugin(pluginDate);
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("main.css");
@@ -43,9 +44,15 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPlugin(syntaxHighlight);
  
+    let options = {
+        html: true,
+        breaks: true,
+        linkify: true
+    };
+
     // Markdown settings
     eleventyConfig.setLibrary( 'md',
-        markdownIt().use( markdownItAnchor )
+        markdownIt(options).use( markdownItAnchor )
     );
     
     /* 

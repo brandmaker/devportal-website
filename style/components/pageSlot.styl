@@ -23,8 +23,26 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+                padding-left: 0.5rem;
+                &_inner
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: right;
+                    overflow: auto;
+                    font-size: medium !important;
+                    width: fit-content !important;
+                    min-width: fit-content !important;
+                    select
+                        padding-left: 1.5rem;
+                        background-position: left 0.2em top 55%;
+                    label
+                        padding-right: 0.5rem;
+
             &_body
-                padding-left: 10%;
+                padding-left: 0.5rem;
+                margin-left: 0.75rem;
+                border-left: thin solid #25294a;;
     &__select
         padding-right: 0 !important;
         width: fit-content !important;

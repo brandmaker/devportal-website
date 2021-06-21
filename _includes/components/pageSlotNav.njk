@@ -19,22 +19,25 @@
         <div class="nav_pageSlots__list_elem">
             <div class="nav_pageSlots__list_elem_header">
                 {{ module.title }}
-                <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_{{ module.title }}" class="select-css nav_pageSlots__select">
-                {%- for productV in module.children %}
-                    <optgroup label="{{ productV.title }}" class="nav_pageSlots__select_optgroup">
-                    {%- for apiV in productV.children %}
-                        {%- if productV.title === setProductVersion and apiV.title === setApiVersion -%}
-                            <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option" selected>
-                                {{ apiV.title }}
-                            </option>
-                        {%- else -%}
-                            <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option">
-                                {{ apiV.title }}
-                            </option>
-                        {%- endif -%}
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_{{ module.title }}" class="select-css nav_pageSlots__select">
+                    {%- for productV in module.children %}
+                        <optgroup label="{{ productV.title }}" class="nav_pageSlots__select_optgroup">
+                        {%- for apiV in productV.children %}
+                            {%- if productV.title === setProductVersion and apiV.title === setApiVersion -%}
+                                <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option" selected>
+                                    {{ apiV.title }}
+                                </option>
+                            {%- else -%}
+                                <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option">
+                                    {{ apiV.title }}
+                                </option>
+                            {%- endif -%}
+                        {%- endfor -%}
                     {%- endfor -%}
-                {%- endfor -%}
-                </select>
+                    </select>
+                </div>
             </div>
             <div class="nav_pageSlots__list_elem_body">
                 {%- for productV in module.children %}
@@ -60,22 +63,25 @@
         <div class="nav_pageSlots__list_elem">
             <div class="nav_pageSlots__list_elem_header">
                 {{ module.title }}
-                <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_{{ module.title }}" class="select-css nav_pageSlots__select">
-                {%- for productV in module.children %}
-                    <optgroup label="{{ productV.title }}" class="nav_pageSlots__select_optgroup">
-                    {%- for apiV in productV.children %}
-                        {%- if productV.title === module.excerpt and apiV.title === productV.excerpt -%}
-                            <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option" selected>
-                                {{ apiV.title }}
-                            </option>
-                        {%- else -%}
-                            <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option">
-                                {{ apiV.title }}
-                            </option>
-                        {%- endif -%}
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_{{ module.title }}" class="select-css nav_pageSlots__select">
+                    {%- for productV in module.children %}
+                        <optgroup label="{{ productV.title }}" class="nav_pageSlots__select_optgroup">
+                        {%- for apiV in productV.children %}
+                            {%- if productV.title === module.excerpt and apiV.title === productV.excerpt -%}
+                                <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option" selected>
+                                    {{ apiV.title }}
+                                </option>
+                            {%- else -%}
+                                <option value="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" class="nav_pageSlots__select_option">
+                                    {{ apiV.title }}
+                                </option>
+                            {%- endif -%}
+                        {%- endfor -%}
                     {%- endfor -%}
-                {%- endfor -%}
-                </select>
+                    </select>
+                </div>
             </div>
             <div class="nav_pageSlots__list_elem_body">
                 {%- for productV in module.children %}
