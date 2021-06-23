@@ -17,12 +17,12 @@ title: "Fusion UX Logic Guide"
 
 With Fusion UX Logic, clients can now integrate **custom UI components** into [**predefined places**](#page-slots) in their BrandMaker system. 
 Possible functionalities easy to implement with custom components are:
-- pulling additional information from 3rd party applications and displaying them
-  - showing that Fusion UX Apps can execute lookups, e.g. in external databases
-- integrating a Lickert Scale or other evaluation questionnaires
-  - showing that Fusion UX Apps can write back results <!-- can they? Otherwise, remove -->
-- visualize existing information in customized component
-  - as charts etc.
+- Pulling additional information from 3rd party applications and displaying them
+  - Showing that Fusion UX Apps can execute lookups, e.g. in external databases
+- Integrating a Lickert Scale or other evaluation questionnaires
+  - Showing that Fusion UX Apps can write back results <!-- can they? Otherwise, remove -->
+- Visualize existing information in customized component
+  - Like charts etc.
 
 
 [Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest-file). \
@@ -33,8 +33,8 @@ Within the administration module, custom components are managed under 'Fusion/UX
 
 ![](/assets/guides/fusion-ux-logic/navigation.png)
 
-### (1) Component Administration
-The **scripts** for the Fusion UX Apps are managed in the section 'Component Administration'. This administration includes the registration of new component scripts and adaptation of existing ones.
+### (1) Management
+The **scripts** for the Fusion UX Apps are managed in the section 'Management'. This administration includes the registration of new component scripts and adaptation of existing ones.
 
  ![](/assets/guides/fusion-ux-logic/admin_overview.png)
 
@@ -43,12 +43,12 @@ The BrandMaker system will not check the uploaded files. If the validation passe
 
 ![](/assets/guides/fusion-ux-logic/admin_upload_new_component.png)
 
-(b): To adjust a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only *displays* these values. To *adjust* them, alter the source files and re-upload them. If the component is already used inside the system (see Component Usage), make sure the attributes still work with the defined usages or adjust the usage accordingly.
+(b): To adjust a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only *displays* these values. To *adjust* them, alter the source files and re-upload them. If the component is already used inside the system (see Usage), make sure the attributes still work with the defined usages or adjust the usage accordingly.
 
 ![](/assets/guides/fusion-ux-logic/admin_adjust_component.png)
 
-### (2) Component Usage
-In this section, the actual 'Component Usage', meaning the integration into the BrandMaker system, is defined and managed. The usage definition includes where (**placement**) and how (**configuration**) the component will be rendered. \
+### (2) Usage
+In this section, the actual 'Usage', meaning the integration into the BrandMaker system, is defined and managed. The usage definition includes where (**placement**) and how (**configuration**) the component will be rendered. \
 Module, page, and a predefined slot within the module define the placement. Important to notice, one place can only have one associated usage at a time.
 
 ![](/assets/guides/fusion-ux-logic/usage_overview.png)
@@ -104,7 +104,7 @@ A Fusion UX App consists of:
 - any additional JS files required from the component
   - additional libraries are NOT allowed (to prevent license obligations and conflict with Page libraries or versions)
 
-These constituents are bundled into one ZIP file (flat list of files, o nesting) and uploaded at once when registering a new component.\
+These constituents are bundled into one ZIP file (flat list of files, or nesting) and uploaded at once when registering a new component.\
 <span style="color:gray">*To create the ZIP file, use a framework like [Webpack](#https://webpack.js.org/), which compresses the constituents into one single file.*</span>
 
 
@@ -129,16 +129,16 @@ Once the component is successfully registered, it will also have a unique ID as 
 The name and the tag name need to be unique within your system. Also, Fusion UX Apps need at least one attribute.
 
 #### Page Slots
-As mentioned before, Fusion UX Apps are integrated into predefined places called Page Slots. They are defined by
+As mentioned before, Fusion UX Apps are integrated into predefined places called page slots. They are defined by
 - ID and name
-- Page (defined by Id, name, and module)
-- Collection of Slot Attributes, each one defined by
+- Page (defined by ID, name, and module)
+- Collection of slot attributes, each one defined by
   - ID, name, and description
   - type (STRING, NUMBER, FUNCTION or URL)
 
 Setting up a Usage triggers the creation of a page slot configuration, which assigns the page slot to a component and captures the relations for the component attributes. The resolution is as follows:
 1. Take value from the assigned slot attribute
-   - the slot attributes are specified per page slot <span style="color:red">*(see [Page Slot Definition](todo: link))*</span>
+   - the slot attributes are specified per page slot *(see navigation about page slots definition)*
 2. Use default value
 3. If not required: `null` 
 
@@ -243,24 +243,24 @@ export default class HelloWorldComponent extends HTMLElement {
 
 
 #### Installation and Integration
-After registering the bundled App like shown under [Component Administration](#(1)-component-administration), the detail page should look like this:
+After registering the bundled app like shown under [Management](#(1)-component-administration), the detail page should look like this:
 
 ![](/assets/guides/fusion-ux-logic/hello_world_detail_page.png)
 
-In this example, the content enrichment timeline node in MAPL will display the component. To render the Fusion UX App there, a new 'Component Usage' will be defined. \
-The filled-out Usage form for the Hello World component will look like this:
+In this example, the content enrichment timeline node in MAPL will display the component. To render the Fusion UX App there, a new 'Usage' will be defined. \
+The filled-out usage form for the Hello World component will look like this:
 
 ![](/assets/guides/fusion-ux-logic/hello_world_usage_form.png)
 
 Some notes about the attributes and their assignments:
-- the default value will be used, if no other value is available
+- The default value will be used, if no other value is available
 - `fux-name` only has the default value
-    - therefore, the attribute will always have this value
-    - because the attribute is not required, it would also be valid to leave this field empty
-- the timeline slot provides two arguments itself:
+    - Therefore, the attribute will always have this value
+    - Because the attribute is not required, it would also be valid to leave this field empty
+- The timeline slot provides two arguments itself:
     - `timelineId` and `nodeId`
-    - both are of the type NUMBER and thus can only be assigned to a NUMBER attribute
-    - in this example, it can be assigned to the component attribute `fux-start-number`
+    - Both are of the type NUMBER and thus can only be assigned to a NUMBER attribute
+    - In this example, it can be assigned to the component attribute `fux-start-number`
 
 
 The code for the rendered component (inside MAPL) will look like this:
