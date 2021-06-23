@@ -12,12 +12,15 @@
                     <ul class="mainnav__list">
                         <!--- only first layer -->
                         {%- for child in entry.children %}
+                            <!-- TODO: REMOVE IF (only for testing) -->
+                            {%- if (child.key != "FUX") -%}
                             <a class="mainnav__listitemlink" href="{{ child.url | url }}">
                                 <span class="mainnav__listitemlinktitle">{{child.title}}</span>
                                 {%- if (child.excerpt != "") %}
                                     <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">{{ child.excerpt }}</span>
                                 {% endif -%}
                             </a>
+                            {%- endif -%}
                         {% endfor -%}
                     </ul>
                 {%- endif -%}
