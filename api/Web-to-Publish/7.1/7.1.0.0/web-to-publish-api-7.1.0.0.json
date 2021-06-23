@@ -35847,25 +35847,6 @@
         "operationId" : "getEditorStyles",
         "produces" : [ "application/json" ],
         "parameters" : [
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "All RTE styles",
-"type" : "file"
-            },
-            "description" : "All RTE styles"
-          }
-        }
-      }
-      ,
-      "get" : {
-        "tags" : [ "\/editor-styles/resources" ],
-        "summary" : "Gets by type RTE styles.",
-        "description" : "Gets by type RTE styles",
-        "operationId" : "getEditorStylesByType",
-        "produces" : [ "application/json" ],
-        "parameters" : [
           {
             "name" : "type",
             "in" : "query",
@@ -35877,10 +35858,10 @@
         "responses" : {
           "200" : {
             "schema" : {
-"description" : "RTE style",
+"description" : "All RTE styles",
 "type" : "file"
             },
-            "description" : "RTE style"
+            "description" : "All RTE styles"
           }
         }
       }
