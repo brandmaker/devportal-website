@@ -1,15 +1,19 @@
 <nav class="nav_pageSlots" role="navigation">
     {% set slotPages = collections.all | eleventyNavigation("FUX") %}
     <script type="text/javascript">
-        function handleSelect(elm) {
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function handleSelect(elm) {
             console.log(elm)
             for (var i = 0; i < elm.options.length; i++) {
-                if (elm.options[i].value === elm.value) {
-                    document.getElementById(elm.value).style.display = 'flex';
-                } else {
-                    document.getElementById(elm.options[i].value).style.display = 'none';
-                }
+                document.getElementById(elm.options[i].value).style.height = '0';
+                document.getElementById(elm.options[i].value).style.opacity = '0';
             }
+            await sleep(150);
+            document.getElementById(elm.value).style.height = '100%';
+            document.getElementById(elm.value).style.opacity = '1';
         }
     </script>
     <h2 class="nav_pageSlots__header">Page Slot Definitions</h2>
@@ -43,13 +47,13 @@
                 {%- for productV in module.children %}
                     {%- for apiV in productV.children %}
                         {%- if productV.title === setProductVersion and apiV.title === setApiVersion -%}
-                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="display: flex; flex-direction: column;">
+                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="height: 100%; opacity: 1;">
                             {%- for page in apiV.children %}
                                 <a href="/guides/fusion-ux-logic/{{ module.url }}/{{ productV.url }}/{{ apiV.url }}/{{ page.url }}/">{{ page.title }}</a>
                             {%- endfor -%}
                             </div>
                         {%- else -%}
-                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="display: none; flex-direction: column;">
+                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="height: 0; opacity: 0;">
                             {%- for page in apiV.children %}
                                 <a href="/guides/fusion-ux-logic/{{ module.url }}/{{ productV.url }}/{{ apiV.url }}/{{ page.url }}/">{{ page.title }}</a>
                             {%- endfor -%}
@@ -87,13 +91,13 @@
                 {%- for productV in module.children %}
                     {%- for apiV in productV.children %}
                         {%- if productV.title === module.excerpt and apiV.title === productV.excerpt -%}
-                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="display: flex; flex-direction: column;">
+                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="height: 100%; opacity: 1;">
                             {%- for page in apiV.children %}
                                 <a href="/guides/fusion-ux-logic/{{ module.url }}/{{ productV.url }}/{{ apiV.url }}/{{ page.url }}/">{{ page.title }}</a>
                             {%- endfor -%}
                             </div>
                         {%- else -%}
-                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="display: none; flex-direction: column;">
+                            <div class="nav_pageSlots__list_elem_body_section" id="{{ module.url }}/{{ productV.url }}/{{ apiV.url }}" style="height: 0; opacity: 0;">
                             {%- for page in apiV.children %}
                                 <a href="/guides/fusion-ux-logic/{{ module.url }}/{{ productV.url }}/{{ apiV.url }}/{{ page.url }}/">{{ page.title }}</a>
                             {%- endfor -%}

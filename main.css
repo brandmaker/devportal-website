@@ -792,6 +792,10 @@ a {
   margin-left: 0.75rem;
   border-left: thin solid #25294a;
 }
+.nav_pageSlots__list_elem_body_section {
+  display: flex;
+  flex-direction: column;
+}
 .nav_pageSlots__select {
   padding-right: 0 !important;
   width: -webkit-fit-content !important;
