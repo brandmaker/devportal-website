@@ -2,13 +2,13 @@
 layout: pages/fuxGuide.njk
 pageTitle: Fusion UX Logic Guide
 description: Build in custom components into your system.
-teaserText: "With Fusion UX Logic, clients can now integrate custom UI component into predefined places in their BrandMaker system"
+teaserText: "With Fusion UX Logic, clients can now integrate custom UI components into predefined places in their BrandMaker system."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
     key: "FUX"
     title: "Fusion UX Logic Guide"
-    excerpt: "Build in custom components into your system"
+    excerpt: "Build in custom components into your system."
     order: -1
 permalink: "guides/fusion-ux-logic/index.html"
 bodyClass: "guide"
@@ -20,9 +20,9 @@ Possible functionalities easy to implement with custom components are:
 - Pulling additional information from 3rd party applications and displaying them
   - Showing that Fusion UX Apps can execute lookups, e.g. in external databases
 - Integrating a Lickert Scale or other evaluation questionnaires
-  - Showing that Fusion UX Apps can write back results <!-- can they? Otherwise, remove -->
+  - Showing that Fusion UX Apps can write back results with the help of functions provided by the page slots
 - Visualize existing information in customized component
-  - Like charts etc.
+  - e.g. with the help of charts
 
 
 [Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest-file). \
@@ -38,22 +38,22 @@ The **scripts** for the Fusion UX Apps are managed in the section 'Management'. 
 
  ![](/assets/guides/fusion-ux-logic/admin_overview.png)
 
-(a): To register a new Fusion UX App, click on 'Create new component'. In the opened dialog, upload the corresponding [ZIP file](#structure-of-zip-file) containing the source files. \
-The BrandMaker system will not check the uploaded files. If the validation passes, the system generates a unique ID and a URL under which the component will be available. After this, the Fusion UX App is ready to be integrated into the system.
+(a): To register a new Fusion UX App, click on 'CREATE NEW COMPONENT'. In the opened dialog, upload the corresponding [ZIP file](#structure-of-zip-file) containing the source files. \
+To ensure the integrity and security of the BrandMaker system, the uploaded files will be examined. If the validation passes, the system generates a unique ID and a URL under which the component will be available. After this, the Fusion UX App is ready to be integrated into the system.
 
 ![](/assets/guides/fusion-ux-logic/admin_upload_new_component.png)
 
-(b): To adjust a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only *displays* these values. To *adjust* them, alter the source files and re-upload them. If the component is already used inside the system (see Usage), make sure the attributes still work with the defined usages or adjust the usage accordingly.
+(b): To edit a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only *displays* these values. To *adjust* them, alter the source files and re-upload them. If the component is already integrated into the system, make sure the attributes still work with the defined usages or adjust the usage definitions accordingly.
 
 ![](/assets/guides/fusion-ux-logic/admin_adjust_component.png)
 
 ### (2) Usage
-In this section, the actual 'Usage', meaning the integration into the BrandMaker system, is defined and managed. The usage definition includes where (**placement**) and how (**configuration**) the component will be rendered. \
+In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component will be rendered. \
 Module, page, and a predefined slot within the module define the placement. Important to notice, one place can only have one associated usage at a time.
 
 ![](/assets/guides/fusion-ux-logic/usage_overview.png)
 
-(a): To add a new placement-configuration combination, click on 'Create new Usage'. In the opened dialog, choose a registered component (can be both predefined by BrandMaker or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. \
+(a): To add a new placement-configuration combination, click on 'CREATE USAGE'. In the opened dialog, choose a registered component (can be both predefined by BrandMaker or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. \
 Configure the attributes of the chosen component by setting a default value or assigning them to a slot attribute provided by the selected slot.
 
 ![](/assets/guides/fusion-ux-logic/usage_create_new_usage.png)
@@ -88,7 +88,7 @@ export default class HelloWorldComponent extends HTMLElement {
 
 ### Specifics for BrandMaker
 
-Components will not be completely static. Instead, they will have a set of configuration values. These settings are not hard-coded into the component but described in a Manifest file and adjustable in the administration.\
+Components are not completely static. Instead, they have a set of configuration values. These settings are not hard-coded into the component but described in a Manifest file and adjustable in the administration.\
 Exemplary configuration values are
 - target URLs of REST API to fetch data
 - credentials to log in
@@ -104,7 +104,7 @@ A Fusion UX App consists of:
 - any additional JS files required from the component
   - additional libraries are NOT allowed (to prevent license obligations and conflict with Page libraries or versions)
 
-These constituents are bundled into one ZIP file (flat list of files, or nesting) and uploaded at once when registering a new component.\
+These constituents are bundled into one ZIP file (flat list of files) and uploaded at once when registering a new component.\
 <span style="color:gray">*To create the ZIP file, use a framework like [Webpack](#https://webpack.js.org/), which compresses the constituents into one single file.*</span>
 
 
@@ -115,7 +115,7 @@ This JSON file contains metadata and the description of the Fusion UX App, which
 - description of component (e.g. including what does it display and why, where to use it)
 - tag name (HTML tag, has to start with '`fux-`')
 - author, license, version
-- description of attributes (stored as JSON array, will be given to the component as HTML attributes):
+- description of attributes (stored as JSON array, provided to the component as HTML attributes):
     - name (has to start with '`fux-`')
     - type, can be one of the following
       - STRING, NUMBER, FUNCTION, URL
@@ -125,7 +125,7 @@ This JSON file contains metadata and the description of the Fusion UX App, which
     - description
     - required
 
-Once the component is successfully registered, it will also have a unique ID as part of its metadata. \
+After successful registration, a unique ID and an assigned URL are part of the component's metadata. \
 The name and the tag name need to be unique within your system. Also, Fusion UX Apps need at least one attribute.
 
 #### Page Slots
@@ -149,7 +149,7 @@ The values are finally assigned when the component gets rendered.
 
 
 ### Example Implementation of 'Hello World App'
-This example app will be integrated into the system in the timeline slot (in the MAPL calendar). Rendered, it will look like this:
+This example app is integrated into the system in the timeline slot (in the MAPL calendar). The rendered result looks like this:
 ![](/assets/guides/fusion-ux-logic/hello_world_result.png)
 
 The component displays two attributes:
@@ -209,11 +209,7 @@ export default class HelloWorldComponent extends HTMLElement {
         this.number += 1;
         this._root.querySelector('.fux__counter').innerHTML = `${this.number}`;
     }
-
-
 }
-
-
 ```
 
 #### Manifest file
@@ -243,12 +239,11 @@ export default class HelloWorldComponent extends HTMLElement {
 
 
 #### Installation and Integration
-After registering the bundled app like shown under [Management](#(1)-component-administration), the detail page should look like this:
+After registering the bundled app like shown under [Management](#(1)-component-administration), its detail page should look like this:
 
 ![](/assets/guides/fusion-ux-logic/hello_world_detail_page.png)
 
-In this example, the content enrichment timeline node in MAPL will display the component. To render the Fusion UX App there, a new 'Usage' will be defined. \
-The filled-out usage form for the Hello World component will look like this:
+As an example, the timeline node in MAPL is used to display the component. The filled-out form for the newly defined usage looks like this:
 
 ![](/assets/guides/fusion-ux-logic/hello_world_usage_form.png)
 
@@ -263,20 +258,19 @@ Some notes about the attributes and their assignments:
     - In this example, it can be assigned to the component attribute `fux-start-number`
 
 
-The code for the rendered component (inside MAPL) will look like this:
+The code for the rendered component (inside MAPL) looks similar to this:
 ```html
 <!-- the placeholder (predefined slot) -->
 <div id="timeline_popover_component_holder" class="timeline_popover-cmp">
     
     <!-- the rendered component (fetched from automatically associated URL) with the assigned arguments -->
     <fux-hello-world 
-        fux-component-code-base-url="/rest/frontend/web-components/e1de71da-66e2-4ef5-aabc-ddcb79cf0dd9/_download-file"
+        fux-component-code-base-url="/rest/frontend/web-components/<UUID>/_download-file"
         fux-name="World" 
-        fux-start-number="8693"
-    >
+        fux-start-number="8693">
+
         <!-- the root for the shadow DOM -->
         #shadow-root (closed)
-
             <!-- style and html structure from inner html --> 
             <style type="text/css"> <!-- ... --> </style>
             <div class="hello-world-wrapper" style="display: block;"> <!-- ... --> </div>
