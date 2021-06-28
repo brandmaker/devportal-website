@@ -58,12 +58,42 @@ The description of Fusion UX Logic is saved as a Markdown-file just like every o
   - product version/
     - api version/
       - page slot name/
-        - FILE: md?
-        - screenshot: a .png
+        - `slot.md`
+        - `screenshot.png`
+
 Just like with the swagger files, remember to store only one description file and one picture (screenshot of the page slot) in the folder.
 
-The file describing a page slot needs to look like this:
-...
+The following code shows the template for the `slot.md` file with explanations of what should be documented/specifically described under every subitem
+``` md
+## Location
+- where exactly is the slot located in the UI (also shown with the screenshot)
+
+## UI specifics
+- Are there UI specifics to consider when rendering html (width, heights, fonts, colors, events, resize, …)
+
+## Slot attributes
+| Name        | Purpose       | Type       | Defaults |
+|:------------|:--------------|:-----------|:---------|
+|             |               |            |          |
+
+- which variables are 'exported' to the component
+- are the variables watched, i.E. can the component set values which then will be picked up by the caller again?
+
+## Callback functions
+| Purpose       | Synopsis   | Return values |
+|:--------------|:-----------|:--------------|
+|               |            |               |
+
+- are there callback functions provided
+
+## Error states
+- how can error states / messages be provided to the component
+- what if component doesn't render anything
+
+## Other specifics or annotations
+- any other specific remarks or annotations
+
+```
 
 ## Used npm Packages
 - eleventy navigation: 

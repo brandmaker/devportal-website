@@ -39,7 +39,7 @@ The **scripts** for the Fusion UX Apps are managed in the section 'Management'. 
  ![](/assets/guides/fusion-ux-logic/admin_overview.png)
 
 (a): To register a new Fusion UX App, click on 'CREATE NEW COMPONENT'. In the opened dialog, upload the corresponding [ZIP file](#structure-of-zip-file) containing the source files. \
-To ensure the integrity and security of the BrandMaker system, the uploaded files will be examined. If the validation passes, the system generates a unique ID and a URL under which the component will be available. After this, the Fusion UX App is ready to be integrated into the system.
+The BrandMaker system examines the uploaded files to ensure integrity and security. If the validation passes, a unique ID and URL will be created. By fetching the component through this URL, the system can then integrate the Fusion UX App.
 
 ![](/assets/guides/fusion-ux-logic/admin_upload_new_component.png)
 
@@ -48,7 +48,7 @@ To ensure the integrity and security of the BrandMaker system, the uploaded file
 ![](/assets/guides/fusion-ux-logic/admin_adjust_component.png)
 
 ### (2) Usage
-In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component will be rendered. \
+In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component is rendered. \
 Module, page, and a predefined slot within the module define the placement. Important to notice, one place can only have one associated usage at a time.
 
 ![](/assets/guides/fusion-ux-logic/usage_overview.png)
@@ -76,7 +76,7 @@ export default class HelloWorldComponent extends HTMLElement {
     constructor() {
         super();
 
-        // need to attach a shadow DOM (will return the ShadowRoot)
+        // need to attach a shadow DOM (returns the ShadowRoot)
         this._root = this.attachShadow({ mode: "closed" });
         this._root.appendChild(template.content.cloneNode(true));
     }
@@ -129,7 +129,7 @@ After successful registration, a unique ID and an assigned URL are part of the c
 The name and the tag name need to be unique within your system. Also, Fusion UX Apps need at least one attribute.
 
 #### Page Slots
-As mentioned before, Fusion UX Apps are integrated into predefined places called page slots. They are defined by
+As mentioned before, Fusion UX Apps render in predefined places called page slots. They are defined by
 - ID and name
 - Page (defined by ID, name, and module)
 - Collection of slot attributes, each one defined by
@@ -248,7 +248,7 @@ As an example, the timeline node in MAPL is used to display the component. The f
 ![](/assets/guides/fusion-ux-logic/hello_world_usage_form.png)
 
 Some notes about the attributes and their assignments:
-- The default value will be used, if no other value is available
+- The default value is used, if no other value is available
 - `fux-name` only has the default value
     - Therefore, the attribute will always have this value
     - Because the attribute is not required, it would also be valid to leave this field empty
