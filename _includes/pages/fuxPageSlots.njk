@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% include 'components/favicons.njk' %}
         <link rel="stylesheet" href="/main.css">
-        <link rel="stylesheet" type="text/css" href="../../../../swagger/swagger-ui.css?v=2" >
     </head>
     <body class="guide">
         {% include 'components/topbar.njk' %}
@@ -17,13 +16,14 @@
         </section>
         <main class="guide__mainlayout">
             <aside class="guide__aside">
-            <div class="stick">
-                {{ content | toc | safe }}
+            <div class="stick" style="position: sticky;top: 50px;">
+                {{ file | renderUsingMarkdown | toc | safe }}
                 {% include 'components/pageSlotNav.njk' %}
             </div>
             </aside>
             <article class="guide__article">
-                {{ content | safe }}
+                <p><img src="{{ img }}" alt=""></p>
+                {{ file | renderUsingMarkdown | safe }}
             </section>
         </main>
         {% include 'components/footer.njk' %}

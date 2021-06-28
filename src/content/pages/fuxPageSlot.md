@@ -18,5 +18,7 @@ eleventyComputed:
     setProductVersion: "{{ pageSlots[2] }}"
     setApiVersion: "{{ pageSlots[3] }}"
     setPageSlot: "{{ pageSlots[4] }}"
-    content: "{{ pageSlots[5] }}"
+    title: "{{ pageSlots[4] }}"
+    img: "/api/{{ pageSlots[0] }}/{{ pageSlots[2] }}/{{ pageSlots[3] }}/{{ pageSlots[4] }}/screenshot.png"
+    file: "{{ pageSlots[5] }}"
 ---

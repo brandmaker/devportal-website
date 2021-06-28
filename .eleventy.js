@@ -8,6 +8,8 @@ const markdownItAnchor = require( 'markdown-it-anchor' );
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { exit } = require("process");
 const pluginDate = require("eleventy-plugin-date");
+const { fileURLToPath } = require("url");
+const MarkdownIt = require("markdown-it");
 
 //const modulesUnstuctured = fg.sync('api/**', { onlyFiles: false, deep: 4, objectMode: true });
 const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 5, objectMode: true });
@@ -140,6 +142,10 @@ module.exports = function (eleventyConfig) {
     let pageSlotApiVersionPage = [];
 
 
+    const mdRender = new MarkdownIt();
+    eleventyConfig.addFilter("renderUsingMarkdown", function(rawString) {
+        return mdRender.use( markdownItAnchor ).render(rawString);
+      });
     modulesStructured.forEach(({ moduleName, productVersions }) => {
         var lastProductVersion;
         var productVersionJson = "{ \"productVersions\": [";
@@ -210,7 +216,9 @@ module.exports = function (eleventyConfig) {
                     addApiVersion = true;
                     addProductVersion = true;
                     addModule = true;
-                    pageSlotPage.push([moduleName, displayNames.get(moduleName), productVersion, apiVersion, pageSlot, file]);
+                    fs.readFile(`api/${moduleName}/${productVersion}/${apiVersion}/${pageSlot}/${file}`, 'utf8', (err, data) => {
+                        pageSlotPage.push([moduleName, displayNames.get(moduleName), productVersion, apiVersion, pageSlot, data]);
+                    });
                 });
                 if (addApiVersion) {
                     pageSlotApiVersionPage.push([moduleName, productVersion, apiVersion, lastPageSlots.get(productVersion).apiVersion.get(apiVersion)]);
@@ -248,8 +256,11 @@ module.exports = function (eleventyConfig) {
     });
 
     
-    eleventyConfig.addPassthroughCopy("api");
-
+    
+    eleventyConfig.addPassthroughCopy("api/**/*.json");
+    eleventyConfig.addPassthroughCopy("api/**/**/*.json");
+    eleventyConfig.addPassthroughCopy("api/**/**/**/*.json");
+    eleventyConfig.addPassthroughCopy("api/**/**/**/**/*.png");
 
 
     let nunjucksEnvironment = new Nunjucks.Environment(

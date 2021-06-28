@@ -41,7 +41,7 @@ The swagger.json files should be added into the "api" folder in the following st
 Example: _api/MediaPool/6.8/6.8.1.0/mediapool-api-6.8.1.0.json_ \
 It's important, that every api version folder contains only one file.
 
-Every module needs a **module.json** file (api/_\<module name>_/module.json) with a name, which will be displayed in the navigation and as the title. It can also have a variable "info", which contain a tagline displayed in the navigation under the title.
+Every module needs a **module.json** file (api/_\<module name>_/module.json) with a name, which will be displayed in the navigation and as the title. It can also have a variable "info", which contains a tagline displayed in the navigation under the title.
 ```
 {
     "name": "<module name>",
@@ -51,6 +51,19 @@ Every module needs a **module.json** file (api/_\<module name>_/module.json) wit
 
 This will generate one page per module, one per product version and one per api version. (with module.md, product.md, swagger.md) \
 Thereby the module page will redirect to the last published product version, and the product version page to the last published api version page. If the user already checked out a specific product/api version, he will be redirected to the according page (localStorage)
+
+### FUX Guide
+The description of Fusion UX Logic is saved as a Markdown-file just like every other guide. Specific for this guide are the additional descriptions for the PAGE SLOTS. Page slots are defined per module, including the versioning. Therefor they are saved in the same structure as the SWAGGER files and an additional folder with the name of the page slot leading to the following structure:
+- api/module name
+  - product version/
+    - api version/
+      - page slot name/
+        - FILE: md?
+        - screenshot: a .png
+Just like with the swagger files, remember to store only one description file and one picture (screenshot of the page slot) in the folder.
+
+The file describing a page slot needs to look like this:
+...
 
 ## Used npm Packages
 - eleventy navigation: 
