@@ -72,17 +72,17 @@ The following code shows the template for the `slot.md` file with explanations o
 - Are there UI specifics to consider when rendering html (width, heights, fonts, colors, events, resize, …)
 
 ## Slot attributes
-| Name        | Purpose       | Type       | Defaults |
-|:------------|:--------------|:-----------|:---------|
-|             |               |            |          |
+|  | Name        | Purpose       | Type       | Defaults |
+|-:|------------|:--------------|:-----------|:---------|
+|1 |             |               |            |          |
 
 - which variables are 'exported' to the component
 - are the variables watched, i.E. can the component set values which then will be picked up by the caller again?
 
 ## Callback functions
-| Purpose       | Synopsis   | Return values |
-|:--------------|:-----------|:--------------|
-|               |            |               |
+|  | Purpose       | Synopsis   | Return values |
+|-:|--------------|:-----------|:--------------|
+|1 |               |            |               |
 
 - are there callback functions provided
 

@@ -6,10 +6,10 @@ Within the hover element, the slot is positioned under the base details and abov
 The component should have a min-width and a min-height, so the tooltip resizes accordingly. Any other styling is optional.
 
 ## Slot attributes
-| Name        | Purpose       | Type       | Defaults |
-|:------------|:--------------|:-----------|:---------|
-| `nodeId`    | Unique identifier for a calender element (row) | `NUMBER`   | none     |
-| `timelineId`| Identifies a timeline (entry in a calender row) | `NUMBER`   | none     | 
+|  | Name        | Purpose       | Type       | Defaults |
+|-:|:------------|:--------------|:-----------|:---------|
+|1 | `nodeId`    | Unique identifier for a calender element (row) | `NUMBER`   | none     |
+|2 | `timelineId`| Identifies a timeline (entry in a calender row) | `NUMBER`   | none     | 
 
 With the help of these two variables, data can be fetched through a provided API. After the successful gathering of the data, the component will render, displaying the received information from the response.\
 Other attributes of the component, like styles or the HTML code, are encapsulated within the Fusion UX App. 
@@ -17,9 +17,9 @@ Other attributes of the component, like styles or the HTML code, are encapsulate
 The variables are not watched and will not be picked up by the caller later again. 
 
 ## Callback functions
-| Purpose       | Synopsis   | Return values |
-|---------------|:-----------|:--------------|
-| no callback functions provided| | |
+|  | Purpose       | Synopsis   | Return values |
+|-:|---------------|:-----------|:--------------|
+|  | no callback functions provided| | |
 
 ## Error states
 There are no error states or error messages provided.
