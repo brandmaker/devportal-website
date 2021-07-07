@@ -1,14 +1,14 @@
 ---
 layout: pages/fuxGuide.njk
 pageTitle: Fusion UX Logic Guide
-description: Build in custom components into your system.
+description: Integrate custom components into your system.
 teaserText: "With Fusion UX Logic, clients can now integrate custom UI components into predefined places in their BrandMaker system."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
     key: "FUX"
     title: "Fusion UX Logic Guide"
-    excerpt: "Build in custom components into your system."
+    excerpt: "Integrate custom components into your system."
     order: -1
 permalink: "guides/fusion-ux-logic/index.html"
 bodyClass: "guide"
