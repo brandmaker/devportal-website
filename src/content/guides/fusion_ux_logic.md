@@ -24,7 +24,7 @@ Possible functionalities easy to implement with custom components are:
 - Visualize existing information in customized component
   - e.g. with the help of charts
 
-
+ 
 [Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest-file). \
 Fusion UX Apps are both registered and managed in the [administration](#structure-of-the-administration) of the BrandMaker system.
 
@@ -45,7 +45,7 @@ The BrandMaker system examines the uploaded files to ensure integrity and securi
 
 (b): To edit a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only *displays* these values. To *adjust* them, alter the source files and re-upload them. If the component is already integrated into the system, make sure the attributes still work with the defined usages or adjust the usage definitions accordingly.
 
-![](/assets/guides/fusion-ux-logic/admin_adjust_component.png)
+![](/assets/guides/fusion-ux-logic/hello_world_detail_page.png)
 
 ### (2) Usage
 In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component is rendered. \
@@ -56,7 +56,7 @@ Module, page, and a predefined slot within the module define the placement. Impo
 (a): To add a new placement-configuration combination, click on 'CREATE USAGE'. In the opened dialog, choose a registered component (can be both predefined by BrandMaker or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. \
 Configure the attributes of the chosen component by setting a default value or assigning them to a slot attribute provided by the selected slot.
 
-![](/assets/guides/fusion-ux-logic/usage_create_new_usage.png)
+![](/assets/guides/fusion-ux-logic/hello_world_usage_form.png)
 
 (b) To configure a usage, select it in the table, which opens the same dialog shown under (a).
 
