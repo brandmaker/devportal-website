@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+<url>
+  <loc>https://developers.brandmaker.com</loc>
+  <lastmod>2021-07-07</lastmod>
+</url><url>
+    <loc>https://developers.brandmaker.com/api/</loc>
+    <lastmod>2021-07-07</lastmod>
+  </url>
+      <url>
+        <loc>https://developers.brandmaker.com/api/JobManager/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/JobManager/6.8/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/JobManager/6.8/6.8.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/api/MAPS/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/MAPS/6.9/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MAPS/6.9/6.9.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MAPS/7.0/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MAPS/7.0/7.0.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MAPS/7.1/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MAPS/7.1/7.1.0.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/api/MediaPool/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/MediaPool/6.8/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MediaPool/6.8/6.8.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MediaPool/6.9/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MediaPool/6.9/6.9.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MediaPool/7.0/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MediaPool/7.0/7.0.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MediaPool/7.1/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MediaPool/7.1/7.1.0.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/api/Web-to-Publish/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/Web-to-Publish/6.6/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Web-to-Publish/6.6/6.6.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/Web-to-Publish/6.7/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Web-to-Publish/6.7/6.7.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/Web-to-Publish/7.0/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Web-to-Publish/7.0/7.0.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/Web-to-Publish/7.1/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Web-to-Publish/7.1/7.1.0.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/api/WebCacheCore/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/WebCacheCore/6.8/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/WebCacheCore/6.8/6.8.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/api/WebCacheEngage/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.com/api/WebCacheEngage/6.8/</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/WebCacheEngage/6.8/6.8.1.0/</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            <url>
+    <loc>https://developers.brandmaker.com/guides/</loc>
+    <lastmod>2021-07-07</lastmod>
+  </url>
+      <url>
+        <loc>https://developers.brandmaker.com/guides/auth/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+      <url>
+        <loc>https://developers.brandmaker.com/guides/fusion-ux-logic/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url>
+          <url>
+            <loc>https://developers.brandmaker.comMAPS</loc>
+            <lastmod>2021-07-07</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com7.1</loc>
+                <lastmod>2021-07-07</lastmod>
+              </url>
+            
+      <url>
+        <loc>https://developers.brandmaker.com/guides/webhook-push-api/</loc>
+        <lastmod>2021-07-07</lastmod>
+      </url></urlset>
