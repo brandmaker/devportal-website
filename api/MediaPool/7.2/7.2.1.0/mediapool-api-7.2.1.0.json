@@ -6,8 +6,8 @@
       "email" : "dev-team-mp@brandmaker.com",
       "name" : "MediaPool"
     },
-    "version" : "76.0.1-7.2",
-    "title" : "MediaPool RESTful Service API - 76.0.1-7.2"
+    "version" : "76.0.2-7.2",
+    "title" : "MediaPool RESTful Service API - 76.0.2-7.2"
   },
   "host" : "is-dev2.brandmaker.com",
   "basePath" : "/rest/mp",
@@ -8961,11 +8961,6 @@
       "type" : "object",
       "title" : "PageableRestDtoOfMediaPoolUserRestDto",
           "properties" : {
-            "totalCount" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "number"
-            },
             "items" : {
             "readOnly" : false,
 "description" : "",
@@ -8973,6 +8968,11 @@
 "items" : {
   "$ref" : "#/definitions/json_MediaPoolUserRestDto"
 }
+            },
+            "totalCount" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
             }
           },
       "description" : ""
@@ -15519,7 +15519,7 @@
             "description" : "Id must be not null and greater then 0"
           },
           "404" : {
-            "description" : "The id does not corresponds to a master asset/The id does not corresponds to a valid asset"
+            "description" : "The id does not corresponds to a master or valid asset"
           },
           "403" : {
             "description" : "The user have insufficient rights to perform the operation"
@@ -15610,7 +15610,7 @@
             "description" : "Master or variant with this id already exists"
           },
           "404" : {
-            "description" : "The id does not corresponds to a master asset/Asset with this id does not exists"
+            "description" : "The id does not corresponds to a master asset | Asset with this id does not exists"
           },
           "400" : {
             "description" : "Id must be not null and greater then 0"
@@ -21010,7 +21010,7 @@
             "description" : "successful request"
           },
           "400" : {
-            "description" : "invalid id/entity for that id not found"
+            "description" : "invalid id | entity for that id not found"
           },
           "401" : {
             "description" : "user not authenticated"
