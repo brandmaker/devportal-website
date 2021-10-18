@@ -108,7 +108,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/PageDtoOfDseObjectLightDto"
                 },
-                "example" : "{\n  \"totalCount\" : 12345,\n  \"offset\" : 12345,\n  \"limit\" : 12345,\n  \"data\" : [ {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  }, {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  } ]\n}"
+                "example" : "{\n  \"limit\" : 12345,\n  \"totalCount\" : 12345,\n  \"data\" : [ {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  }, {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  } ],\n  \"offset\" : 12345\n}"
               }
             }
           }
@@ -165,7 +165,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/PageDtoOfDseObjectLightDto"
                 },
-                "example" : "{\n  \"totalCount\" : 12345,\n  \"offset\" : 12345,\n  \"limit\" : 12345,\n  \"data\" : [ {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  }, {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  } ]\n}"
+                "example" : "{\n  \"limit\" : 12345,\n  \"totalCount\" : 12345,\n  \"data\" : [ {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  }, {\n    \"id\" : 12345,\n    \"name\" : \"...\",\n    \"displayName\" : \"...\",\n    \"deepLink\" : \"...\"\n  } ],\n  \"offset\" : 12345\n}"
               }
             }
           }
@@ -660,7 +660,7 @@
                     "$ref" : "#/components/schemas/DiscussionDto"
                   }
                 },
-                "example" : "[ {\n  \"id\" : 12345,\n  \"content\" : \"...\",\n  \"title\" : \"...\",\n  \"type\" : \"CUSTOM\",\n  \"createDate\" : \"...\",\n  \"modifiedDate\" : \"...\",\n  \"participants\" : [ 12345, 12345 ]\n} ]"
+                "example" : "[ {\n  \"id\" : 12345,\n  \"content\" : \"...\",\n  \"title\" : \"...\",\n  \"type\" : \"SYSTEM\",\n  \"createDate\" : \"...\",\n  \"modifiedDate\" : \"...\",\n  \"participants\" : [ 12345, 12345 ]\n} ]"
               }
             }
           }
@@ -774,7 +774,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/DseObjectDto"
                 },
-                "example" : "{\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
+                "example" : "{\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
               }
             }
           }
@@ -1225,7 +1225,7 @@
               "schema" : {
                 "$ref" : "#/components/schemas/SearchParamDto"
               },
-              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"IS_CANCELLING\", \"FINISHED\" ]\n}"
+              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"ACTIVE\", \"CANCELED\" ]\n}"
             }
           }
         },
@@ -1804,7 +1804,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/DseProcessCreateDto"
                 },
-                "example" : "{\n  \"stepNumber\" : 12345,\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
+                "example" : "{\n  \"stepNumber\" : 12345,\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
               }
             }
           }
@@ -1864,15 +1864,15 @@
         }
       }
     },
-    "/dse/rest/v1/process/{processId}" : {
+    "/dse/rest/v1/process/{ordinalNumber}/ids" : {
       "get" : {
         "tags" : [ "ProcessServiceV1" ],
-        "description" : "Get Process.\n\n__Security Roles Allowed:__ JOB_MANAGER_MODULE_ACCESS",
-        "operationId" : "ProcessServiceV1-GET_get",
+        "description" : "Returns only ids of Process.\n\n__Security Roles Allowed:__ JOB_MANAGER_MODULE_ACCESS",
+        "operationId" : "ProcessServiceV1-GET_getIds",
         "parameters" : [ {
-          "name" : "processId",
+          "name" : "ordinalNumber",
           "in" : "path",
-          "description" : "process' ID",
+          "description" : "is unique serial process number.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -1881,13 +1881,129 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "DseObjectDto",
+            "description" : "Ids of process was returned",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProcessIdsDto"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Process with such id doesn't exist or it is OLD job",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProcessIdsDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dse/rest/v1/process/{ordinalNumber}/{stepNumber}" : {
+      "get" : {
+        "tags" : [ "ProcessServiceV1" ],
+        "description" : "Return Process.\n\n__Security Roles Allowed:__ JOB_MANAGER_MODULE_ACCESS",
+        "operationId" : "ProcessServiceV1-GET_get",
+        "parameters" : [ {
+          "name" : "ordinalNumber",
+          "in" : "path",
+          "description" : "is unique serial process number.",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "stepNumber",
+          "in" : "path",
+          "description" : "is unique serial workflow step number.",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Process was returned",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/DseObjectDto"
-                },
-                "example" : "{\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Process with such id doesn't exist or it is OLD job",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DseObjectDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "ProcessServiceV1" ],
+        "description" : "Updates existed DSE objects values.\n\n__Security Roles Allowed:__ JOB_MANAGER_MODULE_ACCESS",
+        "operationId" : "ProcessServiceV1-POST_updateDseObject",
+        "parameters" : [ {
+          "name" : "ordinalNumber",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "stepNumber",
+          "in" : "path",
+          "description" : "is unique serial workflow step number.",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "map of technical names to their values",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "additionalProperties" : {
+                  "$ref" : "#/components/schemas/ProcessUpdateDto"
+                }
+              },
+              "example" : "{\n  \"...\" : {\n    \"inheritFromParent\" : \"NOT_SUPPORTED\",\n    \"value\" : \"...\"\n  }\n}"
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ids of process was returned",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DseObjectDto"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Process with such id doesn't exist or it is OLD job",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DseObjectDto"
+                }
               }
             }
           }
@@ -2225,7 +2341,7 @@
               "schema" : {
                 "$ref" : "#/components/schemas/SearchParamDto"
               },
-              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"CANCELED\", \"FINISHED\" ]\n}"
+              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"FINISHED\", \"ACTIVE\" ]\n}"
             }
           }
         },
@@ -2237,7 +2353,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/SearchResultDto"
                 },
-                "example" : "{\n  \"totalCount\" : 12345,\n  \"values\" : [ {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  }, {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  } ]\n}"
+                "example" : "{\n  \"totalCount\" : 12345,\n  \"values\" : [ {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"NOT_SUPPORTED\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  }, {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"NOT_SUPPORTED\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  } ]\n}"
               }
             }
           }
@@ -2255,7 +2371,7 @@
               "schema" : {
                 "$ref" : "#/components/schemas/SearchParamDto"
               },
-              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"IS_CANCELLING\", \"IS_CANCELLING\" ]\n}"
+              "example" : "{\n  \"filterId\" : 12345,\n  \"from\" : 12345,\n  \"limit\" : 12345,\n  \"sort\" : 12345,\n  \"dir\" : \"...\",\n  \"variableCondition\" : [ {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  }, {\n    \"value\" : \"...\",\n    \"name\" : \"...\",\n    \"jobTypeUniqueName\" : \"...\",\n    \"operator\" : \"...\",\n    \"cmpCondition\" : \"...\"\n  } ],\n  \"fulltext\" : \"...\",\n  \"states\" : [ \"IS_CANCELLING\", \"CANCELED\" ]\n}"
             }
           }
         },
@@ -2466,7 +2582,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/DseObjectDto"
                 },
-                "example" : "{\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
+                "example" : "{\n  \"values\" : {\n    \"property1\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    },\n    \"property2\" : {\n      \"inheritFromParent\" : \"NOT_SUPPORTED\",\n      \"inheritedValue\" : \"...\",\n      \"displayValue\" : \"...\",\n      \"value\" : \"...\"\n    }\n  },\n  \"instanceId\" : 12345,\n  \"l10nLocaleId\" : 12345,\n  \"workflowObjectId\" : 12345,\n  \"name\" : \"...\",\n  \"extendedName\" : \"...\",\n  \"state\" : \"...\",\n  \"ordinalNumber\" : 12345,\n  \"typeId\" : 12345,\n  \"createdBy\" : \"...\",\n  \"parentId\" : 12345,\n  \"creator\" : {\n    \"id\" : 12345,\n    \"firstName\" : \"...\",\n    \"fullName\" : \"...\",\n    \"lastName\" : \"...\",\n    \"email\" : \"...\",\n    \"login\" : \"...\"\n  },\n  \"workflowTypeId\" : 12345,\n  \"currentStepTemplateId\" : 12345,\n  \"assignment\" : {\n    \"assignees\" : [ {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    }, {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    } ],\n    \"group\" : {\n      \"defaultAssignee\" : { },\n      \"predefined\" : true,\n      \"id\" : 12345,\n      \"name\" : \"...\"\n    }\n  }\n}"
               }
             }
           }
@@ -2569,7 +2685,7 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/PagingWrapperDtoOfDseObjectDto"
                 },
-                "example" : "{\n  \"items\" : [ {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"NOT_SUPPORTED\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  }, {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"BROKEN_INHERITANCE\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  } ],\n  \"total\" : 12345\n}"
+                "example" : "{\n  \"items\" : [ {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"NOT_SUPPORTED\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  }, {\n    \"values\" : {\n      \"property1\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      },\n      \"property2\" : {\n        \"inheritFromParent\" : \"INHERITED_FROM_PARENT\",\n        \"inheritedValue\" : \"...\",\n        \"displayValue\" : \"...\",\n        \"value\" : \"...\"\n      }\n    },\n    \"instanceId\" : 12345,\n    \"l10nLocaleId\" : 12345,\n    \"workflowObjectId\" : 12345,\n    \"name\" : \"...\",\n    \"extendedName\" : \"...\",\n    \"state\" : \"...\",\n    \"ordinalNumber\" : 12345,\n    \"typeId\" : 12345,\n    \"createdBy\" : \"...\",\n    \"parentId\" : 12345,\n    \"creator\" : {\n      \"id\" : 12345,\n      \"firstName\" : \"...\",\n      \"fullName\" : \"...\",\n      \"lastName\" : \"...\",\n      \"email\" : \"...\",\n      \"login\" : \"...\"\n    },\n    \"workflowTypeId\" : 12345,\n    \"currentStepTemplateId\" : 12345,\n    \"assignment\" : {\n      \"assignees\" : [ { }, { } ],\n      \"group\" : { }\n    }\n  } ],\n  \"total\" : 12345\n}"
               }
             }
           }
@@ -4094,15 +4210,11 @@
         "required" : [ "limit", "offset", "totalCount" ],
         "type" : "object",
         "properties" : {
-          "totalCount" : {
-            "type" : "integer",
-            "format" : "int32"
-          },
-          "offset" : {
-            "type" : "integer",
-            "format" : "int32"
-          },
           "limit" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "totalCount" : {
             "type" : "integer",
             "format" : "int32"
           },
@@ -4111,6 +4223,10 @@
             "items" : {
               "$ref" : "#/components/schemas/DseObjectLightDto"
             }
+          },
+          "offset" : {
+            "type" : "integer",
+            "format" : "int32"
           }
         },
         "description" : "Generic page of data"
@@ -4224,6 +4340,35 @@
           }
         },
         "description" : "DTO for information about prefilling from custom structure."
+      },
+      "ProcessIdsDto" : {
+        "title" : "ProcessIdsDto",
+        "type" : "object",
+        "properties" : {
+          "stepNumbers" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          }
+        },
+        "description" : "Identifiers of a process",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/BaseIdsDto"
+        } ]
+      },
+      "ProcessUpdateDto" : {
+        "title" : "ProcessUpdateDto",
+        "type" : "object",
+        "properties" : {
+          "inheritFromParent" : {
+            "$ref" : "#/components/schemas/InheritFromParentEnum"
+          },
+          "value" : {
+            "type" : "string"
+          }
+        }
       },
       "ProcessWorkflowDto" : {
         "title" : "ProcessWorkflowDto",
