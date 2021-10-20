@@ -6,8 +6,8 @@
       "email" : "dev-team-mp@brandmaker.com",
       "name" : "MediaPool"
     },
-    "version" : "76.0.2-7.2",
-    "title" : "MediaPool RESTful Service API - 76.0.2-7.2"
+    "version" : "73.2.8-7.0.2",
+    "title" : "MediaPool RESTful Service API - 73.2.8-7.0.2"
   },
   "host" : "is-dev2.brandmaker.com",
   "basePath" : "/rest/mp",
@@ -65,10 +65,6 @@
     ,
     {
       "name" : "AssetGraphicOperationsRestService"
-    }
-    ,
-    {
-      "name" : "AssetImportResource"
     }
     ,
     {
@@ -247,6 +243,8 @@
     ,
     {
       "name" : "PublishingChannelRestService"
+      ,
+      "description" : "Rest service providing base CRUD functionalities."
     }
     ,
     {
@@ -802,15 +800,15 @@
 "description" : "",
 "type" : "number"
             },
+            "asset_id" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
             "archive_path" : {
             "readOnly" : false,
 "description" : "",
 "type" : "string"
-            },
-            "creationDate" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "number"
             }
           },
       "description" : ""
@@ -1677,63 +1675,6 @@
 "items" : {
   "type" : "number"
 }
-            }
-          },
-      "description" : ""
-    }
-    ,
-    "json_AssetImportRequestRestDto" : {
-      "type" : "object",
-      "title" : "AssetImportRequestRestDto",
-          "properties" : {
-            "sync" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "boolean"
-            },
-            "sessionId" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "string"
-            }
-          },
-      "description" : ""
-    }
-    ,
-    "json_AssetImportResponseRestDto" : {
-      "type" : "object",
-      "title" : "AssetImportResponseRestDto",
-          "properties" : {
-            "asset" : {
-            "readOnly" : false,
-"$ref" : "#/definitions/json_AssetRestDto"
-            },
-            "log" : {
-            "readOnly" : false,
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            }
-          },
-      "description" : ""
-    }
-    ,
-    "json_AssetImportRetryRequestRestDto" : {
-      "type" : "object",
-      "title" : "AssetImportRetryRequestRestDto",
-          "properties" : {
-            "assetId" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "number"
-            },
-            "force" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "boolean"
-            },
-            "sync" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "boolean"
             }
           },
       "description" : ""
@@ -3878,7 +3819,7 @@
           }
         }
       ],
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 8f7a5b76a703a99b46302927c9fddd12"
+      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 9b8f582f17cc0452bd0e2c378eef625b"
     }
     ,
     "json_BaseLoadableRestDto" : {
@@ -3930,7 +3871,7 @@
 }
             }
           },
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 200852afd9cb10ab447a9df2c95f83ef"
+      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: b0f70441c6de75f23194303b5fb65ab2"
     }
     ,
     "json_BaseRestDto" : {
@@ -7065,19 +7006,6 @@
       "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: ec40def507985c35f958f524463ffc82"
     }
     ,
-    "json_InternalServerErrorRestDto" : {
-      "type" : "object",
-      "title" : "InternalServerErrorRestDto",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_BaseErrorRestDto"
-        },
-        {
-        }
-      ],
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: f1b26578642f01ea6dc6ac9362086054"
-    }
-    ,
     "json_IsTaggedRestDto" : {
       "type" : "object",
       "title" : "IsTaggedRestDto",
@@ -7960,7 +7888,7 @@
 }
             }
           },
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 51d360f7a6c2fe2426d9c5b8c21225fe"
+      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 1075a97eb598ee3c82ff87bbbfa8ece9"
     }
     ,
     "json_LongComparisonRestDto" : {
@@ -8370,20 +8298,7 @@
           }
         }
       ],
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: 32b8bbc350cc9c339343b42c6a0dd74d"
-    }
-    ,
-    "json_MissingErrorRestDto" : {
-      "type" : "object",
-      "title" : "MissingErrorRestDto",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_BaseErrorRestDto"
-        },
-        {
-        }
-      ],
-      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: a7d53c7e33a33952c751d70b64cdd8b7"
+      "description" : "This class is generated.\nTemplate: com.brandmaker.mms.mp.generator.templates.rest.RestDtoTemplate\nMD5 checksum: c4528f174f22bf9b8c0a78244aaed3b4"
     }
     ,
     "json_MissingValueStrategyRestDto" : {
@@ -8961,6 +8876,11 @@
       "type" : "object",
       "title" : "PageableRestDtoOfMediaPoolUserRestDto",
           "properties" : {
+            "totalCount" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
             "items" : {
             "readOnly" : false,
 "description" : "",
@@ -8968,11 +8888,6 @@
 "items" : {
   "$ref" : "#/definitions/json_MediaPoolUserRestDto"
 }
-            },
-            "totalCount" : {
-            "readOnly" : false,
-"description" : "",
-"type" : "number"
             }
           },
       "description" : ""
@@ -15214,249 +15129,6 @@
       }
     }
     ,
-    "\/v1.0/assets/import/_retry" : {
-      "post" : {
-        "tags" : [ "AssetImportResource" ],
-        "summary" : "Retry additional tasks (metadata extraction, previews generation, preview asset) if some are failed.",
-        "description" : "Retry additional tasks (metadata extraction, previews generation, preview asset) if some are failed.",
-        "operationId" : "retry2",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [
-          {
-            "name" : "body",
-            "in" : "body",
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportRetryRequestRestDto"
-            },
-            "description" : "input data AssetImportRetryRequestRestDto - holding\nassetId - id of the asset that we want to retry,\nsync - if we want to wait or not for the retry (default: false)\nforce - if we want to redo operations even if they were successful (to be done)"
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Import tasks are retried"
-          },
-          "202" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Request for tasks retry is accepted"
-          },
-          "401" : {
-            "description" : "user not authenticated"
-          },
-          "400" : {
-            "description" : "input validation error"
-          },
-          "207" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Tasks are retried, but there are errors"
-          }
-        }
-      }
-    }
-    ,
-    "\/v1.0/assets/import/mass-imports/suffixes" : {
-      "get" : {
-        "tags" : [ "AssetImportResource" ],
-        "summary" : "TODO.",
-        "description" : "TODO",
-        "operationId" : "getAllowedSuffixes2",
-        "produces" : [ "application/json" ],
-        "parameters" : [
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "Allowed suffixes for mass import",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "description" : "Allowed suffixes for mass import"
-          },
-          "401" : {
-            "description" : "user not authenticated"
-          },
-          "400" : {
-            "description" : "input validation error"
-          }
-        }
-      }
-    }
-    ,
-    "\/v1.0/assets/import/mass-imports/{massImportId}" : {
-      "post" : {
-        "tags" : [ "AssetImportResource" ],
-        "summary" : "TODO.",
-        "description" : "TODO",
-        "operationId" : "importToMassImport",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [
-          {
-            "name" : "massImportId",
-            "in" : "path",
-            "required" : false,
-            "type" : "integer",
-            "format" : "int32",
-            "description" : ""
-          },
-          {
-            "name" : "body",
-            "in" : "body",
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportRequestRestDto"
-            },
-            "description" : ""
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportResponseRestDto"
-            },
-            "description" : "Import is started and base asset data is returned"
-          },
-          "401" : {
-            "description" : "user not authenticated"
-          },
-          "400" : {
-            "description" : "input validation error"
-          },
-          "207" : {
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportResponseRestDto"
-            },
-            "description" : "Asset is imported, but there are errors"
-          }
-        }
-      }
-    }
-    ,
-    "\/v1.0/assets/import/own-collections/{collectionType}" : {
-      "post" : {
-        "tags" : [ "AssetImportResource" ],
-        "summary" : "Import asset into own collection using file upload session.",
-        "description" : "Import asset into own collection using file upload session.",
-        "operationId" : "importToOwnCollection",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [
-          {
-            "name" : "collectionType",
-            "in" : "path",
-            "required" : false,
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "type of the own collection for the asset import"
-          },
-          {
-            "name" : "body",
-            "in" : "body",
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportRequestRestDto"
-            },
-            "description" : "input data AssetImportRequestRestDto - holding\nsessionId - id of the file upload session,\nsync - if we want to wait or not for the import (default: false)"
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportResponseRestDto"
-            },
-            "description" : "Import is started and base asset data is returned"
-          },
-          "207" : {
-            "schema" : {
-"$ref" : "#/definitions/json_AssetImportResponseRestDto"
-            },
-            "description" : "Asset is imported, but there are errors"
-          },
-          "401" : {
-            "schema" : {
-"description" : "User not authenticated",
-"type" : "string"
-            },
-            "description" : "User not authenticated"
-          },
-          "403" : {
-            "schema" : {
-"description" : "Insufficient rights for the module",
-"type" : "string"
-            },
-            "description" : "Insufficient rights for the module"
-          },
-          "400" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Input validation error"
-          },
-          "409" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Business logic error"
-          }
-        }
-      }
-    }
-    ,
-    "\/v1.0/assets/import/own-collections/{collectionType}/suffixes" : {
-      "get" : {
-        "tags" : [ "AssetImportResource" ],
-        "summary" : "Retrieve allowed suffixes for the provided own collection type.",
-        "description" : "Retrieve allowed suffixes for the provided own collection type.",
-        "operationId" : "getAllowedSuffixes",
-        "produces" : [ "application/json" ],
-        "parameters" : [
-          {
-            "name" : "collectionType",
-            "in" : "path",
-            "required" : false,
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "type of the own collection for the asset import"
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "Allowed suffixes for provided asset set type",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "description" : "Allowed suffixes for provided asset set type"
-          },
-          "401" : {
-            "schema" : {
-"description" : "User not authenticated",
-"type" : "string"
-            },
-            "description" : "User not authenticated"
-          },
-          "400" : {
-            "description" : "Input validation error"
-          },
-          "404" : {
-            "schema" : {
-"$ref" : "#/definitions/json_LogResponseRestDto"
-            },
-            "description" : "Collection type is not existing or it is not an own collection type."
-          }
-        }
-      }
-    }
-    ,
     "\/v1.0/assets/load" : {
       "post" : {
         "tags" : [ "AssetRestService" ],
@@ -17160,9 +16832,6 @@
           },
           "404" : {
             "description" : "if the asset or the binary file is missing"
-          },
-          "202" : {
-            "description" : "Preview is still in generation process"
           }
         }
       }
@@ -17225,9 +16894,6 @@
           },
           "500" : {
             "description" : "something went wrong when generating the preview"
-          },
-          "202" : {
-            "description" : "Preview is still in generation process"
           }
         }
       }
@@ -17298,9 +16964,6 @@
           },
           "500" : {
             "description" : "something went wrong when generating the preview"
-          },
-          "202" : {
-            "description" : "Preview is still in generation process"
           }
         }
       }
@@ -17365,9 +17028,6 @@
           },
           "500" : {
             "description" : "something went wrong when generating the preview"
-          },
-          "202" : {
-            "description" : "Preview is still in generation process"
           }
         }
       }
@@ -17424,9 +17084,6 @@
           },
           "500" : {
             "description" : "something went wrong when generating the preview"
-          },
-          "202" : {
-            "description" : "Preview is still in generation process"
           }
         }
       }
@@ -20362,7 +20019,7 @@
             "type" : "array",
             "items" : {
             "type" : "string",
-            "enum" : ["MY_COLLECTIONS", "OWN_COLLECTIONS", "SHARED_COLLECTIONS"]
+            "enum" : ["MY_COLLECTIONS", "SHARED_COLLECTIONS"]
             },
             "collectionFormat" : "multi",
             "description" : "The subset(s) of collections to be returned. One of: <b>my<\/b>, <b>shared<\/b>.\n<pre>E.g.: /rest/mp/v1.1/users/current/asset-collections?filters=my&amp;filters=shared<\/pre>"
@@ -20705,7 +20362,7 @@
             "schema" : {
 "$ref" : "#/definitions/json_ChannelPublicationDeleteRequestRestDto"
             },
-            "description" : "JSON holding required data for delete.\n<pre>\n             {\n                  \"publishingChannelId\":\"PUBLIC_LINKS\"\n             }\n             <\/pre>"
+            "description" : "JSON holding required data for delete. publishingChannelId(value is case-insensitive)\n<pre>\n             {\n                  \"publishingChannelId\":\"PUBLIC_LINKS\"\n             }\n             <\/pre>"
           }
         ],
         "responses" : {
@@ -20724,7 +20381,7 @@
       "get" : {
         "tags" : [ "ChannelPublicationRestService" ],
         "summary" : "Return all the publications for the given asset.",
-        "description" : "Return all the publications for the given asset",
+        "description" : "Return all the publications for the given asset.\nKeep in mind that the publishingChannelId value is case-insensitive.",
         "operationId" : "getPublications",
         "produces" : [ "application/json" ],
         "parameters" : [
@@ -20779,7 +20436,7 @@
             "schema" : {
 "$ref" : "#/definitions/json_ChannelPublicationCreateRequestRestDto"
             },
-            "description" : "JSON holding required data for create.<br>\nMandatory fields: publishingChannelId, renderingSchemeId.<br>\nIf publishFrom/To dates are not specified its treated as publish from NOW/infinity publication.<br>\nLicense id is required for publications of assets that got license assigned.<br>\n\n<pre>\n              {\n                  \"publishingChannelId\":\"PUBLIC_LINKS\",\n                  \"renderingSchemeId\":16050,\n                  \"publishFrom\":\"2019-12-18T15:54:22Z\",\n                  \"publishTo\":\"2019-12-20T15:20:22Z\",\n                  \"licenseId\":123\n              }\n             <\/pre>"
+            "description" : "JSON holding required data for create.<br>\nMandatory fields: publishingChannelId(value is case-insensitive), renderingSchemeId.<br>\nIf publishFrom/To dates are not specified its treated as publish from NOW/infinity publication.<br>\nLicense id is required for publications of assets that got license assigned.<br>\n\n<pre>\n              {\n                  \"publishingChannelId\":\"PUBLIC_LINKS\",\n                  \"renderingSchemeId\":16050,\n                  \"publishFrom\":\"2019-12-18T15:54:22Z\",\n                  \"publishTo\":\"2019-12-20T15:20:22Z\",\n                  \"licenseId\":123\n              }\n             <\/pre>"
           }
         ],
         "responses" : {
@@ -20823,7 +20480,7 @@
             "schema" : {
 "$ref" : "#/definitions/json_ChannelPublicationUpdateRequestRestDto"
             },
-            "description" : "JSON holding required data for update. There are 4 update operation types:<br>\n<ul>\n<li><b>publish<\/b> - set expired or scheduled channel publication to active<br>\nMandatory fields: publishingChannelId, renderingSchemeId<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"publish\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishTo\":\"2019-12-17T11:49:21Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<li><b>unpublish<\/b> - set active channel publication to expired<br>\n\n<pre>\n                     {\n                          \"@type\":\"unpublish\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\"\n                     }\n                     <\/pre>\n<li><b>edit<\/b> - edit active channel publication<br>\nMandatory fields: publishingChannelId, renderingSchemeId<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"edit\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishTo\":\"2019-12-17T11:49:21Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<li><b>schedule<\/b> - schedule future publication of expired or scheduled channel publication<br>\nMandatory fields: publishingChannelId, renderingSchemeId, publishFrom - must be in future<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"schedule\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishFrom\":\"2019-12-18T15:54:22Z\",\n                          \"publishTo\":\"2019-12-20T15:20:22Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<\/ul>"
+            "description" : "JSON holding required data for update. There are 4 update operation types:<br>\n<ul>\n<li><b>publish<\/b> - set expired or scheduled channel publication to active<br>\nMandatory fields: publishingChannelId(value is case-insensitive), renderingSchemeId<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"publish\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishTo\":\"2019-12-17T11:49:21Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<li><b>unpublish<\/b> - set active channel publication to expired<br>\n\n<pre>\n                     {\n                          \"@type\":\"unpublish\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\"\n                     }\n                     <\/pre>\n<li><b>edit<\/b> - edit active channel publication<br>\nMandatory fields: publishingChannelId(value is case-insensitive), renderingSchemeId<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"edit\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishTo\":\"2019-12-17T11:49:21Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<li><b>schedule<\/b> - schedule future publication of expired or scheduled channel publication<br>\nMandatory fields: publishingChannelId(value is case-insensitive), renderingSchemeId, publishFrom - must be in future<br>\nOptional field: publishTo - if not specified its treated as infinity publication,<br>\nlicenseId is required for publications of assets that got license assigned.<br>\n\n<pre>\n                      {\n                          \"@type\":\"schedule\",\n                          \"publishingChannelId\":\"PUBLIC_LINKS\",\n                          \"renderingSchemeId\":16050,\n                          \"publishFrom\":\"2019-12-18T15:54:22Z\",\n                          \"publishTo\":\"2019-12-20T15:20:22Z\",\n                          \"licenseId\":123\n                      }\n                     <\/pre>\n<\/ul>"
           }
         ],
         "responses" : {
@@ -21219,7 +20876,7 @@
       "post" : {
         "tags" : [ "PublishingChannelRestService" ],
         "summary" : "Create a publishing channel.",
-        "description" : "Create a publishing channel.\n\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>\n\nexample of a request body:\n<pre>\n         {\n            \"id\": \"Publishing_channel\",\n            \"name\": \"name\",\n            \"description\": \"description\",\n            \"renderingSchemeId\": 4555\n         }\n <\/pre>\n\nwhere id and name are mandatory for the request\n\nvalidation:\nid must be between 1 and 25 characters length. Allowed characters are a-z, A-Z, 0-9, _ and -,\nsystem channel names are not updatable,\nrenderingSchemeId is an optional parameter",
+        "description" : "Create a publishing channel.\n\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>\n\nexample of a request body:\n<pre>\n         {\n            \"id\": \"Publishing_channel\",\n            \"name\": \"name\",\n            \"description\": \"description\",\n            \"renderingSchemeId\": 4555\n         }\n <\/pre>\n\nwhere id(case-insensitive) and name are mandatory for the request\n\nvalidation:\nid must be between 1 and 25 characters length. Allowed characters are a-z, A-Z, 0-9, _ and -,\nno id duplication allowed(value is case-insensitive),\nsystem channel names are not updatable,\nrenderingSchemeId is an optional parameter",
         "operationId" : "create6",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -21234,11 +20891,11 @@
           }
         ],
         "responses" : {
-          "200" : {
+          "201" : {
             "schema" : {
 "$ref" : "#/definitions/json_PublishingChannelRestDto"
             },
-            "description" : "successful request"
+            "description" : "the resource created successfully"
           },
           "401" : {
             "description" : "user not authenticated"
@@ -21255,7 +20912,7 @@
       "put" : {
         "tags" : [ "PublishingChannelRestService" ],
         "summary" : "Update the provided list of publishing channels.",
-        "description" : "Update the provided list of publishing channels. Missing or null value fields will be nullified.\n\nrequest example:\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>\n\nexample of a request body:\n<pre>\n         {\n             \"updates\":[\n                {\n                 \"id\": \"Publishing_channel\",\n                 \"name\": \"name\",\n                 \"description\": \"description \"\n                },\n                {\n                 \"id\": \"Publishing_channel2\",\n                 \"name\": \"name\",\n                 \"renderingSchemeId\": 27\n                }\n             ]\n         }\n <\/pre>\n\nexample of response body:\n<pre>\n     {\n         \"publishingChannels\": [\n             {\n                 \"id\": \"Publishing_channel\",\n                 \"name\": \"name \",\n                 \"description\": \"description\"\n             },\n             {\n                 \"id\": \"Publishing_channel2\",\n                 \"name\": \"name \",\n                 \"renderingSchemeId\": 27\n             }\n         ]\n     }\n     <\/pre>\n\nvalidation:\nid must be between 1 and 25 characters length. Allowed characters are a-z, A-Z, 0-9, _ and -,\nsystem channel names are not updatable,\nrenderingSchemeId is optional and if provided must be a valid download schema id",
+        "description" : "Update the provided list of publishing channels. Missing or null value fields will be nullified.\n\nrequest example:\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>\n\nexample of a request body:\n<pre>\n         {\n             \"updates\":[\n                {\n                 \"id\": \"Publishing_channel\",\n                 \"name\": \"name\",\n                 \"description\": \"description \"\n                },\n                {\n                 \"id\": \"Publishing_channel2\",\n                 \"name\": \"name\",\n                 \"renderingSchemeId\": 27\n                }\n             ]\n         }\n <\/pre>\n\nexample of response body:\n<pre>\n     {\n         \"publishingChannels\": [\n             {\n                 \"id\": \"Publishing_channel\",\n                 \"name\": \"name \",\n                 \"description\": \"description\"\n             },\n             {\n                 \"id\": \"Publishing_channel2\",\n                 \"name\": \"name \",\n                 \"renderingSchemeId\": 27\n             }\n         ]\n     }\n     <\/pre>\n\nvalidation:\nid must be between 1 and 25 characters length. Allowed characters are a-z, A-Z, 0-9, _ and -,\nno id duplication allowed(value is case-insensitive),\nsystem channel names are not updatable,\nrenderingSchemeId is optional and if provided must be a valid download schema id",
         "operationId" : "update5",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -21293,7 +20950,7 @@
       "delete" : {
         "tags" : [ "PublishingChannelRestService" ],
         "summary" : "Delete the publishing channel with the provided id.",
-        "description" : "Delete the publishing channel with the provided id\n\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>",
+        "description" : "Delete the publishing channel with the provided id.\nKeep in mind that the publishingChannelId value is case-insensitive.\n\n<pre>/rest/mp/v1.2/publishing-channels<\/pre>",
         "operationId" : "delete5",
         "parameters" : [
           {
@@ -21303,7 +20960,7 @@
             "type" : "string",
             "maxLength" : 25,
             "minLength" : 1,
-            "description" : "- text based id"
+            "description" : "- text based id (case-insensitive)"
           }
         ],
         "responses" : {
@@ -21324,8 +20981,8 @@
       ,
       "get" : {
         "tags" : [ "PublishingChannelRestService" ],
-        "summary" : "return the requested publishing channel\n\nrequest example:.",
-        "description" : "return the requested publishing channel\n\nrequest example:\n<pre>/rest/mp/v1.2/publishing-channels/Publishing_channel<\/pre>\n\nresponse example:\n<pre>\n         {\n             \"id\": \"ss\",\n             \"name\": \"name\",\n             \"renderingSchemeId\": 4555,\n             \"assetsCount\": 0\n         }\n <\/pre>",
+        "summary" : "return the requested publishing channel.",
+        "description" : "return the requested publishing channel.\nKeep in mind that the publishingChannelId value in the path is case-insensitive.\n\nrequest example:\n<pre>/rest/mp/v1.2/publishing-channels/ss<\/pre>\n\nresponse example:\n<pre>\n         {\n             \"id\": \"ss\",\n             \"name\": \"name\",\n             \"renderingSchemeId\": 4555,\n             \"assetsCount\": 0\n         }\n <\/pre>",
         "operationId" : "getById4",
         "produces" : [ "application/json" ],
         "parameters" : [
@@ -21336,7 +20993,7 @@
             "type" : "string",
             "maxLength" : 25,
             "minLength" : 1,
-            "description" : "- publishing channel id"
+            "description" : "- publishing channel id (case-insensitive)"
           }
         ],
         "responses" : {
