@@ -999,7 +999,7 @@
       "post" : {
         "tags" : [ "Tenant" ],
         "summary" : "Update oAuth2 acces tokens for a WebCache tenant to access customer systems REST API's",
-        "description" : "<p>Data structure:<p><pre> {\n    \"access_token\": {\n        \"token\": \"abcdefg\",\n        \"expires\": 1607000144\n    },\n    \"refresh_token\": {\n        \"token\": \"abcdefgh\",\n        \"expires\": 1670073103\n    },\n    \"refresh\": \"https://cas.brandmaker.com/api/v1.1/token\",\n    \"client_id\": \"886626da-817a-40ee-909a-c8b3135f0b7d\"\n}</pre><p>&nbsp;<p>Any of the properties is mandatory.<p>Expiration times must be in the future.",
+        "description" : "<p>Post a new pair of access and refresh token to WebCache for a given tenant.<p>Tenant is identified by its customer and system id.<p>The tokens need to be valid and the expiration dates must be in future.<p>The tokens are validated against CAS before storing.<p>A login with the given tokens against Media Pool is executed.<p>Invalid tokens (not validated, login not possible) are rejected.<p>Data structure:<p><pre> {\n    \"access_token\": {\n        \"token\": \"abcdefg\",\n        \"expires\": 1607000144\n    },\n    \"refresh_token\": {\n        \"token\": \"abcdefgh\",\n        \"expires\": 1670073103\n    },\n    \"refresh\": \"https://cas.brandmaker.com/api/v1.1/token\",\n    \"client_id\": \"886626da-817a-40ee-909a-c8b3135f0b7d\"\n}</pre><p>&nbsp;<p>Any of the properties is mandatory.<p>Expiration times must be in the future.",
         "operationId" : "updateAccessTokens",
         "consumes" : [ "application/json" ],
         "produces" : [ "text/html;charset=utf-8", "application/json;charset=utf-8" ],
@@ -1019,7 +1019,7 @@
           "description" : "tokens",
           "required" : true,
           "schema" : {
-            "type" : "string"
+            "$ref" : "#/definitions/OauthTokens"
           },
           "x-examples" : {
             "application/json" : "{\n    \"access_token\": {\n        \"token\": \"abcdefg\",\n        \"expires\": 1607000144\n    },\n    \"refresh_token\": {\n        \"token\": \"abcdefgh\",\n        \"expires\": 1670073103\n    },\n    \"refresh\": \"https://cas.brandmaker.com/api/v1.1/token\",\n    \"client_id\": \"886626da-817a-40ee-909a-c8b3135f0b7d\"\n}"
@@ -1031,6 +1031,9 @@
           },
           "400" : {
             "description" : "Request cannot be processesd due to logical or syntactical errors"
+          },
+          "401" : {
+            "description" : "Tokens cannot be used to authenticate against customer system"
           },
           "404" : {
             "description" : "Tenant not found"
@@ -2224,6 +2227,18 @@
     }
   },
   "definitions" : {
+    "AccessToken" : {
+      "type" : "object",
+      "properties" : {
+        "token" : {
+          "type" : "string"
+        },
+        "expires" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
     "Enumeration" : {
       "type" : "object"
     },
@@ -2232,6 +2247,23 @@
     },
     "IteratorString" : {
       "type" : "object"
+    },
+    "OauthTokens" : {
+      "type" : "object",
+      "properties" : {
+        "access_token" : {
+          "$ref" : "#/definitions/AccessToken"
+        },
+        "refresh_token" : {
+          "$ref" : "#/definitions/RefreshToken"
+        },
+        "refresh" : {
+          "type" : "string"
+        },
+        "client_id" : {
+          "type" : "string"
+        }
+      }
     },
     "Principal" : {
       "type" : "object",
@@ -2244,10 +2276,10 @@
     "PublicKey" : {
       "type" : "object",
       "properties" : {
-        "algorithm" : {
+        "format" : {
           "type" : "string"
         },
-        "format" : {
+        "algorithm" : {
           "type" : "string"
         },
         "encoded" : {
@@ -2256,6 +2288,18 @@
             "type" : "string",
             "format" : "byte"
           }
+        }
+      }
+    },
+    "RefreshToken" : {
+      "type" : "object",
+      "properties" : {
+        "token" : {
+          "type" : "string"
+        },
+        "expires" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -2282,6 +2326,9 @@
         "attributeNames" : {
           "$ref" : "#/definitions/Enumeration"
         },
+        "initParameterNames" : {
+          "$ref" : "#/definitions/Enumeration"
+        },
         "servlets" : {
           "$ref" : "#/definitions/Enumeration"
         },
@@ -2290,9 +2337,6 @@
         },
         "serverInfo" : {
           "type" : "string"
-        },
-        "initParameterNames" : {
-          "$ref" : "#/definitions/Enumeration"
         },
         "servletContextName" : {
           "type" : "string"
@@ -2319,11 +2363,11 @@
         "initParameterNames" : {
           "$ref" : "#/definitions/Enumeration"
         },
-        "servletName" : {
-          "type" : "string"
-        },
         "servletConfig" : {
           "$ref" : "#/definitions/ServletConfig"
+        },
+        "servletName" : {
+          "type" : "string"
         }
       }
     },
@@ -2339,17 +2383,20 @@
         "userId" : {
           "type" : "string"
         },
-        "principal" : {
-          "$ref" : "#/definitions/Principal"
-        },
-        "tenantId" : {
-          "type" : "string"
-        },
         "decryptedSecret" : {
           "type" : "string"
         },
         "lang" : {
           "type" : "string"
+        },
+        "loginName" : {
+          "type" : "string"
+        },
+        "administrator" : {
+          "type" : "boolean"
+        },
+        "principal" : {
+          "$ref" : "#/definitions/Principal"
         },
         "firstName" : {
           "type" : "string"
@@ -2369,11 +2416,8 @@
         "sfdc18Id" : {
           "type" : "string"
         },
-        "loginName" : {
+        "tenantId" : {
           "type" : "string"
-        },
-        "administrator" : {
-          "type" : "boolean"
         },
         "tenantUserPrincipal" : {
           "$ref" : "#/definitions/Principal"
