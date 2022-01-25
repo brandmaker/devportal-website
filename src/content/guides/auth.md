@@ -158,7 +158,7 @@ request against the token refresh endpoint given in step 2 above:
 |--- |--- |--- |--- |
 |client_id|String|Your client ID from the client registration|true|
 |client_secret|String|Your client secret from the client registration|true|
-|grant_type|String|"authorization_code"|true|
+|grant_type|String|"refresh_token"|true|
 |refresh_token|String|Your refresh token|true|
 
 ### Example request CURL
