@@ -156,11 +156,10 @@ request against the token refresh endpoint given in step 2 above:
 
 |Key|Type|Value|Required|
 |--- |--- |--- |--- |
-|code|String|OAuth 2.0 authorization code|true|
 |client_id|String|Your client ID from the client registration|true|
 |client_secret|String|Your client secret from the client registration|true|
 |grant_type|String|"authorization_code"|true|
-|redirect_uri|String|Redirect Url that was specified during client registration|true|
+|refresh_token|String|Your refresh token|true|
 
 ### Example request CURL
 
