@@ -15,7 +15,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run dev
+          npm run build
       - shell: bash
         run: |
           echo developers.brandmaker.com > ./_site/CNAME
