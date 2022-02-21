@@ -17,8 +17,7 @@ title: "Authentication"
 Prerequisits
 =============
 
-In order to authenticate a 3rd party application against your BrandMaker
-Instance and accessing the APIs of the BrandMaker Modules, you need an
+In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an
 oAuth2 access token and a refresh token. BrandMaker provides a
 centralized authentication system for all customers (Centralized
 Authentication Service - CAS), which implements the standardized
