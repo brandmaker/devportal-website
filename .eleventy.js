@@ -2,14 +2,15 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const fg = require('fast-glob');
 const fs = require('fs');
 let Nunjucks = require("nunjucks");
-const eleventyPluginTOC = require( '@thedigitalman/eleventy-plugin-toc-a11y' );
-const markdownIt = require( 'markdown-it' );
-const markdownItAnchor = require( 'markdown-it-anchor' );
+const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { exit } = require("process");
 const pluginDate = require("eleventy-plugin-date");
 const { fileURLToPath } = require("url");
 const MarkdownIt = require("markdown-it");
+const { callbackify } = require("util");
 
 //const modulesUnstuctured = fg.sync('api/**', { onlyFiles: false, deep: 4, objectMode: true });
 const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 5, objectMode: true });
@@ -18,7 +19,7 @@ const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 5, objectMo
 
 //const name = fg.sync('name.json', {objectMode: true});
 module.exports = function (eleventyConfig) {
-    
+
     eleventyConfig.addPlugin(pluginDate);
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("main.css");
@@ -28,7 +29,7 @@ module.exports = function (eleventyConfig) {
 
     // TOC support in MD
 
-    eleventyConfig.addPlugin( eleventyPluginTOC,
+    eleventyConfig.addPlugin(eleventyPluginTOC,
         {
             tags: ['h2', 'h3', 'h4', 'h5', 'h6'],
             wrapper: 'nav',
@@ -45,7 +46,7 @@ module.exports = function (eleventyConfig) {
     );
 
     eleventyConfig.addPlugin(syntaxHighlight);
- 
+
     let options = {
         html: true,
         breaks: true,
@@ -53,10 +54,10 @@ module.exports = function (eleventyConfig) {
     };
 
     // Markdown settings
-    eleventyConfig.setLibrary( 'md',
-        markdownIt(options).use( markdownItAnchor )
+    eleventyConfig.setLibrary('md',
+        markdownIt(options).use(markdownItAnchor)
     );
-    
+
     /* 
         {moduleName, productVersions: {
             productVersion, apiVersions: {
@@ -92,7 +93,7 @@ module.exports = function (eleventyConfig) {
 
     let displayNames = new Map();
     let info = new Map();
-    moduleFiles.forEach(({name, path}) => {
+    moduleFiles.forEach(({ name, path }) => {
         const type = path.split("/").length - 1; // if 2: module.json (display name), if 4: swagger.json, if 5: pageSlot
         const moduleName = path.split("/")[1];
         if ((type == 2) && (displayNames.get(moduleName) == undefined)) {
@@ -100,7 +101,7 @@ module.exports = function (eleventyConfig) {
             displayNames.set(moduleName, obj.name);
             info.set(moduleName, obj.info);
         }
-        
+
         const productVersion = path.split("/")[2];
         const apiVersion = path.split("/")[3];
 
@@ -125,11 +126,11 @@ module.exports = function (eleventyConfig) {
         structure:
         [moduleName, productVersion, lastApiVersion]
     */
-   let productVersionPage = [];
-   /*
-        structure:
-        [moduleName, displayModule, productVersion, apiVersion, file]
-    */
+    let productVersionPage = [];
+    /*
+         structure:
+         [moduleName, displayModule, productVersion, apiVersion, file]
+     */
     let apiVersionPage = [];
     /*
         strucutre:
@@ -143,9 +144,9 @@ module.exports = function (eleventyConfig) {
 
 
     const mdRender = new MarkdownIt();
-    eleventyConfig.addFilter("renderUsingMarkdown", function(rawString) {
-        return mdRender.use( markdownItAnchor ).render(rawString);
-      });
+    eleventyConfig.addFilter("renderUsingMarkdown", function (rawString) {
+        return mdRender.use(markdownItAnchor).render(rawString);
+    });
     modulesStructured.forEach(({ moduleName, productVersions }) => {
         var lastProductVersion;
         var productVersionJson = "{ \"productVersions\": [";
@@ -193,8 +194,8 @@ module.exports = function (eleventyConfig) {
             lastApiVersion = null;
             apiVersionJson = apiVersionJson.slice(0, -1);
             apiVersionJson = apiVersionJson + "]}";
-            fs.writeFile("api/" + moduleName + "/" + productVersion + "/apiVersions.json", apiVersionJson, function(err, result) {
-                if(err) console.log('error', err);
+            fs.writeFile("api/" + moduleName + "/" + productVersion + "/apiVersions.json", apiVersionJson, function (err, result) {
+                if (err) console.log('error', err);
             });
         });
         if (lastProductVersion == null) {
@@ -203,8 +204,8 @@ module.exports = function (eleventyConfig) {
         }
         productVersionJson = productVersionJson.slice(0, -1);
         productVersionJson = productVersionJson + "]}";
-        fs.writeFile("api/" + moduleName + "/productVersions.json", productVersionJson, function(err, result) {
-            if(err) console.log('error', err);
+        fs.writeFile("api/" + moduleName + "/productVersions.json", productVersionJson, function (err, result) {
+            if (err) console.log('error', err);
         });
         modulePage.push([moduleName, displayNames.get(moduleName), lastProductVersion, info.get(moduleName) || ""]);
         var addModule = false;
@@ -255,8 +256,87 @@ module.exports = function (eleventyConfig) {
         return pageSlotApiVersionPage;
     });
 
-    
-    
+    // goal (for every swagger file): read json, add bearer auth (if apikey auth already exists: replace), write back to file
+    apiVersionPage.forEach((entry) => {
+        let module = entry[0]
+        let product_version = entry[2]
+        let api_version = entry[3]
+        let file = entry[4]
+
+        fs.readFile(`api/${module}/${product_version}/${api_version}/${file}`, 'utf8', function read(err, data) {
+            if (err) {
+                throw err
+            }
+            let content = JSON.parse(data)
+  
+
+            if (content["components"]) {
+                if (content["security"]) {
+                    let bearerAuthDefined = false
+                    for (const schemeName in content["components"]["securitySchemes"]) {
+                        let scheme = content["components"]["securitySchemes"][schemeName]
+                        if (scheme["type"] && (scheme["type"] == "apiKey") && scheme["name"] && (scheme["name"] == "Authorization") && scheme["in"] && (scheme["in"] == "header")) {
+                            bearerAuthDefined = true
+                        }
+                    }
+                    if (!bearerAuthDefined) {
+                        content["security"].push({ BearerAuth: [] })
+                        content["components"]["securitySchemes"]["BearerAuth"] = {
+                            type: "apiKey",
+                            name: "Authorization",
+                            description: "Authorization with bearer scheme. Example: 'Bearer <token>'",
+                            in: "header"
+                        }
+                    }
+                } else {
+                    content["security"] = [{ BearerAuth: [] }]
+                    content["components"]["securitySchemes"] = {
+                        "BearerAuth": {
+                            type: "apiKey",
+                            name: "Authorization",
+                            description: "Authorization with bearer scheme. Example: 'Bearer <token>'",
+                            in: "header"
+                        }
+                    }
+                }
+            } else {
+                if (content["security"]) {
+                    let bearerAuthDefined = false
+                    for (const schemeName in content["securityDefinitions"]) {
+                        let scheme = content["securityDefinitions"][schemeName]
+                        if (scheme["type"] && (scheme["type"] == "apiKey") && scheme["name"] && (scheme["name"] == "Authorization") && scheme["in"] && (scheme["in"] == "header")) {
+                            bearerAuthDefined = true
+                        }
+                    }
+                    if (!bearerAuthDefined) {
+                        content["security"].push({ BearerAuth: [] })
+                        content["securityDefinitions"]["BearerAuth"] = {
+                            type: "apiKey",
+                            name: "Authorization",
+                            description: "Authorization with bearer scheme. Example: 'Bearer <token>'",
+                            in: "header"
+                        }
+                    }
+                } else {
+                    content["security"] = [{ BearerAuth: [] }]
+                    content["securityDefinitions"] = {
+                        "BearerAuth": {
+                            type: "apiKey",
+                            name: "Authorization",
+                            description: "Authorization with bearer scheme. Example: 'Bearer <token>'",
+                            in: "header"
+                        }
+                    }
+                }
+            }
+            
+            fs.writeFile(`api/${module}/${product_version}/${api_version}/${file}`, JSON.stringify(content), function (err, result) {
+                if (err) console.log('error', err);
+            })
+        });
+    })
+
+
     eleventyConfig.addPassthroughCopy("api/**/*.json");
     eleventyConfig.addPassthroughCopy("api/**/**/*.json");
     eleventyConfig.addPassthroughCopy("api/**/**/**/*.json");
@@ -267,5 +347,5 @@ module.exports = function (eleventyConfig) {
         new Nunjucks.FileSystemLoader("_includes")
     );
     eleventyConfig.setLibrary("njk", nunjucksEnvironment);
-    
+
 }
