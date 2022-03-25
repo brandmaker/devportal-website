@@ -7,12 +7,12 @@ tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
     key: "mbi"
-    title: "MBI"
+    title: "Message Based Integration Service"
     excerpt: "How to use MBI"
     order: -1
 permalink: "guides/mbi/"
 bodyClass: "guide"
-title: "MBI"
+title: "Message Based Integration Service"
 ---
 
 ## Introduction
@@ -25,8 +25,9 @@ In this way, loose coupling of the BrandMaker system and its modules with third-
 
 ### Terminology
 
-| _Consumer_            | →Subscriber                                                                                                                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Terminology | Description |
+| --- | --- |
+| _Consumer_            | →Subscriber |
 | _Event_               | The → Transaction message sent to the Consumer contains a list “Events” – events that occurred in the system and the associated data (→Payload)                                                                               |
 | _MBI_                 | BrandMaker **M**essage **B**ased **I**ntegration Service, refers to the service as a whole.                                                                                                                                  |
 | _Payload_             | User data of the message. The payload is module and event dependent                                                                                                                                                          |
@@ -427,12 +428,12 @@ Events in the Job Manager are deduplicated based on the "Category" column.
 
 | MBI Event Name | Category | Description | Provided Payload Data |
 | --- | --- | --- | --- |
-JM.JOB_CREATE | CREATE | A new job has been created | [Download](/assets/guides/mbi/jm_job_create.json) |
-JM.JOB_UPDATE | UPDATE | A job has been modified / changed | [Download](/assets/guides/mbi/jm_job_create.json) |
-JM.JOB_DELETE |	DELETE | Delete a job | [Download](/assets/guides/mbi/jm_job_delete.json) |
-JM.JOB_STEP_CHANGED | UPDATE |	A job has been forwarded. A job has been sent back.  | [Download](/assets/guides/mbi/jm_job_step_changed.json) |
-JM.JOB_FINISH | UPDATE | A job has ended | [Download](/assets/guides/mbi/jm_job_finish.json) |
-JM.JOB_CANCEL |	UPDATE | A running job is cancelled | [Download](/assets/guides/mbi/jm_job_cancel.json) |
+JM.JOB_CREATE | CREATE | A new job has been created | <a href="/assets/guides/mbi/jm_job_create.json" target="_blank">Download</a> |
+JM.JOB_UPDATE | UPDATE | A job has been modified / changed | <a href="/assets/guides/mbi/jm_job_update.json" target="_blank">Download</a> |
+JM.JOB_DELETE |	DELETE | Delete a job | <a href="/assets/guides/mbi/jm_job_delete.json" target="_blank">Download</a> |
+JM.JOB_STEP_CHANGED | UPDATE |	A job has been forwarded. A job has been sent back.  | <a href="/assets/guides/mbi/jm_job_step_changed.json" target="_blank">Download</a> |
+JM.JOB_FINISH | UPDATE | A job has ended | <a href="/assets/guides/mbi/jm_job_finish.json" target="_blank">Download</a> |
+JM.JOB_CANCEL |	UPDATE | A running job is cancelled | <a href="/assets/guides/mbi/jm_job_cancel.json" target="_blank">Download</a> |
 JM.INITIAL_LOAD | SYNC | Sync all existing jobs in their current state | JSON which contains all data of all jobs, reflecting the current state |
 
 ### Marketing Planer
