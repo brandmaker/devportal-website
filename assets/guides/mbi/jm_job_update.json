@@ -1,0 +1,29 @@
+{
+    "systemBaseUri": "https://is-int-mrm.brandmaker.com",
+    "systemId": "610-067-857",
+    "customerId": "kfb-kzk-nbn",
+    "namespace": null,
+    "events": [
+        {
+            "module": "JM",
+            "operation": "JM.UPDATE",
+            "entity": "Job",
+            "timestamp": 2904075002081313,
+            "objectId": {
+                "L10N_LOCALE_ID": 0,
+                "ORDINAL_NUMBER": 17124,
+                "INSTANCE_ID": 1723
+            },
+            "data": {
+                "changedValues": {"job__name":"old job name"},
+                "parentOrdinalNumber": null,
+                "sourceOfChange": "Gui",
+                "values": {"workflow__object__id":29507,"last__modification__date":"2022-01-25T11:10:20","creator__":{"name":"Admin User","id":3821,"login":"admin"},"workflow__overdue__date":"","job__id":17124,"job__state":"ACTIVE","job__type__pseudo__variable":138979,"job__name":"new job name","deadline__":"","owner__":{"groupId":"-1","userName":"Admin User","userId":"3821"},"current__step__overdue__date":"","themes__":[],"default__media":[],"job__id__formatted":"17124","workflow__timing":{"duration":null,"dueDate":null,"startDate":null},"current__step__start__date":"","ob__owner__":{"id":null},"workflow__start__date":"","create__date":"2022-01-25T11:08:43"},
+                "metaType": "Job",
+                "eventName": "DSE_OBJECT_CHANGE_VALUES_JMS_SUBJECT",
+                "typeId": 138979
+            },
+            "userId": "admin"
+        }
+    ]
+}
