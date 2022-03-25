@@ -1,7 +1,7 @@
 ---
 layout: pages/guide.njk
 pageTitle: MBI Guide
-description: Message Based Integration
+description: Manual
 teaserText: "With Release 7.3, BrandMaker provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the BrandMaker system into the customer’s infrastructure."
 tags: ['guide']
 eleventyNavigation:
