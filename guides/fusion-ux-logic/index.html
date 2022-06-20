@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Fusion UX Logic Guide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#f95b02">
+<meta name="msapplication-TileColor" content="#0c0f28">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="rMB12-YRyfvSNc_gvIcO_1I5X1zE8N1lzfUQj2Oj-Pg" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3128286-9"></script>
+        <script>
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             //gtag('set', 'dimension1', <Name der ausgewählten API>);
+             //gtag('set', 'dimension2', "Fusion UX Logic Guide");
+
+             gtag('config', 'UA-3128286-9');
+
+        </script>
+
+
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" type="text/css" href="../../../../swagger/swagger-ui.css?v=2" >
+    </head>
+    <body class="guide">
+        <!--- topbar with navigation -->
+<header class="topbar">
+    <a class="hero__logolink" href="/">
+        <img src="/assets/bm_logo.svg" alt="Logo Brandmaker">
+    </a>
+    <nav class="mainnav">
+        
+        
+        <ul class="mainnav__list__main">
+            <!--- eleventy navigation --><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/api/">API</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/api/JobManager/">
+                                <span class="mainnav__listitemlinktitle">Job Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Central Platform for Collaboration</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MAPS/">
+                                <span class="mainnav__listitemlinktitle">Marketing Planner</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Say bye to confusing spreadsheets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MediaPool/">
+                                <span class="mainnav__listitemlinktitle">Media Pool</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Single source of truth</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Web-to-Publish/">
+                                <span class="mainnav__listitemlinktitle">Brand Template Builder</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Brand Management worldwide</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheCore/">
+                                <span class="mainnav__listitemlinktitle">WebCache Core</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Core is the central server side application for SEW and MPM</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheEngage/">
+                                <span class="mainnav__listitemlinktitle">WebCache Engage</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Engage is the central server side application for SEW and MPM</span>
+                                </a>
+                        </ul></li><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/auth/">
+                                <span class="mainnav__listitemlinktitle">Authentication</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
+                                <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/mbi/">
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/webhook-push-api/">
+                                <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
+                                </a>
+                        </ul></li><!--- manually included link to GitHub -->
+            <li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="https://github.com/brandmaker" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+        <section class="hero">
+            <header class="hero__header">
+                <h1 class="hero__headline">Fusion UX Logic Guide</h1> 
+                <div class="hero__description">
+                    Integrate custom components into your system.
+                </div>
+            </header>
+        </section>
+        <main class="guide__mainlayout">
+            <aside class="guide__aside">
+            <div class="stick" style="position: sticky;top: 50px;">
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#structure-of-the-administration">Structure of the administration</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#(1)-management">(1) Management</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#(2)-usage">(2) Usage</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#development-of-own-custom-component">Development of own custom component</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#web-component-basics">Web Component Basics</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#specifics-for-brandmaker">Specifics for BrandMaker</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#structure-of-zip-file">Structure of ZIP file</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#manifest-file">Manifest file</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#page-slots">Page Slots</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-implementation-of-'hello-world-app'">Example Implementation of 'Hello World App'</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#code-for-the-component-(javascript)">Code for the component (Javascript)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#manifest-file-2">Manifest file</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#installation-and-integration">Installation and Integration</a>		</li></ol>		</li></ol>		</li></ol></nav>
+                <nav class="nav_pageSlots" role="navigation">
+    
+    <script type="text/javascript">
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function handleSelect(elm) {
+            console.log(elm)
+            for (var i = 0; i < elm.options.length; i++) {
+                document.getElementById(elm.options[i].value).style.height = '0';
+                document.getElementById(elm.options[i].value).style.opacity = '0';
+            }
+            await sleep(150);
+            document.getElementById(elm.value).style.height = '100%';
+            document.getElementById(elm.value).style.opacity = '1';
+        }
+    </script>
+    <h2 class="nav_pageSlots__header">Page Slot Definitions</h2>
+    <div class="nav_pageSlots__list"><div class="nav_pageSlots__list_elem">
+            <div class="nav_pageSlots__list_elem_header">
+                Marketing Planner
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_Marketing Planner" class="select-css nav_pageSlots__select">
+                        <optgroup label="7.1" class="nav_pageSlots__select_optgroup"><option value="MAPS/7.1/7.1.0.0" class="nav_pageSlots__select_option" selected>
+                                    7.1.0.0
+                                </option></select>
+                </div>
+            </div>
+            <div class="nav_pageSlots__list_elem_body"><div class="nav_pageSlots__list_elem_body_section" id="MAPS/7.1/7.1.0.0" style="height: 100%; opacity: 1;">
+                                <a href="/guides/fusion-ux-logic/MAPS/7.1/7.1.0.0/timeline-slot/">timeline-slot</a></div></div>
+        </div></div>
+</nav>
+            </div>
+            </aside>
+            <article class="guide__article">
+                <p>With Fusion UX Logic, clients can now integrate <strong>custom UI components</strong> into <a href="#page-slots"><strong>predefined places</strong></a> in their BrandMaker system.<br>
+Possible functionalities easy to implement with custom components are:</p>
+<ul>
+<li>Pulling additional information from 3rd party applications and displaying them
+<ul>
+<li>Showing that Fusion UX Apps can execute lookups, e.g. in external databases</li>
+</ul>
+</li>
+<li>Integrating a Lickert Scale or other evaluation questionnaires
+<ul>
+<li>Showing that Fusion UX Apps can write back results with the help of functions provided by the page slots</li>
+</ul>
+</li>
+<li>Visualize existing information in customized component
+<ul>
+<li>e.g. with the help of charts</li>
+</ul>
+</li>
+</ul>
+<p><a href="#web-component-basics">Web Components</a> serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a <a href="#manifest-file">Manifest file</a>. <br>
+Fusion UX Apps are both registered and managed in the <a href="#structure-of-the-administration">administration</a> of the BrandMaker system.</p>
+<h2 id="structure-of-the-administration">Structure of the administration</h2>
+<p>Within the administration module, custom components are managed under 'Fusion/UX Logic'. There they can be registered, installed, and adapted.</p>
+<p><img src="/assets/guides/fusion-ux-logic/navigation.png" alt=""></p>
+<h3 id="(1)-management">(1) Management</h3>
+<p>The <strong>scripts</strong> for the Fusion UX Apps are managed in the section 'Management'. This administration includes the registration of new component scripts and adaptation of existing ones.</p>
+<p><img src="/assets/guides/fusion-ux-logic/admin_overview.png" alt=""></p>
+<p>(a): To register a new Fusion UX App, click on 'CREATE NEW COMPONENT'. In the opened dialog, upload the corresponding <a href="#structure-of-zip-file">ZIP file</a> containing the source files. <br>
+The BrandMaker system examines the uploaded files to ensure integrity and security. If the validation passes, a unique ID and URL will be created. By fetching the component through this URL, the system can then integrate the Fusion UX App.</p>
+<p><img src="/assets/guides/fusion-ux-logic/admin_upload_new_component.png" alt=""></p>
+<p>(b): To edit a script, click on the corresponding table entry. The opened page shows the metadata and attributes of the component. The page only <em>displays</em> these values. To <em>adjust</em> them, alter the source files and re-upload them. If the component is already integrated into the system, make sure the attributes still work with the defined usages or adjust the usage definitions accordingly.</p>
+<p><img src="/assets/guides/fusion-ux-logic/hello_world_detail_page.png" alt=""></p>
+<h3 id="(2)-usage">(2) Usage</h3>
+<p>In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (<strong>placement</strong>) and how (<strong>configuration</strong>) the component is rendered. <br>
+Module, page, and a predefined slot within the module define the placement. Important to notice, one place can only have one associated usage at a time.</p>
+<p><img src="/assets/guides/fusion-ux-logic/usage_overview.png" alt=""></p>
+<p>(a): To add a new placement-configuration combination, click on 'CREATE USAGE'. In the opened dialog, choose a registered component (can be both predefined by BrandMaker or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. <br>
+Configure the attributes of the chosen component by setting a default value or assigning them to a slot attribute provided by the selected slot.</p>
+<p><img src="/assets/guides/fusion-ux-logic/hello_world_usage_form.png" alt=""></p>
+<p>(b) To configure a usage, select it in the table, which opens the same dialog shown under (a).</p>
+<h2 id="development-of-own-custom-component">Development of own custom component</h2>
+<h3 id="web-component-basics">Web Component Basics</h3>
+<p>The components use <a href="https://www.webcomponents.org/introduction">Web Components</a> as a technical foundation. <br>
+A minimal component, only displaying <code>HELLO WORLD!</code>, would look like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// template for the custom component</span><br><span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'template'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h1>HELLO WORLD!&lt;/h1></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldComponent</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span><br>    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>        <span class="token comment">// need to attach a shadow DOM (returns the ShadowRoot)</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">"closed"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p><span style="color:gray"><em>To formalize the setup, <a href="https://hybrids.js.org/#/">hybrids</a> can be used as an abstraction layer.</em></span></p>
+<h3 id="specifics-for-brandmaker">Specifics for BrandMaker</h3>
+<p>Components are not completely static. Instead, they have a set of configuration values. These settings are not hard-coded into the component but described in a Manifest file and adjustable in the administration.<br>
+Exemplary configuration values are</p>
+<ul>
+<li>target URLs of REST API to fetch data</li>
+<li>credentials to log in</li>
+<li>UI settings like colors</li>
+<li>images</li>
+</ul>
+<h4 id="structure-of-zip-file">Structure of ZIP file</h4>
+<p>A Fusion UX App consists of:</p>
+<ul>
+<li>the initial Web Component (needs to be called '<code>BmFusionAppComponent.js</code>')
+<ul>
+<li>entry point for rendering the Fusion UX App</li>
+</ul>
+</li>
+<li>a Manifest file (needs to be called '<code>manifest.json</code>')</li>
+<li>any additional JS files required from the component
+<ul>
+<li>additional libraries are NOT allowed (to prevent license obligations and conflict with Page libraries or versions)</li>
+</ul>
+</li>
+</ul>
+<p>These constituents are bundled into one ZIP file (flat list of files) and uploaded at once when registering a new component.<br>
+<span style="color:gray"><em>To create the ZIP file, use a framework like <a href="#https://webpack.js.org/">Webpack</a>, which compresses the constituents into one single file.</em></span></p>
+<h4 id="manifest-file">Manifest file</h4>
+<p>This JSON file contains metadata and the description of the Fusion UX App, which also includes the description of the setting properties (NOT the settings themselves). In more detail, the Manifest file looks like this:</p>
+<ul>
+<li>name of the component</li>
+<li>description of component (e.g. including what does it display and why, where to use it)</li>
+<li>tag name (HTML tag, has to start with '<code>fux-</code>')</li>
+<li>author, license, version</li>
+<li>description of attributes (stored as JSON array, provided to the component as HTML attributes):
+<ul>
+<li>name (has to start with '<code>fux-</code>')</li>
+<li>type, can be one of the following
+<ul>
+<li>STRING, NUMBER, FUNCTION, URL</li>
+<li>component-code-base-url (to draw information from / use the specified component)</li>
+<li>external-service-base-url (to fetch information from external source)</li>
+<li>or sub-values</li>
+</ul>
+</li>
+<li>description</li>
+<li>required</li>
+</ul>
+</li>
+</ul>
+<p>After successful registration, a unique ID and an assigned URL are part of the component's metadata. <br>
+The name and the tag name need to be unique within your system. Also, Fusion UX Apps need at least one attribute.</p>
+<h4 id="page-slots">Page Slots</h4>
+<p>As mentioned before, Fusion UX Apps render in predefined places called page slots. They are defined by</p>
+<ul>
+<li>ID and name</li>
+<li>Page (defined by ID, name, and module)</li>
+<li>Collection of slot attributes, each one defined by
+<ul>
+<li>ID, name, and description</li>
+<li>type (STRING, NUMBER, FUNCTION or URL)</li>
+</ul>
+</li>
+</ul>
+<p>Setting up a Usage triggers the creation of a page slot configuration, which assigns the page slot to a component and captures the relations for the component attributes. The resolution is as follows:</p>
+<ol>
+<li>Take value from the assigned slot attribute
+<ul>
+<li>the slot attributes are specified per page slot <em>(see navigation about page slots definition)</em></li>
+</ul>
+</li>
+<li>Use default value</li>
+<li>If not required: <code>null</code></li>
+</ol>
+<p>An exemplary mapping of the component attributes might look like this:<br>
+<img src="/assets/guides/fusion-ux-logic/mapping_attributes.png" alt=""><br>
+The values are finally assigned when the component gets rendered.</p>
+<h3 id="example-implementation-of-'hello-world-app'">Example Implementation of 'Hello World App'</h3>
+<p>This example app is integrated into the system in the timeline slot (in the MAPL calendar). The rendered result looks like this:<br>
+<img src="/assets/guides/fusion-ux-logic/hello_world_result.png" alt=""></p>
+<p>The component displays two attributes:</p>
+<ul>
+<li>title (greeting and name)</li>
+<li>number (increasable via a counter, by clicking on it)</li>
+</ul>
+<h4 id="code-for-the-component-(javascript)">Code for the component (Javascript)</h4>
+<pre class="language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'template'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>&lt;style type="text/css"><br>    &lt;!-- css style --><br>&lt;/style><br>&lt;div class="hello-world-wrapper"><br>    &lt;h1 class="fux__title">&lt;/h1><br>    &lt;div class="attribute_wrapper"><br>        &lt;h1 class="attribute_name"><br>            counter:<br>        &lt;/h1><br>        &lt;button class="attribute_value fux__counter">&lt;/button><br>    &lt;/div><br>&lt;/div><br></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldComponent</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span><br>    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">"closed"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>increaseCount <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">increaseCount</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <br>    <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token comment">// fetch the attributes defined in the manifest file</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'fux-start-number'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Hello '</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'fux-name'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'Fusion UX Logic'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'!'</span><span class="token punctuation">;</span><br><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.fux__counter'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>increaseCount<span class="token punctuation">)</span><br><br>        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">renderData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token function">renderData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">const</span> main <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.hello-world-wrapper'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        main<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span><br><br>        <span class="token comment">// include the attributes into the template</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.fux__title'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.fux__counter'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>number<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token function">increaseCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span>_root<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.fux__counter'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>number<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h4 id="manifest-file-2">Manifest file</h4>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Hello World component"</span><span class="token punctuation">,</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Meret Unbehaun"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Simple hello world component"</span><span class="token punctuation">,</span><br>    <span class="token property">"tagName"</span><span class="token operator">:</span> <span class="token string">"fux-hello-world"</span><span class="token punctuation">,</span><br>    <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"BRANDMAKER"</span><span class="token punctuation">,</span><br>    <span class="token property">"attributes"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"fux-start-number"</span><span class="token punctuation">,</span><br>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"NUMBER"</span><span class="token punctuation">,</span><br>            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Initial number of the counter"</span><span class="token punctuation">,</span><br>            <span class="token property">"required"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"fux-name"</span><span class="token punctuation">,</span><br>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"STRING"</span><span class="token punctuation">,</span><br>            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Name that will be displayed after 'Hello', by default: Fusion UX Logic"</span><span class="token punctuation">,</span><br>            <span class="token property">"required"</span><span class="token operator">:</span> <span class="token boolean">false</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<h4 id="installation-and-integration">Installation and Integration</h4>
+<p>After registering the bundled app like shown under <a href="#(1)-component-administration">Management</a>, its detail page should look like this:</p>
+<p><img src="/assets/guides/fusion-ux-logic/hello_world_detail_page.png" alt=""></p>
+<p>As an example, the timeline node in MAPL is used to display the component. The filled-out form for the newly defined usage looks like this:</p>
+<p><img src="/assets/guides/fusion-ux-logic/hello_world_usage_form.png" alt=""></p>
+<p>Some notes about the attributes and their assignments:</p>
+<ul>
+<li>The default value is used, if no other value is available</li>
+<li><code>fux-name</code> only has the default value
+<ul>
+<li>Therefore, the attribute will always have this value</li>
+<li>Because the attribute is not required, it would also be valid to leave this field empty</li>
+</ul>
+</li>
+<li>The timeline slot provides two arguments itself:
+<ul>
+<li><code>timelineId</code> and <code>nodeId</code></li>
+<li>Both are of the type NUMBER and thus can only be assigned to a NUMBER attribute</li>
+<li>In this example, it can be assigned to the component attribute <code>fux-start-number</code></li>
+</ul>
+</li>
+</ul>
+<p>The code for the rendered component (inside MAPL) looks similar to this:</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- the placeholder (predefined slot) --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timeline_popover_component_holder<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timeline_popover-cmp<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>    <span class="token comment">&lt;!-- the rendered component (fetched from automatically associated URL) with the assigned arguments --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fux-hello-world</span> <br>        <span class="token attr-name">fux-component-code-base-url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/rest/frontend/web-components/&lt;UUID>/_download-file<span class="token punctuation">"</span></span><br>        <span class="token attr-name">fux-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>World<span class="token punctuation">"</span></span> <br>        <span class="token attr-name">fux-start-number</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8693<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br>        <span class="token comment">&lt;!-- the root for the shadow DOM --></span><br>        #shadow-root (closed)<br>            <span class="token comment">&lt;!-- style and html structure from inner html --></span> <br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"> &lt;!-- ... --> </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello-world-wrapper<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span> <span class="token comment">&lt;!-- ... --></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fux-hello-world</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+            </section>
+        </main>
+        <!--- footer with navigation -->
+<footer class="dp_footer">
+    <div class="dp_footer__wrapper">
+        <div class="dp_footer__left">
+            <a href="https://www.brandmaker.com/" target="_blank" class="dp_footer__homelink">&copy;BrandMaker Made in Germany</a>
+        </div>
+        <div class="dp_footer__right">
+            <nav>
+                <ul class="dp_footer__navlist">
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/imprint/">Legal Notice</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/privacy-policy/">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/contact/">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

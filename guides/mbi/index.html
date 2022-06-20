@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MBI Guide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#f95b02">
+<meta name="msapplication-TileColor" content="#0c0f28">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="rMB12-YRyfvSNc_gvIcO_1I5X1zE8N1lzfUQj2Oj-Pg" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3128286-9"></script>
+        <script>
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             //gtag('set', 'dimension1', <Name der ausgewählten API>);
+             //gtag('set', 'dimension2', "Message Based Integration Service");
+
+             gtag('config', 'UA-3128286-9');
+
+        </script>
+
+
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" type="text/css" href="../../../../swagger/swagger-ui.css?v=2" >
+    </head>
+    <body class="guide">
+        <!--- topbar with navigation -->
+<header class="topbar">
+    <a class="hero__logolink" href="/">
+        <img src="/assets/bm_logo.svg" alt="Logo Brandmaker">
+    </a>
+    <nav class="mainnav">
+        
+        
+        <ul class="mainnav__list__main">
+            <!--- eleventy navigation --><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/api/">API</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/api/JobManager/">
+                                <span class="mainnav__listitemlinktitle">Job Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Central Platform for Collaboration</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MAPS/">
+                                <span class="mainnav__listitemlinktitle">Marketing Planner</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Say bye to confusing spreadsheets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MediaPool/">
+                                <span class="mainnav__listitemlinktitle">Media Pool</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Single source of truth</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Web-to-Publish/">
+                                <span class="mainnav__listitemlinktitle">Brand Template Builder</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Brand Management worldwide</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheCore/">
+                                <span class="mainnav__listitemlinktitle">WebCache Core</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Core is the central server side application for SEW and MPM</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheEngage/">
+                                <span class="mainnav__listitemlinktitle">WebCache Engage</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Engage is the central server side application for SEW and MPM</span>
+                                </a>
+                        </ul></li><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/auth/">
+                                <span class="mainnav__listitemlinktitle">Authentication</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
+                                <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/mbi/">
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/webhook-push-api/">
+                                <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
+                                </a>
+                        </ul></li><!--- manually included link to GitHub -->
+            <li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="https://github.com/brandmaker" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+        <section class="hero">
+            <header class="hero__header">
+                <h1 class="hero__headline">Message Based Integration Service</h1> 
+                <div class="hero__description">
+                    Manual
+                </div>
+            </header>
+        </section>
+        <main class="guide__mainlayout">
+            <aside class="guide__aside">
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#introduction">Introduction</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#terminology">Terminology</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#additional-information">Additional Information</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#structure-of-this-manual">Structure of This Manual</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#delimitation">Delimitation</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#administration">Administration</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#consumer-development">Consumer Development</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#context-delimitation">Context Delimitation</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#architecture-overview">Architecture Overview</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#administration%3A-consumer-registration-for-mbi">Administration: Consumer Registration for MBI</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#create-consumer">Create Consumer</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#manage-mbi-consumer">Manage MBI Consumer</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#test-mbi-consumer">Test MBI Consumer</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#trigger-mbi-consumer-manually">Trigger MBI Consumer Manually</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#requirements-for-the-rest-api-of-the-consumer">Requirements for the REST API of the Consumer</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#implementation-of-the-rest-interface">Implementation of the REST Interface</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#validation-of-the-request-in-the-consumer">Validation of the Request in the Consumer</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#data-format-of-the-transaction-message">Data Format of the Transaction Message</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#description-of-attributes">Description of Attributes</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#notes-on-the-processing-of-transaction-messages">Notes on the Processing of Transaction Messages</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-implementation-of-a-consumer">Example Implementation of a Consumer</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#basic-structure">Basic Structure</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#general-notes">General Notes</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#signature-validation">Signature Validation</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#using-the-sample-consumer-on-github">Using the Sample-Consumer on GitHub</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#documentation-of-available-transactions-per-module">Documentation of Available Transactions per Module</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#job-manager">Job Manager</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#marketing-planer">Marketing Planer</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#review-manager">Review Manager</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#resource-manager">Resource Manager</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#security-advice">Security Advice</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#ssl-encryption">SSL Encryption</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#request-validation">Request Validation</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#requests-to-the-brandmaker-api">Requests to the BrandMaker API</a>		</li></ol>		</li></ol></nav>
+            </aside>
+            <article class="guide__article">
+                <h2 id="introduction">Introduction</h2>
+<p>With Release 7.3, BrandMaker provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the BrandMaker system into the customer’s infrastructure.</p>
+<p>The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in BrandMaker send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages.</p>
+<p>In this way, loose coupling of the BrandMaker system and its modules with third-party applications is possible. Furthermore, the extensive APIs of the BrandMaker system and its modules are available to third-party applications to read or modify further data.</p>
+<h3 id="terminology">Terminology</h3>
+<table>
+<thead>
+<tr>
+<th>Terminology</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Consumer</em></td>
+<td>→Subscriber</td>
+</tr>
+<tr>
+<td><em>Event</em></td>
+<td>The → Transaction message sent to the Consumer contains a list “Events” – events that occurred in the system and the associated data (→Payload)</td>
+</tr>
+<tr>
+<td><em>MBI</em></td>
+<td>BrandMaker <strong>M</strong>essage <strong>B</strong>ased <strong>I</strong>ntegration Service, refers to the service as a whole.</td>
+</tr>
+<tr>
+<td><em>Payload</em></td>
+<td>User data of the message. The payload is module and event dependent</td>
+</tr>
+<tr>
+<td><em>Producer</em></td>
+<td>→ Publisher</td>
+</tr>
+<tr>
+<td><em>Publisher</em></td>
+<td>Sender of a transaction, generally a module of the BrandMaker system such as the Job Manager or the Marketing Planner</td>
+</tr>
+<tr>
+<td><em>Subscriber</em></td>
+<td>A system registered at the MBI to receive a transaction message</td>
+</tr>
+<tr>
+<td><em>Transaction</em></td>
+<td>User triggered or also automatic event within the BrandMaker module, e.g. “a new task has been created in the Job Manager”.</td>
+</tr>
+<tr>
+<td><em>Transaction message</em></td>
+<td>Information about a transaction (that has taken place) that the MBI sends to registered subscribers or consumers</td>
+</tr>
+<tr>
+<td><em>Webhook</em></td>
+<td>Generally, a method for asynchronous data integration between individual, delimited software systems. Specifically, the service that provides such a function: a → Consumer registers with a Webhook to receive data from it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-information">Additional Information</h3>
+<p>Good introductions and background knowledge in the category “Publish / Subscriber” or “Event Driven Architecture” can be found in this collection of links:</p>
+<ul>
+<li>
+<p><a href="https://requestbin.com/blog/working-with-webhooks/">https://requestbin.com/blog/working-with-webhooks/</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Webhook">https://en.wikipedia.org/wiki/Webhook</a></p>
+</li>
+<li>
+<p><a href="https://aws.amazon.com/de/event-driven-architecture/">https://aws.amazon.com/de/event-driven-architecture/</a></p>
+</li>
+<li>
+<p><a href="https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html">https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.de/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683">https://www.amazon.de/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.de/Building-Microservices-Designing-Fine-Grained-Systems/dp/1492034029">https://www.amazon.de/Building-Microservices-Designing-Fine-Grained-Systems/dp/1492034029</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.de/Publish-Subscribe-Systems-Communications-Distributed-ebook/dp/B008D30LUK">https://www.amazon.de/Publish-Subscribe-Systems-Communications-Distributed-ebook/dp/B008D30LUK</a></p>
+</li>
+</ul>
+<h3 id="structure-of-this-manual">Structure of This Manual</h3>
+<p>This manual describes the various aspects of MBI.</p>
+<ul>
+<li>
+<p>Architecture overview in chapter 3</p>
+</li>
+<li>
+<p>Administration of consumer registrations in the BrandMaker system in chapter 4</p>
+</li>
+<li>
+<p>Requirements for the consumer API in chapter 2</p>
+</li>
+<li>
+<p>Example implementation of a consumer in chapter  6</p>
+</li>
+<li>
+<p>Documentation of the transactions and provided data of the modules starting from chapter 6.2</p>
+<pre><code>  a. Job Manager
+
+  b. Marketing Planer
+
+  c. Review Manager
+
+  d. Resource Management
+</code></pre>
+</li>
+</ul>
+<h2 id="delimitation">Delimitation</h2>
+<h3 id="administration">Administration</h3>
+<p>The reader must basically be familiar with the administration of the BrandMaker system. This manual describes the specific settings of the consumer registration. You need administrator access to your BrandMaker system to make the necessary settings.</p>
+<p>Preconditions</p>
+<ol>
+<li>
+<p>Navigate to the page &gt; Administration &gt; System Settings.</p>
+</li>
+<li>
+<p>Search for the element brandmaker.mbi.url</p>
+</li>
+<li>
+<p>Review an existing URL. Otherwise, enter the missing URL in this field. You can get the correct URL from BrandMaker Support.</p>
+</li>
+</ol>
+<h3 id="consumer-development">Consumer Development</h3>
+<p>We assume that the reader, respectively the developer on the customer side is familiar with technologies like HTTP, REST, and the programming of web services.</p>
+<p>All given example listings are provided in Java, but there is no constraint and no preference for any programming language.</p>
+<p>Furthermore, knowledge of the application and configuration of the BrandMaker system is required. The developer needs administrator access to the BrandMaker system to make the necessary settings.</p>
+<p>In order to automatically retrieve and store data from the BrandMaker system using a third-party system, knowledge of the corresponding development environments and APIs of the third-party system is required. These are also not the subject of this documentation. The third-party system is always presented as a black box in this context.</p>
+<h3 id="context-delimitation">Context Delimitation</h3>
+<p>The interfaces offered are used for near-real-time synchronization of data sets in the BrandMaker system with third-party applications. Other purposes are not supported.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>The basic architecture of the BrandMaker MBI is as follows:</p>
+<p><img src="/assets/guides/mbi/principle_sketch.png" alt=""></p>
+<p>The module sends information about completed transactions to the MBI. The MBI checks whether there is a registration for the module and the respective transaction and sends the information as well as a number of additional details about the source system and module to the registered third-party applications.</p>
+<p>To do this, the third-party applications must provide a REST API capable of accepting the data sent and returning an acknowledgement of receipt.</p>
+<p>The requirements for this REST API to be provided are described in chapter 5 later in this manual. Typically, the MBI sends the transaction data in JSON format to the registered consumer via HTTP POST request.</p>
+<p>The registration of a consumer takes place in the respective customer system in the administration.</p>
+<h2 id="administration%3A-consumer-registration-for-mbi">Administration: Consumer Registration for MBI</h2>
+<p>Log in to your BrandMaker system as an administrator to make the necessary settings. You can access the registration under &gt; Administration &gt; Fusion &gt; Backbone / MBI:</p>
+<p><img src="/assets/guides/mbi/fusion_backbone.png" alt=""><br>
+Your screen view should now resemble the one above. Some screen texts may still be subject to change until the release version.</p>
+<p>❶ Create</p>
+<p>Register the MBI Consumer, see 4.1.</p>
+<p>❸ Action buttons</p>
+<p>In this area you can achieve the following actions:</p>
+<ul>
+<li>Edit MBI Consumer</li>
+</ul>
+<p>By clicking on the pencil icon, you can make changes to the configuration.</p>
+<ul>
+<li>Delete MBI Consumer</li>
+</ul>
+<p>After clicking on the trashcan icon, a confirmation prompt opens before you can fully delete the consumer.</p>
+<p>❷ Slider &quot;Active&quot;</p>
+<p>Use this slider to enable or disable an MBI consumer.</p>
+<p>Consumer characteristics</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Timeout</td>
+<td>How long do you wait for a response from the consumer?[unit s = seconds]; example: 30. After the timeout has elapsed, an error is registered. If too many errors occur in a row, the consumer will be disabled. See chapter 5.4</td>
+</tr>
+<tr>
+<td>Retry delay</td>
+<td>[unit s = seconds]; example: 60. MBI waits for the period of time specified here before attempting to redeliver the message.</td>
+</tr>
+<tr>
+<td>Max Retries</td>
+<td>Maximum number of attempts to send data after timeout.</td>
+</tr>
+<tr>
+<td>Max Events</td>
+<td>Maximum value of events that will be transmitted at once. These are sent in a batch and not individually.</td>
+</tr>
+<tr>
+<td>Send missed messages</td>
+<td>Missing transaction messages that could not be submitted will be submitted as soon as the Consumer is available again. During inactivity all transaction messages are cached.</td>
+</tr>
+<tr>
+<td>Module and events</td>
+<td>Here you select from which modules and events data should be received.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>The maximum limit of the allowed input is for:</p>
+<ul>
+<li>
+<p>Event Timeout = 900 seconds</p>
+</li>
+<li>
+<p>Max. Retries = 100</p>
+</li>
+<li>
+<p>Max. Events = 100</p>
+</li>
+</ul>
+<hr>
+<h3 id="create-consumer">Create Consumer</h3>
+<p>❶ Click <em>Create</em>.</p>
+<p>The following dialog is displayed:<br>
+<img src="/assets/guides/mbi/create_consumer.png" alt=""></p>
+<p>Edit the fields in the upper area. Required fields are marked with an asterisk (*). For a description of the fields, see the chapter 4.</p>
+<p>Note: The consumer URL must be properly registered and configured for the HTTPS protocol. Experimental test environments with <em>localhost</em>-constructs do not work.</p>
+<p>The MBI Consumer active slider is activated by default. If you do not want to do this because the environment is not finished configuring or you do not want to enable the consumer yet, save the configuration for the new consumer only after you have disabled the slider.</p>
+<p>In the area <em>Module and Events under the drop-down lists Modules</em>, <em>Entity</em> and <em>Events</em>, specify which events should be reacted to:</p>
+<p><img src="/assets/guides/mbi/create_consumer2.png" alt=""><br>
+Click Save or Save and Close.</p>
+<h3 id="manage-mbi-consumer">Manage MBI Consumer</h3>
+<ol>
+<li>In the row of the Consumer you want to edit, click the pencil icon on the right side of the row.</li>
+</ol>
+<p>The dialog <em>Manage MBI Consumer</em> appears:</p>
+<p><img src="/assets/guides/mbi/manage_consumer.png" alt=""></p>
+<ol start="2">
+<li>
+<p>Edit the properties of the consumer in the <em>Settings</em> tab.</p>
+</li>
+<li>
+<p>Click <em>Save</em> or <em>Save and Close</em>.</p>
+</li>
+</ol>
+<p>You have edited the MBI Consumer.</p>
+<h3 id="test-mbi-consumer">Test MBI Consumer</h3>
+<ol>
+<li>In the row of the Consumer you want to test, click the pencil icon on the right side of the row.</li>
+</ol>
+<p>The dialog <em>Manage MBI Consumer</em> appears:</p>
+<ol start="2">
+<li>Go to the <em>Test</em> tab.</li>
+</ol>
+<p><img src="/assets/guides/mbi/test_consumer.png" alt=""><br>
+To test, click the <em>Test</em> button.</p>
+<p>A request with random values is sent. Check if the reception and processing work with your consumer. If successful, a notification will be displayed as shown below.</p>
+<p><img src="/assets/guides/mbi/test_consumer_notification.png" alt=""></p>
+<h3 id="trigger-mbi-consumer-manually">Trigger MBI Consumer Manually</h3>
+<p>If you want to trigger the consumer for existing elements, you can simulate an event from the event list.</p>
+<ol>
+<li>In the row of the Consumer you want to test, click the pencil icon on the right.</li>
+</ol>
+<p>The dialog <em>Manage MBI Consumer</em> appears:</p>
+<p><img src="/assets/guides/mbi/trigger_consumer.png" alt=""></p>
+<ol start="2">
+<li>
+<p>Go to the <em>Manual Trigger</em> tab.</p>
+</li>
+<li>
+<p>Select an event from the drop-down menu. The filters in the <em>Settings</em> tab apply.</p>
+</li>
+<li>
+<p>Click the button <em>Trigger</em> to activate.</p>
+</li>
+<li>
+<p>A fake message is generated to the consumer for testing purposes. Again, you will receive feedback in the form of an overlaid notification.</p>
+</li>
+</ol>
+<p>You can select the module <em>GENERIC_TEST_MODULE</em>, as the name suggests, to run generic tests.</p>
+<h2 id="requirements-for-the-rest-api-of-the-consumer">Requirements for the REST API of the Consumer</h2>
+<p>An MBI Consumer must provide a REST interface to receive transaction messages, the URL of which is stored in the registry.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>Please note that this URL must be accessible via the public Internet. In addition, MBI only accepts SSL encrypted connections (https).</p>
+<hr>
+<h3 id="implementation-of-the-rest-interface">Implementation of the REST Interface</h3>
+<p>The MBI sends an HTTP POST request to the Consumer with the data described below. It must be able to receive and process this POST request.</p>
+<p>A request can contain a number of transactions (see Attribute events in the data structure described below). The maximum number of messages transmitted in a batch is stored in the BrandMaker system administration when the Consumer is registered.</p>
+<p>We recommend implementing only the POST method and rejecting all other HTTP methods with HTTP status 405 (&quot;Method not allowed&quot;).</p>
+<p>For illustration, the example Consumer can be used, which is published on GitHub: <a href="https://github.com/brandmaker/MBI-Consumer">https://github.com/brandmaker/MBI-Consumer</a>.</p>
+<h3 id="validation-of-the-request-in-the-consumer">Validation of the Request in the Consumer</h3>
+<p>Since this is asynchronous batch processing, it must be ensured that the request arriving at the Consumer was also sent by the BrandMaker instance and contains unaltered and correct data.</p>
+<p>For this reason, a signature is sent in the request header, which can be used to validate the authenticity of the request in the Consumer. The request is a signed HTTP message according to <a href="https://tools.ietf.org/id/draft-cavage-http-signatures-07.html">https://tools.ietf.org/id/draft-cavage-http-signatures-07.html</a></p>
+<p>The signature includes the entire request body, ensuring the integrity of the request as a whole. The validation of the message is then carried out in accordance with the standard described in the above RFC link and is not described further here.</p>
+<p>To validate the signature, the public key of the BrandMaker system is required, which can be retrieved via the URL https://<brandmaker system>/rest/so/keys/public or .../public-for-file.</p>
+<hr>
+<p><strong>Recommendation for practice</strong></p>
+<p>We advise you to query this key once and store it statically in the application (Consumer). The key is generated once by BrandMaker and does not change for existing systems.<br>
+We strongly advise against picking up the key in the consumer dynamically via the systemBaseUri. This would allow an attacker to provide both public and private keys with a forged signature and submit spoofed requests this way!</p>
+<hr>
+<h3 id="data-format-of-the-transaction-message">Data Format of the Transaction Message</h3>
+<p>The transaction messages have a standardized data format. However, some of the attributes in the sent object depend on the context of the particular module. These are the yellow highlighted attributes in the JSON structure below.</p>
+<p>The basic structure of the message is as follows:</p>
+<p><code>{</code><br>
+<code>  &quot;systemBaseUri&quot;: &quot;https://server&quot;,</code><br>
+<code>  &quot;customerId&quot;: &quot;aaa-bbb-ccc&quot;,</code><br>
+<code>  &quot;systemId&quot;: &quot;123-456-789&quot;,</code><br>
+<code>  &quot;events&quot;: [</code><br>
+<code>    {</code><br>
+<code>      &quot;module&quot;: &quot;MP&quot;,</code><br>
+<code>      &quot;operation&quot;: &quot;update&quot;,</code><br>
+<code>      &quot;entity&quot;: &quot;asset&quot;,</code><br>
+<code>      &quot;timestamp&quot;: 123456789,</code><br>
+<code>      &quot;objectId&quot;: {</code><br>
+<code>        &quot;assetId&quot;: 12345,</code><br>
+<code>        &quot;version&quot;: 4</code><br>
+<code>      },</code><br>
+<code>      &quot;data&quot;: {</code><br>
+<code>        &quot;additionalProp1&quot;: {},</code><br>
+<code>        &quot;additionalProp2&quot;: {},</code><br>
+<code>        &quot;additionalProp3&quot;: {}</code><br>
+<code>      },</code><br>
+<code>      &quot;userId&quot;: &quot;string&quot;</code><br>
+<code>    },</code><br>
+<code>    {</code><br>
+<code>      &quot;module&quot;: &quot;MAPL&quot;,</code><br>
+<code>      &quot;operation&quot;: &quot;update&quot;,</code><br>
+<code>      &quot;entity&quot;: &quot;invoice-node&quot;,</code><br>
+<code>      &quot;timestamp&quot;: 123456789,</code><br>
+<code>      &quot;objectId&quot;: {</code><br>
+<code>        &quot;nodeId&quot;: 12345,</code><br>
+<code>        &quot;invoiceId&quot;: 4</code><br>
+<code>      },</code><br>
+<code>      &quot;data&quot;: {</code><br>
+<code>        &quot;additionalProp1&quot;: {},</code><br>
+<code>        &quot;additionalProp2&quot;: {},</code><br>
+<code>        &quot;additionalProp3&quot;: {}</code><br>
+<code>      },</code><br>
+<code>      &quot;userId&quot;: &quot;string&quot;</code><br>
+<code>    }</code><br>
+<code>  ]</code><br>
+<code>}</code></p>
+<h4 id="description-of-attributes">Description of Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemBaseUri</td>
+<td>String</td>
+<td>URL of the requesting BrandMaker system to make a callback against the APIs</td>
+</tr>
+<tr>
+<td>customerId</td>
+<td>String</td>
+<td>Unique identifier for this customer</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>String</td>
+<td>Unique identifier for this BrandMaker instance</td>
+</tr>
+<tr>
+<td>events</td>
+<td>JSON array</td>
+<td>Array of the transactions submitted in this request</td>
+</tr>
+<tr>
+<td>module</td>
+<td>String</td>
+<td>Module used in webhook registration.</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>String</td>
+<td>Operation specified in webhook registration. (Module specific), like i.e. &quot;UPDATE&quot; or &quot;DEPUBLISH&quot;</td>
+</tr>
+<tr>
+<td>entity</td>
+<td>String</td>
+<td>Entity type used in webhook registration. (Module specific), like i.e. &quot;job&quot; or &quot;invoice-node&quot;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>the Unix timestamp indicating when the event has been created, seconds since the epoch.</td>
+</tr>
+<tr>
+<td>objectId</td>
+<td>JSON Object</td>
+<td>The composite ID of the entity for which the event was emitted.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON Object</td>
+<td>The effective payload of this event (optional). See chapter 7.</td>
+</tr>
+<tr>
+<td>userid</td>
+<td>String</td>
+<td>A user ID if applicable (optional)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes-on-the-processing-of-transaction-messages">Notes on the Processing of Transaction Messages</h3>
+<p>Since it is not unlikely that a high number of requests will be sent against the Consumer in a short period of time, it is necessary that the consumer has a correspondingly good response time behavior. For this reason, the actual processing of the messages should not take place immediately after receipt, but they should first be queued in an internal message queue.</p>
+<p>There they can then be picked up in the second step and processed asynchronously. This prevents the consumer from blocking and losing messages. MBI does attempt to redeliver them, however the Consumer is automatically disabled if too many errors occur in a row. The respective timeouts can be set in the registry, but again we advise against too large values (&gt; 10 seconds).</p>
+<p>The example Consumer described in the next chapter uses <a href="https://activemq.apache.org/">Apache ActiveMQ</a>, for the internal queue, you can equally use another message broker of your choice.</p>
+<h2 id="example-implementation-of-a-consumer">Example Implementation of a Consumer</h2>
+<p>To facilitate the creation of MBI Consumers and to illustrate the basic principle, we have provided a sample implementation at <a href="https://github.com/brandmaker/MBI-Consumer">https://github.com/brandmaker/MBI-Consumer</a>.</p>
+<p>Some basic recommendations, as well as how it works, are explained below.</p>
+<h3 id="basic-structure">Basic Structure</h3>
+<p>The Consumer should process the following processing steps:</p>
+<ol>
+<li>
+<p>Receive and the request including the request body</p>
+</li>
+<li>
+<p>Validation of the request, signature verification</p>
+</li>
+<li>
+<p>Deserialization of the event array</p>
+</li>
+<li>
+<p>For each event in the array</p>
+</li>
+</ol>
+<p>a. Validation of the event</p>
+<p>b. Set event to an internal processing queue. We recommend not to process the events synchronously, because this can lead to a blocking of the Consumer in case of long runtimes</p>
+<ol start="5">
+<li>Return response receipt to MBI service</li>
+</ol>
+<p>The internal processing queue receives its own Consumer (“listener”), which processes the set events in sequence. This is where the actual processing of the data takes place.</p>
+<p><img src="/assets/guides/mbi/program_flow_consumer.png" alt=""></p>
+<h3 id="general-notes">General Notes</h3>
+<p>The following aspects must be considered during implementation:</p>
+<ul>
+<li>
+<p>The MBI may send a series of events in a single POST request. Thus, it is not possible to specifically return the success or failure of processing a single event to the MBI. In principle, it is possible to set the &quot;batch size&quot; to &quot;1&quot; during registration, but this is not recommended, since a high number of transactions will increase the system load both on the BrandMaker system and in the Consumer.</p>
+</li>
+<li>
+<p>Events can be deduplicated in the MBI. A sequence of e.g. &quot;Element Updated&quot; events are thus combined into one event and only the last event is sent. Thus, an event is not always sent for every effective transaction. Deduplication is performed based on the following criteria:</p>
+<ul>
+<li>
+<p>They must contain the same transaction category (e.g. &quot;UPDATE&quot;)</p>
+</li>
+<li>
+<p>They must concern the same object (e.g. Job Manager Task &quot;42&quot;)</p>
+</li>
+<li>
+<p>Transactions identified in this way must be in immediate succession</p>
+</li>
+</ul>
+<p>Whether events are deduplicated or all events are sent depends on the module. Refer to chapter 7 below in the documentation of the events for each module.</p>
+</li>
+<li>
+<p>If a Consumer returns too many errors in a row, it is automatically disabled. In doing so, the MBI registers an error when</p>
+<ul>
+<li>
+<p>The Consumer returns a different http status than 200 - ok or 202 - accepted</p>
+</li>
+<li>
+<p>One of the timeouts expires, which can be set in the administration of the consumer registration.</p>
+<ul>
+<li>Connection Timeout -- Time until a TCP/IP connection is established.</li>
+<li>Response Timeout -- Time until a response is received from the Consumer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The MBI will first attempt to redeliver the messages. If this also fails, the Consumer is deactivated and no longer receives messages.</p>
+<h3 id="signature-validation">Signature Validation</h3>
+<p>The validation of the signature in the Consumer ensures that the received request is unaltered and was actually sent by the customer's BrandMaker system.</p>
+<p>According to <a href="https://tools.ietf.org/id/draft-cavage-http-signatures-07.html">https://tools.ietf.org/id/draft-cavage-http-signatures-07.html</a>a list of headers is sent for this purpose, the values of which are used to form the message to be signed. For MBI this includes the headers date, method und host. If the Consumer is operated behind a reverse proxy, the host header may not contain the value used for signing, but the IP or the name of the effective server. In this case, make sure that the reverse proxy includes the header x-forwarded-server in the request and use its value in the signature validation. For more information, please refer to the published example on GitHub.</p>
+<h3 id="using-the-sample-consumer-on-github">Using the Sample-Consumer on GitHub</h3>
+<p>The sample consumer provided at <a href="https://github.com/brandmaker/MBI-Consumer">https://github.com/brandmaker/MBI-Consumer</a> can be used by interested developers. It is not subject to any legal restriction (Apache Commons License). BrandMaker does not warrant that the published source code is error-free, nor that it can meet any user's requirements.</p>
+<h2 id="documentation-of-available-transactions-per-module">Documentation of Available Transactions per Module</h2>
+<h3 id="job-manager">Job Manager</h3>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>The provided payload data may vary. It depends on which fields are configured in the respective job template.</p>
+<hr>
+<p>Events in the Job Manager are deduplicated based on the &quot;Category&quot; column.</p>
+<table>
+<thead>
+<tr>
+<th>MBI Event Name</th>
+<th>Category</th>
+<th>Description</th>
+<th>Provided Payload Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JM.JOB_CREATE</td>
+<td>CREATE</td>
+<td>A new job has been created</td>
+<td><a href="/assets/guides/mbi/jm_job_create.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.JOB_UPDATE</td>
+<td>UPDATE</td>
+<td>A job has been modified / changed</td>
+<td><a href="/assets/guides/mbi/jm_job_update.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.JOB_DELETE</td>
+<td>DELETE</td>
+<td>Delete a job</td>
+<td><a href="/assets/guides/mbi/jm_job_delete.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.JOB_STEP_CHANGED</td>
+<td>UPDATE</td>
+<td>A job has been forwarded. A job has been sent back.</td>
+<td><a href="/assets/guides/mbi/jm_job_step_changed.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.JOB_FINISH</td>
+<td>UPDATE</td>
+<td>A job has ended</td>
+<td><a href="/assets/guides/mbi/jm_job_finish.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.JOB_CANCEL</td>
+<td>UPDATE</td>
+<td>A running job is cancelled</td>
+<td><a href="/assets/guides/mbi/jm_job_cancel.json" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td>JM.INITIAL_LOAD</td>
+<td>SYNC</td>
+<td>Sync all existing jobs in their current state</td>
+<td>JSON which contains all data of all jobs, reflecting the current state</td>
+</tr>
+</tbody>
+</table>
+<h3 id="marketing-planer">Marketing Planer</h3>
+<p>The Marketing Planer will be integrated into the MBI in one of the next releases of BrandMaker.</p>
+<h3 id="review-manager">Review Manager</h3>
+<p>The Review Manager will be integrated into the MBI in one of the next releases of BrandMaker.</p>
+<h3 id="resource-manager">Resource Manager</h3>
+<p>Resource Management will be integrated into MBI in one of the next releases of BrandMaker.</p>
+<h2 id="security-advice">Security Advice</h2>
+<h3 id="ssl-encryption">SSL Encryption</h3>
+<p>The MBI only processes URLs that use SSL-encrypted HTTP.</p>
+<p>The Consumer operator must ensure that a valid SSL certificate is installed on its system. This must be signed by a known root CA.</p>
+<p>Self-signed certificates are not accepted and lead to a connection error and consequently to a deactivation of the Consumer in the MBI.</p>
+<h3 id="request-validation">Request Validation</h3>
+<p>All requests against the Consumer are signed by the MBI according to <a href="https://tools.ietf.org/id/draft-cavage-http-signatures-07.html">https://tools.ietf.org/id/draft-cavage-http-signatures-07.html</a> The creator of the Consumer is responsible for validating requests against the signature and corresponding public key of the BrandMaker system before processing them and discarding invalid requests.</p>
+<h3 id="requests-to-the-brandmaker-api">Requests to the BrandMaker API</h3>
+<p>An MBI Consumer is not &quot;per se&quot; authorized to send requests to the BrandMaker APIs. Rather, this requires valid authentication to the BrandMaker system. BrandMaker provides the OAuth2-compliant service &quot;BrandMaker CAS&quot; for this purpose.<br>
+See: <a href="https://developers.brandmaker.com/guides/auth/">https://developers.brandmaker.com/guides/auth/</a></p>
+<p>Please note that all requests to the BrandMaker system APIs are always made in the context of an authenticated and authorized user. Its rights and roles affect the result of each request.</p>
+
+            </section>
+        </main>
+        <!--- footer with navigation -->
+<footer class="dp_footer">
+    <div class="dp_footer__wrapper">
+        <div class="dp_footer__left">
+            <a href="https://www.brandmaker.com/" target="_blank" class="dp_footer__homelink">&copy;BrandMaker Made in Germany</a>
+        </div>
+        <div class="dp_footer__right">
+            <nav>
+                <ul class="dp_footer__navlist">
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/imprint/">Legal Notice</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/privacy-policy/">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/contact/">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
