@@ -17,37 +17,21 @@ title: "Authentication"
 Prerequisits
 =============
 
-In order to authenticate a 3rd party application against your BrandMaker
-Instance and accessing the APIs of the BrandMaker Modules, you need an
-oAuth2 access token and a refresh token. BrandMaker provides a
-centralized authentication system for all customers (Centralized
-Authentication Service - CAS), which implements the standardized
-[oAuth2 Web Flow](https://oauth.net/2/).
+In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an oAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [oAuth2 Web Flow](https://oauth.net/2/).
 
 ### Required steps
 The following steps need to be done in order to register your app and
 authenticate and authorize an application user:
 
-1.  Make sure, your BrandMaker Instance is registered as Resource Server
-    on the CAS. On questions regarding this, please contact our [Support
-    Team](https://www.brandmaker.com/contact/support-ticket/)
-2.  [Register your App](#register-your-app) through
-    the administration in your BrandMaker Instance
-3.  [Initiate the oAuth2](#initiate-the-oauth2) flow to
-    authenticate a user for your application
-4.  Store your client ID and Client Secret provided in step 2 in a safe
-    place, we are not able to recover the secret at any later time!
-5.  Store the access token and refresh token provided in step 3 along
-    with your app
-6.  [Use the tokens](#authenticate-against-the-brandmaker-apis) in order to
-    access any of the BrandMaker APIs
-7.  Check the expiration time of your access token and [retrieve a new
-    one with the refresh token](#request-a-new-access-token-with-the-refresh-token)
-    once it is close to expire
+1.  Make sure, your BrandMaker Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our [Support Team](https://www.brandmaker.com/contact/support-ticket/)
+2.  [Register your App](#register-your-app) through the administration in your BrandMaker Instance
+3.  [Initiate the oAuth2](#initiate-the-oauth2) flow to authenticate a user for your application
+4.  Store your client ID and Client Secret provided in step 2 in a safe place, we are not able to recover the secret at any later time!
+5.  Store the access token and refresh token provided in step 3 along with your app
+6.  [Use the tokens](#authenticate-against-the-brandmaker-apis) in order to access any of the BrandMaker APIs
+7.  Check the expiration time of your access token and [retrieve a new one with the refresh token](#request-a-new-access-token-with-the-refresh-token) once it is close to expire
 
-All necessary end-point URLs for the flow will be provided in step 2
-above. This information is always available in the administration in
-your BrandMaker Instance.
+All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your BrandMaker Instance.
 
 ## Register your App
 
@@ -75,13 +59,9 @@ The client secret is only shown immediately after the registration of a client i
 
 ### Refresh Token and Access Token
 
-Now that you have obtained your client ID and client secret, your
-application will have to acquire an access token and a refresh token.
+Now that you have obtained your client ID and client secret, your application will have to acquire an access token and a refresh token.
 
-In order to acquire your first access token and refresh token, your need
-an OAuth2.0 authorization code. In order to acquire this OAuth2.0
-authorization code, your app will need to send the client ID and client
-secret to the following CAS-URL via GET:
+In order to acquire your first access token and refresh token, your need an OAuth2.0 authorization code. In order to acquire this OAuth2.0 authorization code, your app will need to send the client ID and client secret to the following CAS-URL via GET:
 
 Your user will also be prompted with a login challenge at this point.
 
@@ -131,26 +111,20 @@ Now that your application has acquired its access token and refresh token, it ca
 
 ## Authenticate against the BrandMaker APIs
 
-In order to authenticate your application against any BrandMaker API,
-use the given authentication token from step 3 above.
+In order to authenticate your application against any BrandMaker API, use the given authentication token from step 3 above.
 
-The token must be put into an [Authorization
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
-in the according request:
+The token must be put into an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) in the according request:
 
 **Authorization Header in Request to BrandMaker API**
 ``` xquery
 Authorization: Bearer 98w7n98wvetr98vern9t87vq9tz ... c9n4837590nv8eorfpocrw74n87c
 ```
 
-If the token has expired, an according error message is sent back, which
-may differ depending on which internal system you are trying to access.
-The response's http status code is always 403.
+If the token has expired, an according error message is sent back, which may differ depending on which internal system you are trying to access. The response's http status code is always 403.
 
 ## Request a New Access Token with the Refresh Token
 
-In order to request a new access token with the refresh token, issue a
-request against the token refresh endpoint given in step 2 above:
+In order to request a new access token with the refresh token, issue a request against the token refresh endpoint given in step 2 above:
 
 ### POST parameters
 
