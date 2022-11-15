@@ -2,7 +2,7 @@
 layout: pages/guide.njk
 pageTitle: Authentification
 description: How to Authenticate 3rd Party Applications to your BrandMaker Instance
-teaserText: "In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an oAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the the standardized oAuth2 Web Flow."
+teaserText: "In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the the standardized OAuth2 Web Flow."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
@@ -17,7 +17,7 @@ title: "Authentication"
 Prerequisits
 =============
 
-In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an oAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [oAuth2 Web Flow](https://oauth.net/2/).
+In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. The centralized authentication system (CAS) only supports the Grant-Type [Authorization Code](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow). BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [OAuth2 Web Flow](https://oauth.net/2/).
 
 ### Required steps
 The following steps need to be done in order to register your app and
@@ -25,7 +25,7 @@ authenticate and authorize an application user:
 
 1.  Make sure, your BrandMaker Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our [Support Team](https://www.brandmaker.com/contact/support-ticket/)
 2.  [Register your App](#register-your-app) through the administration in your BrandMaker Instance
-3.  [Initiate the oAuth2](#initiate-the-oauth2) flow to authenticate a user for your application
+3.  [Initiate the OAuth2](#initiate-the-oauth2) flow to authenticate a user for your application
 4.  Store your client ID and Client Secret provided in step 2 in a safe place, we are not able to recover the secret at any later time!
 5.  Store the access token and refresh token provided in step 3 along with your app
 6.  [Use the tokens](#authenticate-against-the-brandmaker-apis) in order to access any of the BrandMaker APIs
@@ -37,13 +37,13 @@ All necessary end-point URLs for the flow will be provided in step 2 above. This
 
 ### Client ID and Client Secret
 
-In order to connect your application via oAuth2 you will need a client
+In order to connect your application via OAuth2 you will need a client
 ID and a client secret. You get access to these the following way:
 
 1.  Log in to your BrandMaker system.
 2.  Navigate to your Administration space
 3.  Depending on the version, navigate (on the left) to Registered Apps:
-    - for version ≤ 6.9: *System Configuration* =\> Registered Apps
+    - for version ≥ 6.8: *System Configuration* =\> Registered Apps
     - for version > 7.0: *Fusion* =\> Registered Apps
 4.  There you can register a new app. ![](/assets/guides/auth/clientsecret.png)
 5.  After you have successfully registered your app, you will be shown a
@@ -55,7 +55,7 @@ The client secret is only shown immediately after the registration of a client i
 
  ![](/assets/guides/auth/clientsecretid.png)
 
-## Initiate the oAuth2
+## Initiate the OAuth2
 
 ### Refresh Token and Access Token
 
