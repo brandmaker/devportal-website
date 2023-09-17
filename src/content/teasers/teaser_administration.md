@@ -5,4 +5,3 @@ icon: logo_administration
 destination: Administration
 shorttext: Manage notifications and e-mail templates.  
 ---
-Bla blubb.
