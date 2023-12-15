@@ -1,7 +1,8 @@
 ---
 title: Administration 
 tags: ['teaser']
-icon: logo_administration
+icon: logo_userservice
 destination: Administration
-shorttext: Manage notifications and e-mail templates.  
+shorttext: Explore the User Management including Single Sign-On for secure and simplified access. Administer Roles and Permissions, Addresses, User Groups and Org Units, Login Requests, Calendars, and more.
 ---
+Explore the User Management including Single Sign-On for secure and simplified access. Administer Roles and Permissions, Addresses, User Groups and Org Units, Login Requests, Calendars, and more.
