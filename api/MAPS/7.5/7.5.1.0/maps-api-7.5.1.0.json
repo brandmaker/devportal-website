@@ -3546,7 +3546,7 @@
       "/maps/rest/api/{version}/kpi/{kpiId}" : {
         "get" : {
           "tags" : [ "KpiRestApi" ],
-          "description" : "This method provides all KPI information for a given kpi id.\n\n__Available Since:__ 1.0",
+          "description" : "This method provides all KPI information for a given KPI id.\n\n__Available Since:__ 1.0",
           "operationId" : "KpiRestApi-GET_getKpiById",
           "parameters" : [ {
             "name" : "version",
