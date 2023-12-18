@@ -2,7 +2,7 @@
 layout: pages/guide.njk
 pageTitle: API Changelog
 description: Stay up to date with the latest changes and updates to our REST API
-teaserText: "In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the the standardized OAuth2 Web Flow."
+teaserText: "latest changes and updates to our REST API"
 tags: ['guide']
 eleventyNavigation:
     parent: "API"
@@ -10,7 +10,7 @@ eleventyNavigation:
     title: "API Changelog"
     excerpt: "latest changes and updates to our REST API"
     order: -1
-permalink: "api/changelog/"
+permalink: "guides/changelog/"
 bodyClass: "guide"
 title: "API Changelog"
 ---
