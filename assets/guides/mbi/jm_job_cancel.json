@@ -1,0 +1,64 @@
+{
+    "systemBaseUri": "https://is-int-mrm.brandmaker.com",
+    "systemId": "610-067-857",
+    "customerId": "kfb-kzk-nbn",
+    "namespace": null,
+    "events": [
+        {
+            "module": "JM",
+            "operation": "JM.JOB_CANCEL",
+            "entity": "Job",
+            "timestamp": 2904181333269775,
+            "objectId": {
+                "L10N_LOCALE_ID": 0,
+                "ORDINAL_NUMBER": 17124,
+                "INSTANCE_ID": 17239
+            },
+            "data": {
+                "parentOrdinalNumber": null,
+                "sourceOfChange": "Gui",
+                "newWorkflowStatus": "CANCELED",
+                "values": {
+                    "workflow__object__id": 29507,
+                    "last__modification__date": "2022-01-25T11:12:06",
+                    "creator__": {
+                        "name": "Admin User",
+                        "id": 3821,
+                        "login": "admin"
+                    },
+                    "workflow__overdue__date": "",
+                    "job__id": 17124,
+                    "job__state": "CANCELED",
+                    "job__type__pseudo__variable": 138979,
+                    "job__name": "new job name",
+                    "deadline__": "",
+                    "owner__": {
+                        "groupId": "1",
+                        "userName": "Admin User",
+                        "userId": "3821"
+                    },
+                    "current__step__overdue__date": "",
+                    "themes__": [],
+                    "default__media": [],
+                    "job__id__formatted": "17124",
+                    "workflow__timing": {
+                        "duration": null,
+                        "dueDate": null,
+                        "startDate": "2022-01-25"
+                    },
+                    "current__step__start__date": "01/25/2022",
+                    "ob__owner__": {
+                        "id": null
+                    },
+                    "workflow__start__date": "",
+                    "create__date": "2022-01-25T11:08:43"
+                },
+                "metaType": "Job",
+                "eventName": "DSE_OBJECT_CHANGE_WF_STATUS_JMS_SUBJECT",
+                "typeId": 138979,
+                "oldWorkflowStatus": "ACTIVE"
+            },
+            "userId": "admin"
+        }
+    ]
+}
