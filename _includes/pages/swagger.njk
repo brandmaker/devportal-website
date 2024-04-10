@@ -22,9 +22,9 @@
                             {%- if moduleE.key == module %}
                             <label class="nav__selectlabel" for="navselect">Selected Version:</label> 
                                 <select onchange="javascipt:handleSelect(this)" id="navselect" class="select-css">
-                                    {%- for pVersion in moduleE.children %}
+                                    {%- for pVersion in moduleE.children | reverse %}
                                     <optgroup label="{{ pVersion.title }}">
-                                        {%- for apiV in pVersion.children %}
+                                        {%- for apiV in pVersion.children | reverse %}
                                         {%- if apiV.title == apiVersion %}
                                         <option value="../../../{{ module }}/{{ pVersion.title }}/{{ apiV.title }}" selected>
                                             {{ apiV.title }}
