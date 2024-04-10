@@ -2,13 +2,13 @@
 layout: pages/guide.njk
 pageTitle: API Changelog
 description: Stay up to date with the latest changes and updates to our REST API
-teaserText: "latest changes and updates to our REST API"
+teaserText: "A detailed record of all the changes we've made to our REST API since the previous version"
 tags: ['guide']
 eleventyNavigation:
     parent: "API"
     key: "changelog"
     title: "API Changelog"
-    excerpt: "latest changes and updates to our REST API"
+    excerpt: "Latest changes and updates to our REST API"
     order: -1
 permalink: "guides/changelog/"
 bodyClass: "guide"
@@ -16,7 +16,7 @@ title: "API Changelog"
 ---
 
 <br>
-This changelog provides a detailed record of all the changes we've made to our API from the previous version 7.4 to version 7.5, including new features, modifications, and deprecations, so that it can help you adapt your implementations to be compatible with our latest updates.
+This changelog provides a detailed record of all the changes we've made to our API since the previous version 7.4 to version 7.5, including new features, modifications, and deprecations, so that it can help you adapt your implementations to be compatible with our latest updates.
 
 ## Job Manager
 
