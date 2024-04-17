@@ -4,7 +4,7 @@ Our static web pages that build the environment for the adapted [Swagger UI](htt
 This static site generator uses 11ty. 
 
 ## Automatic Build
-Whenever something is pushed to the master branch (or pull request to master), the _side folder will be generated and pushed to the branch 'published-pages'. This branch is the soucce for GitHub pages (https://developers.brandmaker.com/) \
+Whenever something is pushed to the master branch (or pull request to master), the _site folder will be generated and pushed to the branch 'published-pages'. This branch is the soucce for GitHub pages (https://developers.brandmaker.com/) \
 GitHub will do it automatically with Actions. \
 
 
