@@ -29,7 +29,7 @@
 
   <script>
     // Check browser support
-    var lastUsedProductVersion = "7.5/";
+    var lastUsedProductVersion = "8.0/";
     if ((typeof(Storage) !== "undefined") && (localStorage.getItem("JobManager_used_productVersion"))) {
       lastUsedProductVersion =  localStorage.getItem("JobManager_used_productVersion");  
     }
@@ -38,7 +38,7 @@
     request.open("GET","./productVersions.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
-    lastUsedProductVersion = jsonData.productVersions.includes(lastUsedProductVersion) ? lastUsedProductVersion : "7.5/"
+    lastUsedProductVersion = jsonData.productVersions.includes(lastUsedProductVersion) ? lastUsedProductVersion : "8.0/"
     window.location.href = window.location.href + lastUsedProductVersion;
   </script>
 </head>

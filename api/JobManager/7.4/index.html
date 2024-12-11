@@ -29,7 +29,7 @@
 
   <script>
     // Check browser support
-    var lastUsedApiVersion = "6.4.1.0";//7.4.1.0";
+    var lastUsedApiVersion = "6.4.1.0";//7.4.2.0";
     if ((typeof(Storage) !== "undefined") && (localStorage.getItem("JobManager_7.4_used_apiVersion"))) {
       lastUsedApiVersion =  localStorage.getItem("JobManager_7.4_used_apiVersion");  
     }
@@ -38,7 +38,7 @@
     request.open("GET","./apiVersions.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
-    lastUsedApiVersion = jsonData.apiVersions.includes(lastUsedApiVersion) ? lastUsedApiVersion : "7.4.1.0"
+    lastUsedApiVersion = jsonData.apiVersions.includes(lastUsedApiVersion) ? lastUsedApiVersion : "7.4.2.0"
     window.location.href = window.location.href + lastUsedApiVersion;
   </script>
 </head>

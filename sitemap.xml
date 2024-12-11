@@ -26,6 +26,15 @@
                 <lastmod>2024-12-11</lastmod>
               </url>
             
+          <url>
+            <loc>https://developers.brandmaker.com/api/Administration/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Administration/8.0/8.0.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
       <url>
         <loc>https://developers.brandmaker.com/api/JobManager/</loc>
         <lastmod>2024-12-11</lastmod>
@@ -93,12 +102,26 @@
                 <lastmod>2024-12-11</lastmod>
               </url>
             
+              <url>
+                <loc>https://developers.brandmaker.com/api/JobManager/7.4/7.4.2.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
           <url>
             <loc>https://developers.brandmaker.com/api/JobManager/7.5/</loc>
             <lastmod>2024-12-11</lastmod>
           </url>
               <url>
                 <loc>https://developers.brandmaker.com/api/JobManager/7.5/7.5.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/JobManager/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/JobManager/8.0/8.0.1.0/</loc>
                 <lastmod>2024-12-11</lastmod>
               </url>
             
@@ -160,12 +183,26 @@
                 <lastmod>2024-12-11</lastmod>
               </url>
             
+              <url>
+                <loc>https://developers.brandmaker.com/api/MAPS/7.4/7.4.2.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
           <url>
             <loc>https://developers.brandmaker.com/api/MAPS/7.5/</loc>
             <lastmod>2024-12-11</lastmod>
           </url>
               <url>
                 <loc>https://developers.brandmaker.com/api/MAPS/7.5/7.5.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/MAPS/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MAPS/8.0/8.0.1.0/</loc>
                 <lastmod>2024-12-11</lastmod>
               </url>
             
@@ -245,6 +282,15 @@
                 <lastmod>2024-12-11</lastmod>
               </url>
             
+          <url>
+            <loc>https://developers.brandmaker.com/api/MediaPool/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/MediaPool/8.0/8.0.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
       <url>
         <loc>https://developers.brandmaker.com/api/ReviewManager/</loc>
         <lastmod>2024-12-11</lastmod>
@@ -255,6 +301,15 @@
           </url>
               <url>
                 <loc>https://developers.brandmaker.com/api/ReviewManager/7.5/7.5.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/ReviewManager/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/ReviewManager/8.0/8.0.1.0/</loc>
                 <lastmod>2024-12-11</lastmod>
               </url>
             
@@ -277,6 +332,15 @@
           </url>
               <url>
                 <loc>https://developers.brandmaker.com/api/Shop/7.5/7.5.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/Shop/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Shop/8.0/8.0.1.0/</loc>
                 <lastmod>2024-12-11</lastmod>
               </url>
             
@@ -344,6 +408,15 @@
           </url>
               <url>
                 <loc>https://developers.brandmaker.com/api/Web-to-Publish/7.5/7.5.1.0/</loc>
+                <lastmod>2024-12-11</lastmod>
+              </url>
+            
+          <url>
+            <loc>https://developers.brandmaker.com/api/Web-to-Publish/8.0/</loc>
+            <lastmod>2024-12-11</lastmod>
+          </url>
+              <url>
+                <loc>https://developers.brandmaker.com/api/Web-to-Publish/8.0/8.0.1.0/</loc>
                 <lastmod>2024-12-11</lastmod>
               </url>
             

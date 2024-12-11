@@ -35,7 +35,7 @@
         <!--- topbar with navigation -->
 <header class="topbar">
     <a class="hero__logolink" href="/">
-        <img src="/assets/bm_logo.svg" alt="Logo Brandmaker">
+        <img src="/assets/logo-green.svg" alt="Logo">
     </a>
     <nav class="mainnav">
         
@@ -127,7 +127,7 @@
             <header class="hero__header">
                 <h1 class="hero__headline">Authentication</h1> 
                 <div class="hero__description">
-                    How to Authenticate 3rd Party Applications to your BrandMaker Instance
+                    How to Authenticate 3rd Party Applications to your Uptempo Instance
                 </div>
             </header>
         </section>
@@ -141,33 +141,33 @@
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-request">Example Request</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#post-parameters">POST Parameters</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#flow-overview">Flow Overview</a>		</li></ol>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authenticate-against-the-brandmaker-apis">Authenticate against the BrandMaker APIs</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authenticate-against-the-uptempo-apis">Authenticate against the Uptempo APIs</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#request-a-new-access-token-with-the-refresh-token">Request a New Access Token with the Refresh Token</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#post-parameters-2">POST parameters</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-request-curl">Example request CURL</a>		</li></ol>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#oauth-debugger">OAuth Debugger</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-input%3A">Example input:</a>		</li></ol>		</li></ol></nav>
             </aside>
             <article class="guide__article">
                 <h1 id="prerequisits">Prerequisits</h1>
-<p>In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized <a href="https://oauth.net/2/">OAuth2 Web Flow</a>. CAS only supports the Grant-Type <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow">Authorization Code</a>.</p>
+<p>In order to authenticate a 3rd party application against your Uptempo Instance and accessing the APIs of the Uptempo Modules, you need an OAuth2 access token and a refresh token. Uptempo provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized <a href="https://oauth.net/2/">OAuth2 Web Flow</a>. CAS only supports the Grant-Type <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow">Authorization Code</a>.</p>
 <h3 id="required-steps">Required steps</h3>
 <p>The following steps need to be done in order to register your app and<br>
 authenticate and authorize an application user:</p>
 <ol>
-<li>Make sure, your BrandMaker Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our <a href="https://www.brandmaker.com/contact/support-ticket/">Support Team</a></li>
-<li><a href="#register-your-app">Register your App</a> through the administration in your BrandMaker Instance</li>
+<li>Make sure, your Uptempo Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our <a href="https://www.brandmaker.com/contact/support-ticket/">Support Team</a></li>
+<li><a href="#register-your-app">Register your App</a> through the administration in your Uptempo Instance</li>
 <li><a href="#initiate-the-oauth2">Initiate the OAuth2</a> flow to authenticate a user for your application</li>
 <li>Store your client ID and Client Secret provided in step 2 in a safe place, we are not able to recover the secret at any later time!</li>
 <li>Store the access token and refresh token provided in step 3 along with your app</li>
-<li><a href="#authenticate-against-the-brandmaker-apis">Use the tokens</a> in order to access any of the BrandMaker APIs</li>
+<li><a href="#authenticate-against-the-brandmaker-apis">Use the tokens</a> in order to access any of the Uptempo APIs</li>
 <li>Check the expiration time of your access token and <a href="#request-a-new-access-token-with-the-refresh-token">retrieve a new one with the refresh token</a> once it is close to expire</li>
 </ol>
-<p>All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your BrandMaker Instance.</p>
+<p>All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your Uptempo Instance.</p>
 <h2 id="register-your-app">Register your App</h2>
 <h3 id="client-id-and-client-secret">Client ID and Client Secret</h3>
 <p>In order to connect your application via OAuth2 you will need a client<br>
 ID and a client secret. You get access to these the following way:</p>
 <ol>
-<li>Log in to your BrandMaker system.</li>
+<li>Log in to your Uptempo or legacy BrandMaker system.</li>
 <li>Navigate to your Administration space</li>
 <li>Depending on the version, navigate (on the left) to Registered Apps:
 <ul>
@@ -239,13 +239,13 @@ For more information visit <a href="https://auth0.com/docs/protocols/state-param
 <p>After your application has successfully acquired an oAuth 2.0 authorization code, you can now acquire your refresh token and access token from this CAS-URL via POST:</p>
 <h3 id="post-parameters">POST Parameters</h3>
 <pre class="language-xquery"><code class="language-xquery">curl -d <span class="token string">"code=oauth2_authorization_code&amp;\<br>   client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;\<br>   client_secret=your_client_secret&amp;\<br>   grant_type=authorization_code&amp;\<br>   redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug%0D%0A"</span> -X POST <span class="token string">"https://cas.brandmaker.com/api/v1.1/token"</span></code></pre>
-<p>Now that your application has acquired its access token and refresh token, it can now make requests to the BrandMaker APIs. In order to access such a BrandMaker resource you need to include your access token in each request in the header &quot;authorization&quot;. The token must be prefixed with the keyword &quot;bearer &quot; (with whitespace). For more information regarding bearer tokens you can visit the following <a href="https://tools.ietf.org/html/rfc6750">site</a>.</p>
+<p>Now that your application has acquired its access token and refresh token, it can now make requests to the Uptempo APIs. In order to access such a Uptempo resource you need to include your access token in each request in the header &quot;authorization&quot;. The token must be prefixed with the keyword &quot;bearer &quot; (with whitespace). For more information regarding bearer tokens you can visit the following <a href="https://tools.ietf.org/html/rfc6750">site</a>.</p>
 <h3 id="flow-overview">Flow Overview</h3>
 <p><img src="/assets/guides/auth/flowoverview.png" alt=""></p>
-<h2 id="authenticate-against-the-brandmaker-apis">Authenticate against the BrandMaker APIs</h2>
-<p>In order to authenticate your application against any BrandMaker API, use the given authentication token from step 3 above.</p>
+<h2 id="authenticate-against-the-uptempo-apis">Authenticate against the Uptempo APIs</h2>
+<p>In order to authenticate your application against any Uptempo API, use the given authentication token from step 3 above.</p>
 <p>The token must be put into an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">Authorization header</a> in the according request:</p>
-<p><strong>Authorization Header in Request to BrandMaker API</strong></p>
+<p><strong>Authorization Header in Request to Uptempo API</strong></p>
 <pre class="language-xquery"><code class="language-xquery">Authorization<span class="token punctuation">:</span> Bearer <span class="token number">98</span>w7n98wvetr98vern9t87vq9tz <span class="token operator">..</span><span class="token operator">.</span> c9n4837590nv8eorfpocrw74n87c</code></pre>
 <p>If the token has expired, an according error message is sent back, which may differ depending on which internal system you are trying to access. The response's http status code is always 403.</p>
 <h2 id="request-a-new-access-token-with-the-refresh-token">Request a New Access Token with the Refresh Token</h2>
@@ -301,19 +301,19 @@ For more information visit <a href="https://auth0.com/docs/protocols/state-param
 <footer class="dp_footer">
     <div class="dp_footer__wrapper">
         <div class="dp_footer__left">
-            <a href="https://www.brandmaker.com/" target="_blank" class="dp_footer__homelink">&copy;BrandMaker Made in Germany</a>
+            <a href="https://uptempo.io" target="_blank" class="dp_footer__homelink">&copy;Uptempo</a>
         </div>
         <div class="dp_footer__right">
             <nav>
                 <ul class="dp_footer__navlist">
                     <li class="dp_footer__navlistitem">
-                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/imprint/">Legal Notice</a>
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/imprint/">Legal Notice</a>
                     </li>
                     <li class="dp_footer__navlistitem">
-                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/privacy-policy/">Terms &amp; Conditions</a>
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/terms-conditions-of-use/">Terms &amp; Conditions</a>
                     </li>
                     <li class="dp_footer__navlistitem">
-                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/contact/">Contact us</a>
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/contact-us/">Contact us</a>
                     </li>
                 </ul>
             </nav>
