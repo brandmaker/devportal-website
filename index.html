@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Brandmaker Dev Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#f95b02">
+<meta name="msapplication-TileColor" content="#0c0f28">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="rMB12-YRyfvSNc_gvIcO_1I5X1zE8N1lzfUQj2Oj-Pg" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3128286-9"></script>
+        <script>
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             //gtag('set', 'dimension1', <Name der ausgewählten API>);
+             //gtag('set', 'dimension2', "");
+
+             gtag('config', 'UA-3128286-9');
+
+        </script>
+
+
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body class="home">
+        <!--- topbar with navigation -->
+<header class="topbar">
+    <a class="hero__logolink" href="/">
+        <img src="/assets/bm_logo.svg" alt="Logo Brandmaker">
+    </a>
+    <nav class="mainnav">
+        
+        
+        <ul class="mainnav__list__main">
+            <!--- eleventy navigation --><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/api/">API</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/changelog/">
+                                <span class="mainnav__listitemlinktitle">API Changelog</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Latest changes and updates to our REST API</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Administration/">
+                                <span class="mainnav__listitemlinktitle">Administration</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">User Service</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/JobManager/">
+                                <span class="mainnav__listitemlinktitle">Job Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Central Platform for Collaboration</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MAPS/">
+                                <span class="mainnav__listitemlinktitle">Marketing Planner</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Say bye to confusing spreadsheets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MediaPool/">
+                                <span class="mainnav__listitemlinktitle">Media Pool</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Store and manage digital assets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/ReviewManager/">
+                                <span class="mainnav__listitemlinktitle">Review Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Review created content</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Shop/">
+                                <span class="mainnav__listitemlinktitle">Shop</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">The eShop to control marketing materials and services</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Web-to-Publish/">
+                                <span class="mainnav__listitemlinktitle">Brand Template Builder</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Brand Management worldwide</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheCore/">
+                                <span class="mainnav__listitemlinktitle">WebCache Core</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Core is the central server side application for SEW and MPM</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheEngage/">
+                                <span class="mainnav__listitemlinktitle">WebCache Engage</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Engage is the central server side application for SEW and MPM</span>
+                                </a>
+                        </ul></li><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/auth/">
+                                <span class="mainnav__listitemlinktitle">Authentication</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
+                                <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/mbi/">
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/webhook-push-api/">
+                                <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
+                                </a>
+                        </ul></li><!--- manually included link to GitHub -->
+            <li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="https://github.com/brandmaker" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+        <section class="hero">
+            <section class="hero__slogan">
+                <div class="hero__text">
+                    <h1 class="hero__headline">Discover Our <a href="api">APIs</a> to Unleash Your Marketing Superpowers!</h1>
+                    <p class="hero__p">A farewell to isolated solutions – Leveraging APIs, you can quickly and flexibly integrate the BrandMaker solution into your marketing and technology stack. This way, functionalities are easily configurable according to your needs.</p>
+                    <!-- <p class="hero__p hero__p--strong"></p> -->
+                    
+                        <a class="cta" href="/api">Discover Our APIs</a>
+                    
+                </div>
+            </section>
+        </section>
+        <ul class="teaser">
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Media Pool</h3>
+                    <div class="teaser__contenttext">
+                        Media Pool delivers a central place to store and manage digital assets in any format, for any device, and for any purpose. Within our BrandMaker marketing stack, Media Pool can be used in conjunction with every other module.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/MediaPool">Discover Media Pool API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_mediapool.svg" alt="Logo Media Pool">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Administration</h3>
+                    <div class="teaser__contenttext">
+                        Explore the User Management including Single Sign-On for secure and simplified access. Administer Roles and Permissions, Addresses, User Groups and Org Units, Login Requests, Calendars, and more.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/Administration">Discover Administration API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_userservice.svg" alt="Logo Administration">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Brand Template Builder</h3>
+                    <div class="teaser__contenttext">
+                        Brand Template Builder enables the CD-compliant design, adaption, and localization of marketing assets, such as advertisements, brochures, business cards, or posters, without using special applications.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/Web-to-Publish">Discover Brand Template Builder API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_brandportal.svg" alt="Logo Brand Template Builder">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Job Manager</h3>
+                    <div class="teaser__contenttext">
+                        Job Manager streamlines project management and collaboration, with all jobs and workflows transparently managed, controlled, and processed – no matter whether marketing projects, budget releases or purchase orders.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/JobManager">Discover Job Manager API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_jobmanager.svg" alt="Logo Job Manager">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Marketing Planner</h3>
+                    <div class="teaser__contenttext">
+                        With BrandMaker Marketing Planner, you gain full visibility and control over all campaigns, financial planning, and performance measurement. It thus provides a comprehensive platform for all stakeholders.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/MAPS">Discover Marketing Planner API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_marketingplanner.svg" alt="Logo Marketing Planner">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Review Manager</h3>
+                    <div class="teaser__contenttext">
+                        With the Review Manager module you coordinate interactively and centrally with colleagues in the production workflow. The Review Manager can be used to seamlessly document and organize annotations and updates of your layout files, images, and texts, for example.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/ReviewManager">Discover Review Manager API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_reviewmanager.svg" alt="Logo Review Manager">
+                    </div>
+                
+            </div>
+        </li>
+        <li class="teaser__item">
+            <div class="teaser__wrapper">
+                <div class="teaser__content">
+                    <h3 class="teaser__title">Shop</h3>
+                    <div class="teaser__contenttext">
+                        With the Shop module, you can efficiently handle ordering and delivery processes in advertising materials logistics. The module offers all the functions you need to quickly and transparently provide advertising materials for your employees, branches, and partners.
+                    </div>
+                    <a class="cta cta--teaser" href="/api/Shop">Discover Shop API</a>
+                </div>
+                
+                    <div class="teaser__icon"> 
+                        <img src="/assets/logo_shop.svg" alt="Logo Shop">
+                    </div>
+                
+            </div>
+        </li>
+        </ul>
+    <!--- footer with navigation -->
+<footer class="dp_footer">
+    <div class="dp_footer__wrapper">
+        <div class="dp_footer__left">
+            <a href="https://www.brandmaker.com/" target="_blank" class="dp_footer__homelink">&copy;BrandMaker Made in Germany</a>
+        </div>
+        <div class="dp_footer__right">
+            <nav>
+                <ul class="dp_footer__navlist">
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/imprint/">Legal Notice</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/privacy-policy/">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/contact/">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

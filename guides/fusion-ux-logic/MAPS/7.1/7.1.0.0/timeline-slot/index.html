@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Brandmaker Dev Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#f95b02">
+<meta name="msapplication-TileColor" content="#0c0f28">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="rMB12-YRyfvSNc_gvIcO_1I5X1zE8N1lzfUQj2Oj-Pg" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3128286-9"></script>
+        <script>
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             //gtag('set', 'dimension1', <Name der ausgewählten API>);
+             //gtag('set', 'dimension2', "timeline-slot");
+
+             gtag('config', 'UA-3128286-9');
+
+        </script>
+
+
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body class="guide">
+        <!--- topbar with navigation -->
+<header class="topbar">
+    <a class="hero__logolink" href="/">
+        <img src="/assets/bm_logo.svg" alt="Logo Brandmaker">
+    </a>
+    <nav class="mainnav">
+        
+        
+        <ul class="mainnav__list__main">
+            <!--- eleventy navigation --><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/api/">API</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/changelog/">
+                                <span class="mainnav__listitemlinktitle">API Changelog</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Latest changes and updates to our REST API</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Administration/">
+                                <span class="mainnav__listitemlinktitle">Administration</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">User Service</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/JobManager/">
+                                <span class="mainnav__listitemlinktitle">Job Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Central Platform for Collaboration</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MAPS/">
+                                <span class="mainnav__listitemlinktitle">Marketing Planner</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Say bye to confusing spreadsheets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MediaPool/">
+                                <span class="mainnav__listitemlinktitle">Media Pool</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Store and manage digital assets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/ReviewManager/">
+                                <span class="mainnav__listitemlinktitle">Review Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Review created content</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Shop/">
+                                <span class="mainnav__listitemlinktitle">Shop</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">The eShop to control marketing materials and services</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Web-to-Publish/">
+                                <span class="mainnav__listitemlinktitle">Brand Template Builder</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Brand Management worldwide</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheCore/">
+                                <span class="mainnav__listitemlinktitle">WebCache Core</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Core is the central server side application for SEW and MPM</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheEngage/">
+                                <span class="mainnav__listitemlinktitle">WebCache Engage</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Engage is the central server side application for SEW and MPM</span>
+                                </a>
+                        </ul></li><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/auth/">
+                                <span class="mainnav__listitemlinktitle">Authentication</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
+                                <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/mbi/">
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/webhook-push-api/">
+                                <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
+                                </a>
+                        </ul></li><!--- manually included link to GitHub -->
+            <li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="https://github.com/brandmaker" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+        <section class="hero">
+            <header class="hero__header">
+                <h1 class="hero__headline">timeline-slot</h1> 
+                <div class="hero__description">
+                    Available in the module 'Marketing Planner' for Version '7.1'
+                </div>
+            </header>
+        </section>
+        <main class="guide__mainlayout">
+            <aside class="guide__aside">
+            <div class="stick" style="position: sticky;top: 50px;">
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#location">Location</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#ui-specifics">UI specifics</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#slot-attributes">Slot attributes</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#callback-functions">Callback functions</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#error-states">Error states</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#other-specifics-or-annotations">Other specifics or annotations</a>		</li></ol></nav>
+                <nav class="nav_pageSlots" role="navigation">
+    
+    <script type="text/javascript">
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function handleSelect(elm) {
+            console.log(elm)
+            for (var i = 0; i < elm.options.length; i++) {
+                document.getElementById(elm.options[i].value).style.height = '0';
+                document.getElementById(elm.options[i].value).style.opacity = '0';
+            }
+            await sleep(150);
+            document.getElementById(elm.value).style.height = '100%';
+            document.getElementById(elm.value).style.opacity = '1';
+        }
+    </script>
+    <h2 class="nav_pageSlots__header">Page Slot Definitions</h2>
+    <div class="nav_pageSlots__list"><div class="nav_pageSlots__list_elem">
+            <div class="nav_pageSlots__list_elem_header">
+                Marketing Planner
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_Marketing Planner" class="select-css nav_pageSlots__select">
+                        <optgroup label="7.1" class="nav_pageSlots__select_optgroup"><option value="MAPS/7.1/7.1.0.0" class="nav_pageSlots__select_option" selected>
+                                    7.1.0.0
+                                </option></select>
+                </div>
+            </div>
+            <div class="nav_pageSlots__list_elem_body"><div class="nav_pageSlots__list_elem_body_section" id="MAPS/7.1/7.1.0.0" style="height: 100%; opacity: 1;">
+                                <a href="/guides/fusion-ux-logic/MAPS/7.1/7.1.0.0/timeline-slot/">timeline-slot</a></div></div>
+        </div></div>
+</nav>
+            </div>
+            </aside>
+            <article class="guide__article">
+                <p><img src="/api/MAPS/7.1/7.1.0.0/timeline-slot/screenshot.png" alt=""></p>
+                <h2 id="location">Location</h2>
+<p>The location of this slot is the timeline tooltip of the 'Marketing Planner Calender'. This tooltip is showing when the user hovers over a timeline.<br>
+Within the hover element, the slot is positioned under the base details and above the content enrichment.</p>
+<h2 id="ui-specifics">UI specifics</h2>
+<p>The component should have a min-width and a min-height, so the tooltip resizes accordingly. Any other styling is optional.</p>
+<h2 id="slot-attributes">Slot attributes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Purpose</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left"><code>nodeId</code></td>
+<td style="text-align:left">Unique identifier for a calender element (row)</td>
+<td style="text-align:left"><code>NUMBER</code></td>
+<td style="text-align:left">none</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left"><code>timelineId</code></td>
+<td style="text-align:left">Identifies a timeline (entry in a calender row)</td>
+<td style="text-align:left"><code>NUMBER</code></td>
+<td style="text-align:left">none</td>
+</tr>
+</tbody>
+</table>
+<p>With the help of these two variables, data can be fetched through a provided API. After the successful gathering of the data, the component will render, displaying the received information from the response.<br>
+Other attributes of the component, like styles or the HTML code, are encapsulated within the Fusion UX App.</p>
+<p>The variables are not watched and will not be picked up by the caller later again.</p>
+<h2 id="callback-functions">Callback functions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th>Purpose</th>
+<th style="text-align:left">Synopsis</th>
+<th style="text-align:left">Return values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"></td>
+<td>no callback functions provided</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-states">Error states</h2>
+<p>There are no error states or error messages provided.</p>
+<p>If the component does not render anything, the slot will be left empty. Since this behavior is normal and expected, the display from the rest of the tooltip remains unaffected.</p>
+<h2 id="other-specifics-or-annotations">Other specifics or annotations</h2>
+<p>None</p>
+
+            </section>
+        </main>
+        <!--- footer with navigation -->
+<footer class="dp_footer">
+    <div class="dp_footer__wrapper">
+        <div class="dp_footer__left">
+            <a href="https://www.brandmaker.com/" target="_blank" class="dp_footer__homelink">&copy;BrandMaker Made in Germany</a>
+        </div>
+        <div class="dp_footer__right">
+            <nav>
+                <ul class="dp_footer__navlist">
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/imprint/">Legal Notice</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/privacy-policy/">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.brandmaker.com/contact/">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
