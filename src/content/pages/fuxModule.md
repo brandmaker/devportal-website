@@ -1,6 +1,6 @@
 ---
 layout: pages/fuxModule.njk
-pageTitle: Brandmaker Dev Portal
+pageTitle: Uptempo Dev Portal
 pagination:
     data: collections.pageSlotModules
     size: 1

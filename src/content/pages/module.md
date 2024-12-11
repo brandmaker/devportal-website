@@ -1,6 +1,6 @@
 ---
 layout: pages/module.njk
-pageTitle: Brandmaker Dev Portal
+pageTitle: Uptempo Dev Portal
 pagination:
     data: collections.modules
     size: 1

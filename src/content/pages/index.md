@@ -1,9 +1,9 @@
 ---
 layout: pages/home.njk
 bodyClass: home
-pageTitle: Brandmaker Dev Portal
+pageTitle: Uptempo Dev Portal
 claim: Discover Our <a href="api">APIs</a> to Unleash Your Marketing Superpowers!
-subclaim: A farewell to isolated solutions – Leveraging APIs, you can quickly and flexibly integrate the BrandMaker solution into your marketing and technology stack. This way, functionalities are easily configurable according to your needs.
+subclaim: Transform your Tech Ecosystem with Uptempo Work Management 8.0 – Say goodbye to standalone tools! With our robust RESTful APIs, programmers and technical professionals can rapidly weave Uptempo modules into your existing marketing and technology frameworks. Tailor functionalities with unparalleled ease to fine-tune your workflow precisely to your specifications.
 ctaLink: /api
 ctaLinkText: Discover Our APIs
 permalink: "/"

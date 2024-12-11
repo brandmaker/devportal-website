@@ -1,93 +1,93 @@
-.mainnav 
-    &__list
-        list-style none
-        align-items center
-        height 75px
-        margin 0
-        padding 0
-        &__main
-            display flex
-            list-style none
-            align-items center
-            height 75px
-            margin 0
-            padding 0
-        &item 
-            margin 0
-            position relative
-            display block
-            height 100%
-            display flex
-            align-items center
-            &:hover
-                background rgba(255,255,255,.1)
-            &link 
-                padding 0 3.5rem
-                color white
-                font-size 1.125rem
-                text-decoration none
-                display block
-                height: 75px
-                line-height: 75px
-                //text-align: center;
-                &:before
-                    display: block;
-                    content: attr(title);
-                    font-weight: bold
-                    height: 0;
-                    overflow: hidden;
-                    visibility: hidden;
+.mainnav  // Main navigation container
+    &__list // List of navigation items
+	
+        list-style none // Remove default list styles
+        align-items center // Center align items vertically
+        height 75px // Set height of the navigation bar
+        margin 0 // Remove default margins
+        padding 0 // Remove default padding
+        &__main // Main navigation list
+            display flex // Use flexbox for layout
+            list-style none // Remove default list styles
+            align-items center // Center align items vertically
+            height 75px // Set height of the navigation bar
+            margin 0 // Remove default margins
+            padding 0 // Remove default padding
+        &item  // Individual navigation item
+            margin 0 // Remove default margins
+            position relative // Needed for positioning sub-menus
+            display block // Display as a block element
+            height 100% // Take full height of the parent
+            display flex // Use flexbox for layout
+            align-items center // Center align items vertically
+            &:hover // Hover state of navigation item
+                background rgba(255,255,255,.1) // Add a semi-transparent white background on hover
+            &link  // Link within the navigation item
+                padding 0 3.5rem // Add horizontal padding
+                color white // Set text color to white
+                font-size 1.125rem // Set font size
+                text-decoration none // Remove underline
+                display block // Display as a block element
+                height: 75px // Set height of the link
+                line-height: 75px // Set line height for vertical centering
+                &:before // Pseudo-element before the link
+                    display: block; // Display as a block element
+                    content: attr(title); // Set content to the 'title' attribute of the link
+                    font-weight: bold // Make the content bold
+                    height: 0; // Set height to 0
+                    overflow: hidden; // Hide overflowing content
+                    visibility: hidden; // Hide the content initially
         
-            // Sub
-            ul
-                visibility hidden
-                padding 0
-                position absolute
-                right: 0
-                top: 75px
-                width 250%
-                text-align left
-                opacity 0
-                transition opacity 0.3s ease-out
-                background white
-                box-shadow 0 0 30px rgba(0,0,0,.5)
-                height auto
-                .mainnav__listitem
-                    display block
-                    background white
-                    height: auto
-                    position: relative
-                    &link
-                        color $grey500
-                        padding 1rem 2rem 1rem
-                        line-height 1
-                        display block
-                        font-weight 400
-                        transition all .3s ease-out
-                        border-left 0px solid transparent
-                        height: 100%
-                        line-height: 100%
-                        &:hover
-                            border-left 5px solid $orange
-                            color $grey900
-                        &title
-                            font-weight 700
-                            font-size: 1.125rem
+            // Sub-menu styles
+            ul // Sub-menu list
+                visibility hidden // Initially hide the sub-menu
+                padding 0 // Remove default padding
+                position absolute // Position absolutely within the parent
+                right: 0 // Align to the right
+                top: 75px // Position below the main navigation bar
+                width 250% // Set width of the sub-menu
+                text-align left // Align text to the left
+                opacity 0 // Initially set opacity to 0 (invisible)
+                transition opacity 0.3s ease-out // Add a transition effect for opacity
+                background white // Set background color to white
+                box-shadow 0 0 30px rgba(0,0,0,.5) // Add a box shadow
+                height auto // Set height to auto (adjust based on content)
+                .mainnav__listitem // Sub-menu navigation item
+                    display block // Display as a block element
+                    background white // Set background color to white
+                    height: auto // Set height to auto (adjust based on content)
+                    position: relative // Position relatively
+                    &link // Link within the sub-menu item
+                        color $grey500 // Set text color to a grey variable
+                        padding 1rem 2rem 1rem // Add padding
+                        line-height 1 // Set line height
+                        display block // Display as a block element
+                        font-weight 400 // Set font weight
+                        transition all .3s ease-out // Add a transition effect for all properties
+                        border-left 0px solid transparent // Initially set a transparent left border
+                        height: 100% // Take full height of the parent
+                        line-height: 75px // Set line height for vertical centering
+                        &:hover // Hover state of the sub-maenu link
+                            border-left 5px solid $mindaro // Add a solid left border with a variable color
+                            color $grey900 // Change text color to a darker grey variable
+                        &title // Title of the sub-menu link
+                            font-weight 700 // Set font weight to bold
+                            font-size: 1.125rem // Set font size
 
-                            &--sub
-                                font-weight: 400;
-                                color: rgb(147, 152, 155);
-                                font-size: .875rem;
-                                line-height: 1.4;
-                                display: inline-block;
-                                margin-top: 3px;
-                                display block
-            &:hover
-                z-index 15
-                > .mainnav__listitemlink
-                    color $orange
-                    z-index 10
-                    position: relative
-                ul
-                    visibility visible
-                    opacity 1
+                            &--sub // Additional sub-text of the title
+                                font-weight: 400; // Set font weight to normal
+                                color: rgb(147, 152, 155); // Set text color to a specific grey color
+                                font-size: .875rem; // Set font size
+                                line-height: 1.4; // Set line height
+                                display: inline-block; // Display as an inline-block element
+                                margin-top: 3px; // Add top margin
+                                display block // Display as a block element
+            &:hover // Hover state of the main navigation item
+                z-index 15 // Increase z-index to bring the item to the front
+                > .mainnav__listitemlink // Direct child link of the navigation item
+                    color $mindaro // Change text color to a variable color
+                    z-index 10 // Increase z-index to bring the link to the front
+                    position: relative // Position relatively
+                ul // Sub-menu list
+                    visibility visible // Make the sub-menu visible
+                    opacity 1 // Set opacity to 1 (fully visible)

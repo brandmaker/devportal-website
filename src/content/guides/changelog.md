@@ -16,15 +16,15 @@ title: "API Changelog"
 ---
 
 <br>
-This changelog provides a detailed record of all the changes we've made to our API since the previous version 7.4 to version 7.5, including new features, modifications, and deprecations, so that it can help you adapt your implementations to be compatible with our latest updates.
+This changelog provides a detailed record of all the changes we've made to our API since the previous version 7.4 to version 8.0, including new features, modifications, and deprecations, so that it can help you adapt your implementations to be compatible with our latest updates.
 
 ## Job Manager
 
-The most substantial change in version 7.5 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!
+The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!
 
 > Please note:
 >
-> In some operations the old IDs have already been replaced by UUIDs, and can no longer be used!
+> In some operations the old IDs have been replaced by UUIDs, and can no longer be used!
 
 ### Breaking (3)
 Removing a resource is always breaking unless it was deprecated before.

@@ -19,6 +19,7 @@
                                     <h1 class="teaser__title">{{ claim | safe }}</h3>
                                     <div class="teaser__contenttext">
                                         {{ subclaim }}
+                                        {{ subclaim | replace("Note ", "Note: ") | safe }}
                                     </div>
                                 </div>
                                 <div class="teaser__icon">

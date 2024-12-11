@@ -1,6 +1,6 @@
 ---
 layout: pages/fuxApiVersion.njk
-pageTitle: Brandmaker Dev Portal
+pageTitle: Uptempo Dev Portal
 pagination:
     data: collections.pageSlotApiVersions
     size: 1

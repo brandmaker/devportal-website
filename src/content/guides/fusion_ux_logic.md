@@ -2,7 +2,7 @@
 layout: pages/fuxGuide.njk
 pageTitle: Fusion UX Logic Guide
 description: Integrate custom components into your system.
-teaserText: "With Fusion UX Logic, clients can now integrate custom UI components into predefined places in their BrandMaker system."
+teaserText: "With Fusion UX Logic, clients can now integrate custom UI components into predefined places in their system."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
@@ -15,7 +15,7 @@ bodyClass: "guide"
 title: "Fusion UX Logic Guide"
 ---
 
-With Fusion UX Logic, clients can now integrate **custom UI components** into [**predefined places**](#page-slots) in their BrandMaker system. 
+With Fusion UX Logic, clients can now integrate **custom UI components** into [**predefined places**](#page-slots) in their Uptempo system. 
 Possible functionalities easy to implement with custom components are:
 - Pulling additional information from 3rd party applications and displaying them
   - Showing that Fusion UX Apps can execute lookups, e.g. in external databases
@@ -26,7 +26,7 @@ Possible functionalities easy to implement with custom components are:
 
  
 [Web Components](#web-component-basics) serve as the technical foundation. Besides the initial component, a Fusion UX App also consists of a set of configuration values collected in a [Manifest file](#manifest-file). \
-Fusion UX Apps are both registered and managed in the [administration](#structure-of-the-administration) of the BrandMaker system.
+Fusion UX Apps are both registered and managed in the [administration](#structure-of-the-administration) of the Uptemp osystem.
 
 ## Structure of the administration
 Within the administration module, custom components are managed under 'Fusion/UX Logic'. There they can be registered, installed, and adapted. 
@@ -39,7 +39,7 @@ The **scripts** for the Fusion UX Apps are managed in the section 'Management'. 
  ![](/assets/guides/fusion-ux-logic/admin_overview.png)
 
 (a): To register a new Fusion UX App, click on 'CREATE NEW COMPONENT'. In the opened dialog, upload the corresponding [ZIP file](#structure-of-zip-file) containing the source files. \
-The BrandMaker system examines the uploaded files to ensure integrity and security. If the validation passes, a unique ID and URL will be created. By fetching the component through this URL, the system can then integrate the Fusion UX App.
+The Uptempo system examines the uploaded files to ensure integrity and security. If the validation passes, a unique ID and URL will be created. By fetching the component through this URL, the system can then integrate the Fusion UX App.
 
 ![](/assets/guides/fusion-ux-logic/admin_upload_new_component.png)
 
@@ -48,12 +48,12 @@ The BrandMaker system examines the uploaded files to ensure integrity and securi
 ![](/assets/guides/fusion-ux-logic/hello_world_detail_page.png)
 
 ### (2) Usage
-In this section, the actual usage, meaning the integration into the BrandMaker system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component is rendered. \
+In this section, the actual usage, meaning the integration into the Uptempo system, is defined and managed. This definition includes where (**placement**) and how (**configuration**) the component is rendered. \
 Module, page, and a predefined slot within the module define the placement. Important to notice, one place can only have one associated usage at a time.
 
 ![](/assets/guides/fusion-ux-logic/usage_overview.png)
 
-(a): To add a new placement-configuration combination, click on 'CREATE USAGE'. In the opened dialog, choose a registered component (can be both predefined by BrandMaker or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. \
+(a): To add a new placement-configuration combination, click on 'CREATE USAGE'. In the opened dialog, choose a registered component (can be both predefined by Uptempo or own custom component) and select the module, page, and one of the predefined slots later displaying the Fusion UX App. \
 Configure the attributes of the chosen component by setting a default value or assigning them to a slot attribute provided by the selected slot.
 
 ![](/assets/guides/fusion-ux-logic/hello_world_usage_form.png)

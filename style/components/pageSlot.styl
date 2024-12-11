@@ -1,65 +1,80 @@
-.nav_pageSlots 
-    font-size: 1.25rem;
-    padding: 0 2rem 1rem;
-    max-height: calc(100vh - 80px);
-    overflow: auto;
+.nav_pageSlots {
+    font-size: 1.25rem; // Increasing the font size for the entire section
+    padding: 0 2rem 1rem; // Adding padding around the section
+    max-height: calc(100vh - 80px); // Setting a maximum height for the section based on the viewport height
+    overflow: auto; // Adding a scrollbar if the content exceeds the maximum height
 
-    &__header
-        font-size: 1rem !important;
-        text-transform: uppercase;
-        margin: 2rem 0 1rem;
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-        padding-bottom: 0.5rem;
-        scroll-margin-top: 75px;
-        line-height: 1.2;
+    &__header {
+        font-size: 1rem !important; // Overriding the font size for the header
+        text-transform: uppercase; // Making the header text uppercase
+        margin: 2rem 0 1rem; // Adding margin around the header
+        border-bottom: 1px solid rgba(255,255,255,0.15); // Adding a bottom border to the header
+        padding-bottom: 0.5rem; // Adding padding below the header
+        scroll-margin-top: 75px; // Setting the scroll margin top for the header
+        line-height: 1.2; // Adjusting the line height for the header
+    }
 
-    &__list
-        margin: 0.5rem 0 0.75rem;
-        padding: 0 0 0 0.5rem;
+    &__list {
+        margin: 0.5rem 0 0.75rem; // Adding margin around the list
+        padding: 0 0 0 0.5rem; // Adding padding to the left of the list
 
-        &_elem
-            &_header
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding-left: 0.5rem;
-                &_inner
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: right;
-                    overflow: auto;
-                    font-size: medium !important;
-                    width: fit-content !important;
-                    min-width: fit-content !important;
-                    select
-                        padding-left: 1.5rem;
-                        background-position: left 0.2em top 55%;
-                    label
-                        padding-right: 0.5rem;
+        &_elem {
+            &_header {
+                display: flex; // Making the header a flex container
+                flex-direction: row; // Arranging the flex items in a row
+                align-items: center; // Vertically centering the flex items
+                justify-content: space-between; // Distributing the flex items along the main axis
+                padding-left: 0.5rem; // Adding padding to the left of the header
 
-            &_body
-                padding-left: 0.5rem;
-                margin-left: 0.75rem;
-                border-left: thin solid #25294a;
-                &_section
-                    display: flex;
-                    flex-direction: column;
-                    //transition: all 0.1s linear;
+                &_inner {
+                    display: flex; // Making the inner header a flex container
+                    flex-direction: row; // Arranging the flex items in a row
+                    align-items: center; // Vertically centering the flex items
+                    justify-content: right; // Aligning the flex items to the right
+                    overflow: auto; // Adding a scrollbar if the content exceeds the container
+                    font-size: medium !important; // Setting the font size to medium
+                    width: fit-content !important; // Making the width fit the content
+                    min-width: fit-content !important; // Setting the minimum width to fit the content
 
+                    select {
+                        padding-left: 1.5rem; // Adding padding to the left of the select element
+                        background-position: left 0.2em top 55%; // Adjusting the background position of the select element
+                    }
 
-    &__select
-        padding-right: 0 !important;
-        width: fit-content !important;
-        &_optgroup
-            background-color: #104;
-            font-size: 1.125rem;
-            font-weight: 150;
-        &__option
-            background: #104;
-            font-family: "Calibri", sans-serif;
-            font-size: 1rem;
+                    label {
+                        padding-right: 0.5rem; // Adding padding to the right of the label
+                    }
+                }
+            }
 
+            &_body {
+                padding-left: 0.5rem; // Adding padding to the left of the body
+                margin-left: 0.75rem; // Adding margin to the left of the body
+                border-left: thin solid #6126EF; // Changing the left border color of the body
 
-            
+                &_section {
+                    display: flex; // Making the section a flex container
+                    flex-direction: column; // Arranging the flex items in a column
+                    //transition: all 0.1s linear; // Commenting out a transition property
+                }
+            }
+        }
+    }
+
+    &__select {
+        padding-right: 0 !important; // Removing padding from the right of the select element
+        width: fit-content !important; // Making the width fit the content
+
+        &_optgroup {
+            background-color: #210532; // Changing the background color for the option group
+            font-size: 1.125rem; // Increasing the font size for the option group
+            font-weight: 150; // Setting the font weight for the option group
+        }
+
+        &__option {
+            background: #210532; // Changing the background color for the option
+            font-family: "Calibri", sans-serif; // Setting the font family for the option
+            font-size: 1rem; // Setting the font size for the option
+        }
+    }
+}

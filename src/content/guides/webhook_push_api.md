@@ -17,7 +17,7 @@ title: "Media Pool Webhook Push API"
 
 ##  Introduction and Objectives
 
-The BrandMaker Media Pool is increasingly used by its users as a central repository for all types of assets that are also to be used outside the company. The Media Pool is intended to assume the role of a central application that controls the distribution of assets. It is therefore necessary for the Media Pool to provide powerful APIs that enable users to synchronize and keep stored content and third-party applications up to date.
+The Uptempo Media Pool is increasingly used by its users as a central repository for all types of assets that are also to be used outside the company. The Media Pool is intended to assume the role of a central application that controls the distribution of assets. It is therefore necessary for the Media Pool to provide powerful APIs that enable users to synchronize and keep stored content and third-party applications up to date.
 
 ####   Task Definition
 
@@ -29,7 +29,7 @@ New and described in this document are the so-called Webhooks, which can inform 
 
 A very comprehensive description of how Webhooks work can be found at [https://requestbin.com/blog/working-with-webhooks/](https://requestbin.com/blog/working-with-webhooks/) and [https://en.wikipedia.org/wiki/Webhook](https://en.wikipedia.org/wiki/Webhook).
 
-For this purpose, the third-party applications should register at the Media Pool. This registration consists of storing a URL (Webhook) that is called by the BrandMaker system as soon as relevant changes have been made to the asset.
+For this purpose, the third-party applications should register at the Media Pool. This registration consists of storing a URL (Webhook) that is called by the Uptempo system as soon as relevant changes have been made to the asset.
 
 All actions performed on an asset by users generate an event. When registering the webhook, the administrator can select one or more of these events. Please note the flow chart Figure 1 - Functional overall structure in chapter 2.
 
@@ -39,7 +39,7 @@ It is assumed that the reader or developer on the customer side is familiar with
 
 Listed example listings are exemplary created in JAVA, but there is no constraint and no preference for any programming language.
 
-Furthermore, knowledge of the application and configuration of the BrandMaker Media Pool is required. The developer needs administrator access to the Media Pool to be able to make the necessary settings.
+Furthermore, knowledge of the application and configuration of the Uptempo Media Pool is required. The developer needs administrator access to the Media Pool to be able to make the necessary settings.
 
 In order to retrieve and save data from the Media Pool automatically using a third-party system (e.g. CMS), knowledge of the corresponding development environments and APIs of the third-party system is required. This knowledge is also not covered in this documentation. The third-party system is always represented as a black box in this context.
 
@@ -89,7 +89,7 @@ _Figure 1 - Functional overall structure_
 
 | Name | Description |
 | --- | --- |
-| Media Pool | BrandMaker Media Pool Instance |
+| Media Pool | Uptempo Media Pool Instance |
 | Third party application | The third-party application that is to receive the released, published assets from the Media Pool |
 | Media Pool REST API | API to retrieve data from the Media Pool |
 | Webhook-Consumer | The REST endpoint to create within the third-party application that receives the notifications |
@@ -126,7 +126,7 @@ Please note that the data of an asset is not transmitted to the Webhook (content
 
 The data transmitted in the webhook is sent to the REST endpoint of the consumer in JSON notation using the POST method.
 
-The Media pool assumes that no authentication takes place in the webhook. To ensure that the request was sent by the correct instance, the data is signed with the private key of the BrandMaker system and can be verified using the public key of the BrandMaker system. The public key can be requested via an API of the BrandMaker system, please refer to the administration manual of the BrandMaker system. Since the source URL is also contained in the signed data, a positive validation of the signature verifies the source system.
+The Media pool assumes that no authentication takes place in the webhook. To ensure that the request was sent by the correct instance, the data is signed with the private key of the Uptempo system and can be verified using the public key of the Uptempo system. The public key can be requested via an API of the Uptempo system, please refer to the administration manual of the Uptempo system. Since the source URL is also contained in the signed data, a positive validation of the signature verifies the source system.
 
 ####   List of Events Showing Changes in the Categories
 
@@ -139,7 +139,7 @@ General category changes also affect the metadata of an asset. However, since no
 
 ####   Webhook Consumer
 
-To process the data sent by the Media Pool via webhook, the third-party application must provide a REST endpoint whose URL the user must register and activate in the BrandMaker system.
+To process the data sent by the Media Pool via webhook, the third-party application must provide a REST endpoint whose URL the user must register and activate in the Uptempo system.
 
 Depending on the event that has occurred, different data objects are sent that contain the necessary information for further processing of the event.
 
@@ -149,9 +149,9 @@ Depending on the event that has occurred, different data objects are sent that c
 
 The URL of the REST endpoint is called by the Media Pool immediately after the corresponding transaction within the Media Pool is completed. Depending on the system load and the number of events that arrive and are to be transferred, this can take a few seconds.
 
-If an error occurs at the REST end point of the consumer, the Media Pool attempts to resend the event. The repetition rate can be adjusted by the BrandMaker support, please contact the BrandMaker support if necessary. You specify the time interval between two attempts when you register the webhook in Administration.
+If an error occurs at the REST end point of the consumer, the Media Pool attempts to resend the event. The repetition rate can be adjusted by Uptempo support, please contact support if necessary. You specify the time interval between two attempts when you register the webhook in Administration.
 
-If all retries fail, the Webhook is locked and no further notifications are sent. In this case, manual intervention is necessary. This is indicated via the status display of the webhook in the BrandMaker system under _\&gt; Administration \> Media Pool \> Webhooks_.
+If all retries fail, the Webhook is locked and no further notifications are sent. In this case, manual intervention is necessary. This is indicated via the status display of the webhook in the Uptempo system under _\&gt; Administration \> Media Pool \> Webhooks_.
 
 > **Note**
 >
@@ -238,9 +238,9 @@ _Figure 2 - Principle sketch webhook consumer_
 
 To retrieve the effective data of an asset from the Media Pool, the Media Pool provides a comprehensive REST API.
 
-All API endpoints require authentication. This is currently done as Basic Authentication. BrandMaker recommends setting up access to the APIs of a non-personal, technical user whose password is always valid.
+All API endpoints require authentication. This is currently done as Basic Authentication. Uptempo recommends setting up access to the APIs of a non-personal, technical user whose password is always valid.
 
-Please note that in one of the next versions of BrandMaker, the authentication of the APIs will be changed centrally to the oAuth2 standard in connection with the BrandMaker Fusion feature set.
+Please note that in one of the next versions of BrandMaker, the authentication of the APIs will be changed centrally to the oAuth2 standard in connection with the Uptempo Fusion feature set.
 
 The following REST APIs are of interest in connection with this document:
 
@@ -252,7 +252,7 @@ The following REST APIs are of interest in connection with this document:
 | FileResourceRestService | Provides detailed information about an asset&#39;s stored file format. |
 | AssetResourceVersionRestService | Detailed information about the versioning of an asset. The resource _FileGenerationTaskRestService_ expects information about the version of the asset to be delivered, which can be determined here. |
 
-Detailed information on the individual resources of the REST API as well as further endpoints can be found within the BrandMaker system under _\&gt; Administration \> System Information \> API Descriptions_.
+Detailed information on the individual resources of the REST API as well as further endpoints can be found within the Uptempo system under _\&gt; Administration \> System Information \> API Descriptions_.
 
 ##  Test of Consumer
 
@@ -284,8 +284,8 @@ Im Folgenden werden einige mögliche Symptome und deren mögliche Ursachen als H
 
 **The request is not received on the target system.**
 
-- The Webhook contains an invalid or incorrect URL. ***Solution***: If necessary, correct the URL entered in the BrandMaker system under _\&gt; Administration \> Media Pool \> Webhooks_ for this webhook.
-- The BrandMaker system cannot reach the third-party application with the webhook. ***Solution***: Make sure that the third-party application with the webhook is accessible via the Internet. If necessary, check the DNS resolution and the routing.
+- The Webhook contains an invalid or incorrect URL. ***Solution***: If necessary, correct the URL entered in the Uptempo system under _\&gt; Administration \> Media Pool \> Webhooks_ for this webhook.
+- The Uptempo system cannot reach the third-party application with the webhook. ***Solution***: Make sure that the third-party application with the webhook is accessible via the Internet. If necessary, check the DNS resolution and the routing.
 
 **The request is received, but returns an http status unequal 20x.**
 - The format of the data does not correspond to the format expected by the Webhook or there is a fundamental implementation error. ***Solution***: Check and correct your implementation if necessary.
@@ -307,9 +307,9 @@ Im Folgenden werden einige mögliche Symptome und deren mögliche Ursachen als H
 **An asset is automatically reported as DEPUBLISHED before its expiration date and without user interaction.**
 - The asset has been moved to the VDB recycle bin. In this case the publication of the asset will be automatically stopped from version 6.6 on.
 **The webhook consumer cannot access the Media Pool API.**
-- No physical connection can be established. ***Solution***: Check the network connections of your server and the BrandMaker system.
+- No physical connection can be established. ***Solution***: Check the network connections of your server and the Uptempo system.
 **The Media Pool API returns an HTTP status 40x.**
-- The technical user with which the API authenticates itself to the BrandMaker system is invalid or does not have sufficient rights. ***Solution***: Check the user account of the technical user under \> Administration \> Users &amp; Groups \> Users.
+- The technical user with which the API authenticates itself to the Uptempo or BrandMaker system is invalid or does not have sufficient rights. ***Solution***: Check the user account of the technical user under \> Administration \> Users &amp; Groups \> Users.
 - Information about the requested resource (asset, rendering scheme, file information, ...) is not available. ***Solution***: Please refer to the corresponding API documentation.
 
 
@@ -328,8 +328,8 @@ Below is an example implementation of a REST endpoint based on Java 8, Apache Sl
  * <p>This service is not doing anything else than making formal checks on the request and then queue the request to the importer queue!
  * <p>As this API does not require any login, it is crucial to validate the request signature!
  *
- * @author axel.amthor@brandmaker.com
- * @copyright BrandMaker GmbH, Karlsruhe, 2019
+ * @author john.doe@brandmaker.com
+ * @copyright Brandmaker GmbH, Karlsruhe, 2019
  */
 @Service(value={MediaPoolWebHook.class}) // service on interface in order to hide class specific implementations!
 @Component(
