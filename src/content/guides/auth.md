@@ -1,8 +1,8 @@
 ---
 layout: pages/guide.njk
 pageTitle: Authentification
-description: How to Authenticate 3rd Party Applications to your BrandMaker Instance
-teaserText: "To authenticate a 3rd party application for use against your BrandMaker instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the the standardized OAuth2 Web Flow."
+description: How to Authenticate 3rd Party Applications to your Uptempo Instance
+teaserText: "To authenticate a 3rd party application for use against your Uptempo instance and accessing the APIs of the Uptempo Modules, you need an OAuth2 access token and a refresh token. Uptempo provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the the standardized OAuth2 Web Flow."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
@@ -17,21 +17,21 @@ title: "Authentication"
 Prerequisits
 =============
 
-In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [OAuth2 Web Flow](https://oauth.net/2/). CAS only supports the Grant-Type [Authorization Code](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow).
+In order to authenticate a 3rd party application against your Uptempo Instance and accessing the APIs of the Uptempo Modules, you need an OAuth2 access token and a refresh token. Uptempo provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [OAuth2 Web Flow](https://oauth.net/2/). CAS only supports the Grant-Type [Authorization Code](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow).
 
 ### Required steps
 The following steps need to be done in order to register your app and
 authenticate and authorize an application user:
 
-1.  Make sure, your BrandMaker Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our [Support Team](https://www.brandmaker.com/contact/support-ticket/)
-2.  [Register your App](#register-your-app) through the administration in your BrandMaker Instance
+1.  Make sure, your Uptempo Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our [Support Team](https://www.brandmaker.com/contact/support-ticket/)
+2.  [Register your App](#register-your-app) through the administration in your Uptempo Instance
 3.  [Initiate the OAuth2](#initiate-the-oauth2) flow to authenticate a user for your application
 4.  Store your client ID and Client Secret provided in step 2 in a safe place, we are not able to recover the secret at any later time!
 5.  Store the access token and refresh token provided in step 3 along with your app
-6.  [Use the tokens](#authenticate-against-the-brandmaker-apis) in order to access any of the BrandMaker APIs
+6.  [Use the tokens](#authenticate-against-the-brandmaker-apis) in order to access any of the Uptempo APIs
 7.  Check the expiration time of your access token and [retrieve a new one with the refresh token](#request-a-new-access-token-with-the-refresh-token) once it is close to expire
 
-All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your BrandMaker Instance.
+All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your Uptempo Instance.
 
 ## Register your App
 
@@ -40,7 +40,7 @@ All necessary end-point URLs for the flow will be provided in step 2 above. This
 In order to connect your application via OAuth2 you will need a client
 ID and a client secret. You get access to these the following way:
 
-1.  Log in to your BrandMaker system.
+1.  Log in to your Uptempo or legacy BrandMaker system.
 2.  Navigate to your Administration space
 3.  Depending on the version, navigate (on the left) to Registered Apps:
     - for version ≥ 6.8: *System Configuration* =\> Registered Apps
@@ -103,19 +103,19 @@ curl -d "code=oauth2_authorization_code&\
     redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug%0D%0A" -X POST "https://cas.brandmaker.com/api/v1.1/token"
 ```
 
-Now that your application has acquired its access token and refresh token, it can now make requests to the BrandMaker APIs. In order to access such a BrandMaker resource you need to include your access token in each request in the header "authorization". The token must be prefixed with the keyword "bearer " (with whitespace). For more information regarding bearer tokens you can visit the following [site](https://tools.ietf.org/html/rfc6750).
+Now that your application has acquired its access token and refresh token, it can now make requests to the Uptempo APIs. In order to access such a Uptempo resource you need to include your access token in each request in the header "authorization". The token must be prefixed with the keyword "bearer " (with whitespace). For more information regarding bearer tokens you can visit the following [site](https://tools.ietf.org/html/rfc6750).
 
 ### Flow Overview
 
  ![](/assets/guides/auth/flowoverview.png)
 
-## Authenticate against the BrandMaker APIs
+## Authenticate against the Uptempo APIs
 
-In order to authenticate your application against any BrandMaker API, use the given authentication token from step 3 above.
+In order to authenticate your application against any Uptempo API, use the given authentication token from step 3 above.
 
 The token must be put into an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) in the according request:
 
-**Authorization Header in Request to BrandMaker API**
+**Authorization Header in Request to Uptempo API**
 ``` xquery
 Authorization: Bearer 98w7n98wvetr98vern9t87vq9tz ... c9n4837590nv8eorfpocrw74n87c
 ```

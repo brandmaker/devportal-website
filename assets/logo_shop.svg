@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 99.2 99.2" style="enable-background:new 0 0 99.2 99.2;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#XMLID_00000125596533639819580530000012054211534829612683_);}
+	.st0{fill:url(#XMLID_00000078729777060644667710000009108093168348498323_);}
 </style>
-<g id="Ebene_1">
+<g id="Ebene_1_00000132078752567885587910000002680701534603635107_">
 	
-		<radialGradient id="XMLID_00000047738851564975729350000006640722494013793470_" cx="49.6148" cy="48.95" r="48.0102" gradientUnits="userSpaceOnUse">
-		<stop  offset="0" style="stop-color:#FB9F27"/>
-		<stop  offset="1" style="stop-color:#F95900"/>
+		<radialGradient id="XMLID_00000101061551273291541670000010515658610564619673_" cx="49.6148" cy="53.05" r="48.0102" gradientTransform="matrix(1 0 0 -1 0 102)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#CCFF66"/>
+		<stop  offset="1" style="stop-color:#66CC99"/>
 	</radialGradient>
-	<path id="XMLID_47_" style="fill:url(#XMLID_00000047738851564975729350000006640722494013793470_);" d="M37.5,44.1l23.6,19
+	<path id="XMLID_47_" style="fill:url(#XMLID_00000101061551273291541670000010515658610564619673_);" d="M37.5,44.1l23.6,19
 		c1,0.8,2.5,0.7,3.3-0.4l20.2-25c0.8-1,0.7-2.5-0.4-3.3L73.8,26v-9.7l16.4-6v12.2c-1.2-0.7-2.8-1.1-4.6-1.1c-3.8,0-6.9,2-6.9,4.5
 		s3.1,4.5,6.9,4.5s6.9-2,6.9-4.5c0-0.2,0-0.5-0.1-0.7V3.7c0-0.6-0.5-1.1-1.1-1.1c-0.2,0-0.3,0.1-0.5,0.1l0,0L72.4,9.4l0,0
 		c-0.4,0.2-0.8,0.6-0.8,1.1v13.9l-11-8.9c-1-0.8-2.5-0.7-3.3,0.3l-20.2,25C36.3,41.8,36.5,43.3,37.5,44.1z M73.8,11.2l16.4-6V8
@@ -40,6 +40,6 @@
 		C0,21.1,1.2,20,2.6,20h8.5c0.8,0,1.6,0.4,2.1,1.1l31.7,45.3h31.2l15-21.4l3.5-5c0.8-1.2,2.4-1.5,3.6-0.6
 		C99.3,40.2,99.6,41.8,98.7,43z"/>
 </g>
-<g id="Ebene_2">
+<g id="Ebene_2_00000160188057021110725380000005114937249635189181_">
 </g>
 </svg>

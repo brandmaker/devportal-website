@@ -1,6 +1,6 @@
 ---
 layout: pages/swagger.njk
-pageTitle: Brandmaker Dev Portal
+pageTitle: UptempoDev Portal
 pagination:
     data: collections.apiVersions
     size: 1

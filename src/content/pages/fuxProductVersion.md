@@ -1,6 +1,6 @@
 ---
 layout: pages/fuxProductVersion.njk
-pageTitle: Brandmaker Dev Portal
+pageTitle: Uptempo Dev Portal
 pagination:
     data: collections.pageSlotProductVersions
     size: 1

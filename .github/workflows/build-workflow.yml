@@ -20,7 +20,7 @@ jobs:
         run: |
           echo developers.brandmaker.com > ./_site/CNAME
       - name: Publish on published-pages
-        uses: peaceiris/actions-gh-pages@v1.1.0
+        uses: peaceiris/actions-gh-pages@v4
         env:
           PUBLISH_DIR: _site 
           PUBLISH_BRANCH: published-pages

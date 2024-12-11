@@ -2,7 +2,7 @@
 layout: pages/guide.njk
 pageTitle: MBI Guide
 description: Manual
-teaserText: "With Release 7.3, BrandMaker provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the BrandMaker system into the customer’s infrastructure."
+teaserText: "With Release 7.3, we delivered the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
@@ -17,11 +17,11 @@ title: "Message Based Integration Service"
 
 ## Introduction
 
-With Release 7.3, BrandMaker provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the BrandMaker system into the customer’s infrastructure.
+With Release 7.3, Uptempo provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure.
 
-The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in BrandMaker send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages. 
+The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages. 
 
-In this way, loose coupling of the BrandMaker system and its modules with third-party applications is possible. Furthermore, the extensive APIs of the BrandMaker system and its modules are available to third-party applications to read or modify further data.
+In this way, loose coupling of the Uptempo system and its modules with third-party applications is possible. Furthermore, the extensive APIs of the Uptempo system and its modules are available to third-party applications to read or modify further data.
 
 ### Terminology
 
@@ -29,12 +29,12 @@ In this way, loose coupling of the BrandMaker system and its modules with third-
 | --- | --- |
 | _Consumer_            | →Subscriber |
 | _Event_               | The → Transaction message sent to the Consumer contains a list “Events” – events that occurred in the system and the associated data (→Payload)                                                                               |
-| _MBI_                 | BrandMaker **M**essage **B**ased **I**ntegration Service, refers to the service as a whole.                                                                                                                                  |
+| _MBI_                 | Uptempo**M**essage **B**ased **I**ntegration Service, refers to the service as a whole.                                                                                                                                  |
 | _Payload_             | User data of the message. The payload is module and event dependent                                                                                                                                                          |
 | _Producer_            | → Publisher                                                                                                                                                                                                                   |
-| _Publisher_           | Sender of a transaction, generally a module of the BrandMaker system such as the Job Manager or the Marketing Planner                                                                                                        |
+| _Publisher_           | Sender of a transaction, generally a module of the Uptempo system such as the Job Manager or the Marketing Planner                                                                                                        |
 | _Subscriber_          | A system registered at the MBI to receive a transaction message                                                                                                                                                              |
-| _Transaction_         | User triggered or also automatic event within the BrandMaker module, e.g. “a new task has been created in the Job Manager”.                                                                                                  |
+| _Transaction_         | User triggered or also automatic event within the Uptempo module, e.g. “a new task has been created in the Job Manager”.                                                                                                  |
 | _Transaction message_ | Information about a transaction (that has taken place) that the MBI sends to registered subscribers or consumers                                                                                                             |
 | _Webhook_             | Generally, a method for asynchronous data integration between individual, delimited software systems. Specifically, the service that provides such a function: a → Consumer registers with a Webhook to receive data from it. |
 
@@ -62,7 +62,7 @@ This manual describes the various aspects of MBI.
 
 - Architecture overview in chapter 3
 
-- Administration of consumer registrations in the BrandMaker system in chapter 4
+- Administration of consumer registrations in the Uptempo system in chapter 4
 
 - Requirements for the consumer API in chapter 2
 
@@ -83,7 +83,7 @@ This manual describes the various aspects of MBI.
 
 ### Administration
 
-The reader must basically be familiar with the administration of the BrandMaker system. This manual describes the specific settings of the consumer registration. You need administrator access to your BrandMaker system to make the necessary settings. 
+The reader must basically be familiar with the administration of the Uptempo system. This manual describes the specific settings of the consumer registration. You need administrator access to your Uptempo system to make the necessary settings. 
 
 Preconditions
 
@@ -91,7 +91,7 @@ Preconditions
 
 2. Search for the element brandmaker.mbi.url
 
-3. Review an existing URL. Otherwise, enter the missing URL in this field. You can get the correct URL from BrandMaker Support.
+3. Review an existing URL. Otherwise, enter the missing URL in this field. You can get the correct URL from Uptempo Support.
 
 ### Consumer Development
 
@@ -99,17 +99,17 @@ We assume that the reader, respectively the developer on the customer side is fa
 
 All given example listings are provided in Java, but there is no constraint and no preference for any programming language.
 
-Furthermore, knowledge of the application and configuration of the BrandMaker system is required. The developer needs administrator access to the BrandMaker system to make the necessary settings.
+Furthermore, knowledge of the application and configuration of the Uptempos ystem is required. The developer needs administrator access to the Uptempo system to make the necessary settings.
 
-In order to automatically retrieve and store data from the BrandMaker system using a third-party system, knowledge of the corresponding development environments and APIs of the third-party system is required. These are also not the subject of this documentation. The third-party system is always presented as a black box in this context.
+In order to automatically retrieve and store data from the Uptempo system using a third-party system, knowledge of the corresponding development environments and APIs of the third-party system is required. These are also not the subject of this documentation. The third-party system is always presented as a black box in this context.
 
 ### Context Delimitation
 
-The interfaces offered are used for near-real-time synchronization of data sets in the BrandMaker system with third-party applications. Other purposes are not supported.
+The interfaces offered are used for near-real-time synchronization of data sets in the Uptempo system with third-party applications. Other purposes are not supported.
 
 ## Architecture Overview
 
-The basic architecture of the BrandMaker MBI is as follows:
+The basic architecture of the MBI is as follows:
 
  ![](/assets/guides/mbi/principle_sketch.png)
 
@@ -123,7 +123,7 @@ The registration of a consumer takes place in the respective customer system in 
 
 ## Administration: Consumer Registration for MBI
 
-Log in to your BrandMaker system as an administrator to make the necessary settings. You can access the registration under > Administration > Fusion > Backbone / MBI:
+Log in to your Uptempo or legacy BrandMaker system as an administrator to make the necessary settings. You can access the registration under > Administration > Fusion > Backbone / MBI:
 
  ![](/assets/guides/mbi/fusion_backbone.png)
  Your screen view should now resemble the one above. Some screen texts may still be subject to change until the release version.
@@ -255,7 +255,7 @@ Please note that this URL must be accessible via the public Internet. In additio
 
 The MBI sends an HTTP POST request to the Consumer with the data described below. It must be able to receive and process this POST request.
 
-A request can contain a number of transactions (see Attribute events in the data structure described below). The maximum number of messages transmitted in a batch is stored in the BrandMaker system administration when the Consumer is registered.
+A request can contain a number of transactions (see Attribute events in the data structure described below). The maximum number of messages transmitted in a batch is stored in the Uptempo system administration when the Consumer is registered.
 
 We recommend implementing only the POST method and rejecting all other HTTP methods with HTTP status 405 ("Method not allowed").
 
@@ -263,19 +263,19 @@ For illustration, the example Consumer can be used, which is published on GitHub
 
 ### Validation of the Request in the Consumer
 
-Since this is asynchronous batch processing, it must be ensured that the request arriving at the Consumer was also sent by the BrandMaker instance and contains unaltered and correct data.
+Since this is asynchronous batch processing, it must be ensured that the request arriving at the Consumer was also sent by the Uptempo instance and contains unaltered and correct data.
 
 For this reason, a signature is sent in the request header, which can be used to validate the authenticity of the request in the Consumer. The request is a signed HTTP message according to <https://tools.ietf.org/id/draft-cavage-http-signatures-07.html>
 
 The signature includes the entire request body, ensuring the integrity of the request as a whole. The validation of the message is then carried out in accordance with the standard described in the above RFC link and is not described further here.
 
-To validate the signature, the public key of the BrandMaker system is required, which can be retrieved via the URL https://<brandmaker system>/rest/so/keys/public or .../public-for-file.
+To validate the signature, the public key of the Uptempo system is required, which can be retrieved via the URL https://<Uptemposystem>/rest/so/keys/public or .../public-for-file.
 
 ---
 
 **Recommendation for practice**
 
-We advise you to query this key once and store it statically in the application (Consumer). The key is generated once by BrandMaker and does not change for existing systems.
+We advise you to query this key once and store it statically in the application (Consumer). The key is generated once by Uptempo and does not change for existing systems.
 We strongly advise against picking up the key in the consumer dynamically via the systemBaseUri. This would allow an attacker to provide both public and private keys with a forged signature and submit spoofed requests this way!
 
 ---
@@ -330,9 +330,9 @@ The basic structure of the message is as follows:
 
 | Field | Type | Meaning |
 | --- | --- | --- |
-| systemBaseUri | String | URL of the requesting BrandMaker system to make a callback against the APIs |
+| systemBaseUri | String | URL of the requesting Uptempo system to make a callback against the APIs |
 | customerId | String | Unique identifier for this customer |
-| systemId | String | Unique identifier for this BrandMaker instance |
+| systemId | String | Unique identifier for this Uptempo instance |
 | events | JSON array | Array of the transactions submitted in this request |
 | module | String | Module used in webhook registration. |
 | operation | String | Operation specified in webhook registration. (Module specific), like i.e. "UPDATE" or "DEPUBLISH" |
@@ -382,7 +382,7 @@ The internal processing queue receives its own Consumer (“listener”), which 
 
 The following aspects must be considered during implementation:
 
-- The MBI may send a series of events in a single POST request. Thus, it is not possible to specifically return the success or failure of processing a single event to the MBI. In principle, it is possible to set the "batch size" to "1" during registration, but this is not recommended, since a high number of transactions will increase the system load both on the BrandMaker system and in the Consumer.
+- The MBI may send a series of events in a single POST request. Thus, it is not possible to specifically return the success or failure of processing a single event to the MBI. In principle, it is possible to set the "batch size" to "1" during registration, but this is not recommended, since a high number of transactions will increase the system load both on the Uptemposystem and in the Consumer.
 
 - Events can be deduplicated in the MBI. A sequence of e.g. "Element Updated" events are thus combined into one event and only the last event is sent. Thus, an event is not always sent for every effective transaction. Deduplication is performed based on the following criteria:
     - They must contain the same transaction category (e.g. "UPDATE")
@@ -405,13 +405,13 @@ The MBI will first attempt to redeliver the messages. If this also fails, the Co
 
 ### Signature Validation
 
-The validation of the signature in the Consumer ensures that the received request is unaltered and was actually sent by the customer's BrandMaker system.
+The validation of the signature in the Consumer ensures that the received request is unaltered and was actually sent by the customer's Uptempo system.
 
 According to <https://tools.ietf.org/id/draft-cavage-http-signatures-07.html>a list of headers is sent for this purpose, the values of which are used to form the message to be signed. For MBI this includes the headers date, method und host. If the Consumer is operated behind a reverse proxy, the host header may not contain the value used for signing, but the IP or the name of the effective server. In this case, make sure that the reverse proxy includes the header x-forwarded-server in the request and use its value in the signature validation. For more information, please refer to the published example on GitHub.
 
 ### Using the Sample-Consumer on GitHub
 
-The sample consumer provided at <https://github.com/brandmaker/MBI-Consumer> can be used by interested developers. It is not subject to any legal restriction (Apache Commons License). BrandMaker does not warrant that the published source code is error-free, nor that it can meet any user's requirements.
+The sample consumer provided at <https://github.com/brandmaker/MBI-Consumer> can be used by interested developers. It is not subject to any legal restriction (Apache Commons License). Uptempo does not warrant that the published source code is error-free, nor that it can meet any user's requirements.
 
 ## Documentation of Available Transactions per Module
 
@@ -444,10 +444,6 @@ The Marketing Planer will be integrated into the MBI in one of the next releases
 
 The Review Manager will be integrated into the MBI in one of the next releases of BrandMaker.
 
-### Resource Manager
-
-Resource Management will be integrated into MBI in one of the next releases of BrandMaker.
-
 ## Security Advice
 
 ### SSL Encryption
@@ -460,12 +456,12 @@ Self-signed certificates are not accepted and lead to a connection error and con
 
 ### Request Validation
 
-All requests against the Consumer are signed by the MBI according to <https://tools.ietf.org/id/draft-cavage-http-signatures-07.html> The creator of the Consumer is responsible for validating requests against the signature and corresponding public key of the BrandMaker system before processing them and discarding invalid requests.
+All requests against the Consumer are signed by the MBI according to <https://tools.ietf.org/id/draft-cavage-http-signatures-07.html> The creator of the Consumer is responsible for validating requests against the signature and corresponding public key of the Uptempo system before processing them and discarding invalid requests.
 
-### Requests to the BrandMaker API
+### Requests to the Uptempo API
 
-An MBI Consumer is not "per se" authorized to send requests to the BrandMaker APIs. Rather, this requires valid authentication to the BrandMaker system. BrandMaker provides the OAuth2-compliant service "BrandMaker CAS" for this purpose.\
+An MBI Consumer is not "per se" authorized to send requests to the Uptempo APIs. Rather, this requires valid authentication to the Uptempo system. Uptempo provides the OAuth2-compliant service "CAS" for this purpose.\
 See: <https://developers.brandmaker.com/guides/auth/>
 
-Please note that all requests to the BrandMaker system APIs are always made in the context of an authenticated and authorized user. Its rights and roles affect the result of each request.
+Please note that all requests to the Uptempo system APIs are always made in the context of an authenticated and authorized user. Its rights and roles affect the result of each request.
 
