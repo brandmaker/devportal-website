@@ -26,11 +26,11 @@ This changelog provides a detailed record of all the changes we've made to our A
 **DELETE**
 - **Endpoint:** /dse/rest/v1.0/jobs/{ordinalNumber}/grids/{variableInstanceId}/rows/_delete &nbsp;&nbsp;<font color="#ff003f">Operation is now deleted!</font>
 
-### Important Change!
+### Note Box
 
-The most substantial change in Job Manager version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now discontinued!
+The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!
 
-> Attention:
+> <font color="#ff003f">Attention!:
 >
 > In some operations the old IDs have been replaced by UUIDs, and can no longer be used!
 
@@ -76,24 +76,20 @@ These changes provide a more robust and secure API while maintaining backward co
   - Returns detailed history of DSE object changes
 - **Endpoint:** /dse/rest/v2/process-types/{technicalName}
   - Enhanced process type retrieval with additional metadata
+- **Endpoint:** /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
+  - Retrieve list of participants for a job
 
-**POST**
-- **Endpoint:** /dse/rest/v2.0/jobs/discussions/{discussionId}/participants/_add
-  - **Request Example:**
-    ```json
-    {
-      "userId": "uuid-string-format",
-      "discussionId": 12345
-    }
-    ```
-- **Endpoint:** /dse/rest/v2/dse-object/{instanceId}/_next-hop
-  - **Request Example:**
-    ```json
-    {
-      "decisionId": 5,
-      "comment": "Approval comment"
-    }
-    ```
+**PATCH**
+- **Endpoint:** /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
+  - Add new participants to a job (without replacing existing ones)
+
+**PUT**
+- **Endpoint:** /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
+  - Add new participants to a job (replacing existing ones)
+
+**DELETE**
+- **Endpoint:** /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants/{userUUID}
+  - Remove a specific participant from a job
 
 ### Added Tags
 
