@@ -30,7 +30,7 @@ This changelog provides a detailed record of all the changes we've made to our A
 
 The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!
 
-> <font color="#ff003f">Attention!:
+> <font color="#ff003f">Attention!</font>
 >
 > In some operations the old IDs have been replaced by UUIDs, and can no longer be used!
 
