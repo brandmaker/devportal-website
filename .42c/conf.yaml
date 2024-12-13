@@ -1,0 +1,3 @@
+apis:
+  api/Administration/8.0/8.0.1.0/administration-api-8.0.1.0.json:
+    alias: uptempo-user-service-api
