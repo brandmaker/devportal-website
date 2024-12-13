@@ -1,6 +1,6 @@
 ---
 layout: pages/swagger.njk
-pageTitle: UptempoDev Portal
+pageTitle: Uptempo Dev Portal
 pagination:
     data: collections.apiVersions
     size: 1
