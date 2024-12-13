@@ -127,850 +127,619 @@
             <header class="hero__header">
                 <h1 class="hero__headline">API Changelog</h1> 
                 <div class="hero__description">
-                    Stay up to date with the latest changes and updates to our REST API
+                    Keep up with the latest changes and updates to our REST API.
                 </div>
             </header>
         </section>
         <main class="guide__mainlayout">
             <aside class="guide__aside">
-                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#job-manager">Job Manager</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-(3)">Breaking (3)</a>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints-(9)">Added Endpoints (9)</a>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#modified-(30)">Modified (30)</a>		</li></ol>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#media-pool">Media Pool</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-(2)">Breaking (2)</a>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints-(24)">Added Endpoints (24)</a>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#modified-(45)">Modified (45)</a>		</li></ol>		</li></ol></nav>
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#job-manager">Job Manager</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(removed-endpoints)">Breaking Changes (Removed Endpoints)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#important-change!">Important Change!</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#user-identification-changes">User Identification Changes</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#updated-dtos">Updated DTOs</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#migration-notes">Migration Notes</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#security-improvements">Security Improvements</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints">Added Endpoints</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-tags">Added Tags</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#changed-endpoints">Changed Endpoints</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#marketing-planner">Marketing Planner</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(deprecated-endpoints)">Breaking Changes (Deprecated Endpoints)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints-2">Added Endpoints</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-tags-2">Added Tags</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#changed-endpoints-2">Changed Endpoints</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#media-pool">Media Pool</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(removed-endpoints)-2">Breaking Changes (Removed Endpoints)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints-3">Added Endpoints</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#changed-endpoints-3">Changed Endpoints</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes">Breaking Changes</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#security-role-changes">Security Role Changes</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#important-changes!">Important Changes!</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#security-scheme-update">Security Scheme Update</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#documentation-enhancements">Documentation Enhancements</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#endpoint-enhancements">Endpoint Enhancements</a>		</li></ol>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#review-manager">Review Manager</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-2">Breaking Changes</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#api-component-updates">API Component Updates</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#schema-changes">Schema Changes</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#new-features">New Features</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#review-management">Review Management</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authentication-%26-security">Authentication & Security</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#behavioral-changes">Behavioral Changes</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#review-system">Review System</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#documentation">Documentation</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#technical-improvements">Technical Improvements</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#data-models">Data Models</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#response-handling">Response Handling</a>		</li></ol>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#brand-template-builder">Brand Template Builder</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(updated-endpoints)">Breaking Changes (Updated Endpoints)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#added-endpoints-4">Added Endpoints</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#shop">Shop</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(updated-endpoints)-2">Breaking Changes (Updated Endpoints)</a>		</li></ol>		</li></ol></nav>
             </aside>
             <article class="guide__article">
                 <br>
 This changelog provides a detailed record of all the changes we've made to our API since the previous version 7.4 to version 8.0, including new features, modifications, and deprecations, so that it can help you adapt your implementations to be compatible with our latest updates.
 <h2 id="job-manager">Job Manager</h2>
-<p>The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!</p>
+<h3 id="breaking-changes-(removed-endpoints)">Breaking Changes (Removed Endpoints)</h3>
+<p><strong>DELETE</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/v1.0/jobs/{ordinalNumber}/grids/{variableInstanceId}/rows/_delete   <font color="#ff003f">Operation is now deleted!</font></li>
+</ul>
+<h3 id="important-change!">Important Change!</h3>
+<p>The most substantial change in Job Manager version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now discontinued!</p>
 <blockquote>
-<p>Please note:</p>
+<p>Attention:</p>
 <p>In some operations the old IDs have been replaced by UUIDs, and can no longer be used!</p>
 </blockquote>
-<h3 id="breaking-(3)">Breaking (3)</h3>
-<p>Removing a resource is always breaking unless it was deprecated before.</p>
-<p><strong>GET</strong>  /dse/rest/v1.0/dse-object/{instanceId}/{l10nLocaleId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#ff003f"><em>removed</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#ff003f"><em>removed</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>  /dse/rest/v1.0/jobs/discussions/{discussionId}/comments</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>user → id   <font color="#ff003f"><em>removed</em></font><br>
-user → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>  /dse/rest/v1.0/jobs/{ordinalNumber}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#ff003f"><em>removed</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#ff003f"><em>removed</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<h3 id="added-endpoints-(9)">Added Endpoints (9)</h3>
-<p>Newly added operations now available in Job Manager with version 7.5:</p>
+<h3 id="user-identification-changes">User Identification Changes</h3>
+<p>Our API has undergone a significant modernization in how we handle user identification. We've moved from numeric IDs to UUIDs across the entire API. This change affects multiple endpoints and DTOs:</p>
+<h4 id="updated-dtos">Updated DTOs</h4>
 <ul>
-<li><strong>GET</strong>   /dse/rest/v1.0/dse-object/{instanceId}/{l10nLocaleId}/histories</li>
-<li><strong>GET</strong>   /dse/rest/v1.0/job-manager/filters</li>
-<li><strong>GET</strong>   /dse/rest/v2/process-types/{technicalName}</li>
-<li><strong>GET</strong>   /dse/rest/{version}/assets/{assetId}/discussion-count</li>
-<li><strong>PATCH</strong>   /dse/rest/v1.0/dse-object/{instanceId}</li>
-<li><strong>POST</strong>   /dse/rest/v1.0/dse-object</li>
-<li><strong>POST</strong>   /dse/rest/v1.0/job-manager/types/_search-by-filter</li>
-<li><strong>POST</strong>   /dse/rest/v2.0/jobs/discussions/{discussionId}/participants/_add</li>
-<li><strong>POST</strong>   /dse/rest/v2.0/jobs/discussions/{discussionId}/participants/_delete</li>
+<li>UserDto now includes UUID field</li>
+<li>AssignmentDto uses UUID for user references</li>
+<li>DseUserGroupDto includes UUID-based identification</li>
 </ul>
-<h3 id="modified-(30)">Modified (30)</h3>
-<p><strong>GET</strong>   /dse/rest/v1.0/job-manager/types</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>variables → label   <font color="#5edc1f"><em>added</em></font><br>
-variables → help   <font color="#5edc1f"><em>added</em></font><br>
-color   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/jobs/filters/{filterId}/types   <font color="#fa8432">Operation is now deprecated!</font></p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>types → variables → label   <font color="#5edc1f"><em>added</em></font><br>
-types → variables → help   <font color="#5edc1f"><em>added</em></font><br>
-types → color   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/jobs/{ordinalNumber}/subjobs</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>items → values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-items → values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-items → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-items → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-items → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-items → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/product-manager/types</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>variables → label   <font color="#5edc1f"><em>added</em></font><br>
-variables → help   <font color="#5edc1f"><em>added</em></font><br>
-color   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/product-manager/types-light</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>variables → label   <font color="#5edc1f"><em>added</em></font><br>
-variables → help   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/products/{ordinalNumber}/{localeId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1.0/products/{ordinalNumber}/{localeId}/subproducts</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>items → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-items → creator → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1/job-or-process/{jobOrProcessId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1/process-list/{nextChunkId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → workflowStep → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → workflowStep → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → workflowStep → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → workflowStep → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1/process-types</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>variables → label   <font color="#5edc1f"><em>added</em></font><br>
-variables → help   <font color="#5edc1f"><em>added</em></font><br>
-color   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1/process-types/{dseObjectTypeId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>variables → label   <font color="#5edc1f"><em>added</em></font><br>
-variables → help   <font color="#5edc1f"><em>added</em></font><br>
-color   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /dse/rest/v1/process/{processId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/job-manager/types/_search</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>creatorId   <font color="#fa8432"><em>deprecated</em></font><br>
-creatorUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/_search</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/_search/ids</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/discussions/{discussionId}/comments</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>id   <font color="#fa8432"><em>deprecated</em></font><br>
-uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/{ordinalNumber}/_assign</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>assigneeId   <font color="#fa8432"><em>deprecated</em></font><br>
-userGroupId   <font color="#fa8432"><em>deprecated</em></font><br>
-assigneeUUID   <font color="#5edc1f"><em>added</em></font><br>
-userGroupUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/{ordinalNumber}/_forward</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>assigneeId   <font color="#fa8432"><em>deprecated</em></font><br>
-userGroupId   <font color="#fa8432"><em>deprecated</em></font><br>
-assigneeUUID   <font color="#5edc1f"><em>added</em></font><br>
-userGroupUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/jobs/{ordinalNumber}/_reject</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>assigneeId   <font color="#fa8432"><em>deprecated</em></font><br>
-userGroupId   <font color="#fa8432"><em>deprecated</em></font><br>
-assigneeUUID   <font color="#5edc1f"><em>added</em></font><br>
-userGroupUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/product-manager/types/_search</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/products</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>creatorId   <font color="#fa8432"><em>deprecated</em></font><br>
-creatorUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/products/_search   <font color="#fa8432">Operation is now deprecated!</font></p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1.0/products/_search/ids   <font color="#fa8432">Operation is now deprecated!</font></p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1/job-or-process/{jobOrProcessId}/_approve</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1/process-list</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → workflowStep → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → workflowStep → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → workflowStep → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → workflowStep → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1/process-types/{processTypeId}/process</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>alActivityId   <font color="#5edc1f"><em>added</em></font><br>
-creatorUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>201 response   <font color="#ff003f"><em>removed</em></font><br>
-202 response   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1/product-list</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>values → creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-values → assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-values → assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /dse/rest/v1/product-list/ids</p>
-<blockquote>
-<p>Body</p>
-<blockquote>
-<p>userId   <font color="#fa8432"><em>deprecated</em></font><br>
-userIdUUID   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PUT</strong>   /dse/rest/v1.0/jobs/{ordinalNumber}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>creator → id   <font color="#fa8432"><em>deprecated</em></font><br>
-creator → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → assignees → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → assignees → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → uuid   <font color="#5edc1f"><em>added</em></font><br>
-assignment → group → defaultAssignee → id   <font color="#fa8432"><em>deprecated</em></font><br>
-assignment → group → defaultAssignee → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
+<h4 id="migration-notes">Migration Notes</h4>
+<p>If you're currently using numeric user IDs in your Job Manager implementation, you'll need to:</p>
+<ol>
+<li>Update all user identification references to use UUID format</li>
+<li>Modify any stored procedures or queries that reference user IDs</li>
+<li>Update your authentication handling to support UUID-based tokens</li>
+</ol>
+<p>We recommend testing these changes thoroughly in a staging environment before deploying to production, as this represents a fundamental change in how user identification is handled throughout the API.</p>
+<h3 id="security-improvements">Security Improvements</h3>
+<p>The latest version of Job Manager API includes several security enhancements:</p>
+<ol>
+<li>Enhanced authentication scheme supporting multiple authentication methods</li>
+<li>More granular security role definitions</li>
+<li>Improved handling of sensitive data in responses</li>
+<li>Updated security requirements for participant management endpoints</li>
+</ol>
+<p>These changes provide a more robust and secure API while maintaining backward compatibility where possible.</p>
+<h3 id="added-endpoints">Added Endpoints</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/{version}/assets/{assetId}/discussion-count</li>
+<li><strong>Endpoint:</strong> /dse/rest/{version}/assets/{assetId}/jobs
+<ul>
+<li>Returns paginated list of jobs containing specific assets</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /dse/rest/{version}/assets/{assetId}/products
+<ul>
+<li>Returns paginated list of products containing specific assets</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /dse/rest/v1.0/dse-object/{instanceId}/{l10nLocaleId}/histories
+<ul>
+<li>Returns detailed history of DSE object changes</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /dse/rest/v2/process-types/{technicalName}
+<ul>
+<li>Enhanced process type retrieval with additional metadata</li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/v2.0/jobs/discussions/{discussionId}/participants/_add
+<ul>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"userId"</span><span class="token operator">:</span> <span class="token string">"uuid-string-format"</span><span class="token punctuation">,</span><br>  <span class="token property">"discussionId"</span><span class="token operator">:</span> <span class="token number">12345</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /dse/rest/v2/dse-object/{instanceId}/_next-hop
+<ul>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"decisionId"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>  <span class="token property">"comment"</span><span class="token operator">:</span> <span class="token string">"Approval comment"</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="added-tags">Added Tags</h3>
+<ul>
+<li>DseObjectParticipantRestService</li>
+<li>ProcessMetaDataServiceV2</li>
+<li>DseJobDiscussionRestServiceV2</li>
+</ul>
+<h3 id="changed-endpoints">Changed Endpoints</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li>
+<p><strong>Endpoint:</strong> /dse/rest/v1.0/dashboards/my-active</p>
+<ul>
+<li><strong>Added Query Parameter:</strong> <code>sort</code></li>
+<li><strong>Modified Response:</strong> Enhanced assignment data structure</li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"items"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token punctuation">{</span><br>      <span class="token property">"jobInstanceId"</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span><br>      <span class="token property">"assignment"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"assignees"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>          <span class="token punctuation">{</span><br>            <span class="token property">"uuid"</span><span class="token operator">:</span> <span class="token string">"user-uuid"</span><span class="token punctuation">,</span><br>            <span class="token property">"fullName"</span><span class="token operator">:</span> <span class="token string">"User Name"</span><br>          <span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /dse/rest/v1.0/dse-object/{instanceId}/{l10nLocaleId}</p>
+<ul>
+<li><strong>Added Query Parameter:</strong> <code>includeHistory</code></li>
+<li><strong>Modified Response:</strong> Updated user identification to UUID format</li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/v1.0/jobs/_search
+<ul>
+<li><strong>Added Field:</strong> <code>userIdUUID</code></li>
+<li><strong>Deprecated Field:</strong> <code>userId</code></li>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"userIdUUID"</span><span class="token operator">:</span> <span class="token string">"user-uuid-string"</span><span class="token punctuation">,</span><br>  <span class="token property">"filterId"</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span><br>  <span class="token property">"states"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ACTIVE"</span><span class="token punctuation">,</span> <span class="token string">"PENDING"</span><span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="marketing-planner">Marketing Planner</h2>
+<h3 id="breaking-changes-(deprecated-endpoints)">Breaking Changes (Deprecated Endpoints)</h3>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/group   <font color="#ff003f">Deprecated API</font>
+<ul>
+<li><strong>Added Optional Request Property:</strong> <code>uid</code></li>
+<li><strong>Added Response Property:</strong> <code>uid</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>DELETE</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/group/{id}   <font color="#ff003f">Deprecated API</font></li>
+</ul>
+<p><strong>PUT</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/group/{id}   <font color="#ff003f">Deprecated API</font>
+<ul>
+<li><strong>Added Optional Request Property:</strong> <code>uid</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/node/{nodeId}/copy/{parentId}   <font color="#ff003f">Deprecated API</font>
+<ul>
+<li><strong>Added Optional Request Property:</strong> <code>filteredIds</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/usergroups/all   <font color="#ff003f">Deprecated API</font></li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/usergroups/user/{userId}   <font color="#ff003f">Deprecated API</font></li>
+</ul>
+<p><strong>PUT</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/usergroups/user/{userId}   <font color="#ff003f">Deprecated API</font></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/node-type/icons/download/{typeId}   <font color="#ff003f">Breaking Change</font>
+<ul>
+<li><strong>Changed Response Body Type:</strong> From <code>object</code> to <code>string</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="added-endpoints-2">Added Endpoints</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/dimension/node-allchildren/{nodeId}
+<ul>
+<li>Retrieves all child nodes for a given dimension node.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/fee
+<ul>
+<li><strong>Added Parameter:</strong> <code>query</code></li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"fees"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token punctuation">{</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Service"</span><span class="token punctuation">,</span><br>      <span class="token property">"amount"</span><span class="token operator">:</span> <span class="token number">100</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/group
+<ul>
+<li><strong>Added Property:</strong> <code>uid</code></li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"groups"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token punctuation">{</span><br>      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"group-id"</span><span class="token punctuation">,</span><br>      <span class="token property">"uid"</span><span class="token operator">:</span> <span class="token string">"unique-id"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view/lastused/user/{userId}
+<ul>
+<li><strong>Added Query Parameter:</strong> <code>includes</code></li>
+<li><strong>Added Properties:</strong> <code>accessType</code>, <code>creatorId</code></li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"views"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token punctuation">{</span><br>      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"view-id"</span><span class="token punctuation">,</span><br>      <span class="token property">"accessType"</span><span class="token operator">:</span> <span class="token string">"Public"</span><span class="token punctuation">,</span><br>      <span class="token property">"creatorId"</span><span class="token operator">:</span> <span class="token string">"user-id"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/task/node-allchildren/{nodeId}
+<ul>
+<li>Retrieves all tasks for a specific node including children.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/node/allchildren/{nodeId}
+<ul>
+<li>Retrieves all child nodes for a specific node.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view
+<ul>
+<li>Create a new view in the system.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view/all
+<ul>
+<li>Retrieves all available views.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view/log/download/{viewId}
+<ul>
+<li>Downloads the log for a specific view.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view/{viewId}
+<ul>
+<li>Retrieves the details of a specific view.</li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/view/{viewId}
+<ul>
+<li>Updates details of a specific view.</li>
+</ul>
+</li>
+</ul>
+<h3 id="added-tags-2">Added Tags</h3>
+<ul>
+<li>DimensionNodeService</li>
+<li>GroupService</li>
+<li>ViewService</li>
+</ul>
+<h3 id="changed-endpoints-2">Changed Endpoints</h3>
+<p><strong>PUT</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/dimension/node/{nodeId}
+<ul>
+<li>Updated to support additional metadata for nodes.</li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /maps/rest/api/{version}/node/{nodeId}/copy/{parentId}
+<ul>
+<li><strong>Added Field:</strong> <code>filteredIds</code></li>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"filteredIds"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"id1"</span><span class="token punctuation">,</span> <span class="token string">"id2"</span><span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="media-pool">Media Pool</h2>
-<h3 id="breaking-(2)">Breaking (2)</h3>
-<p>Removing a resource is always breaking unless it was deprecated before.</p>
-<p><strong>GET</strong>   /rest/mp/v1.0/settings   <font color="#ff003f">Operation is now deleted!</font></p>
-<p><strong>GET</strong>   /rest/mp/v1.0/suggest</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>response: 200   <font color="#ff003f"><em>deleted</em></font><br>
-response: 204   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<h3 id="added-endpoints-(24)">Added Endpoints (24)</h3>
-<p>Newly added operations now available in Media Pool with version 7.5:</p>
+<h3 id="breaking-changes-(removed-endpoints)-2">Breaking Changes (Removed Endpoints)</h3>
+<p><strong>GET</strong></p>
 <ul>
-<li><strong>POST</strong>   /rest/mp/v1.0/assets/_delete</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/assets/digital-watermark/{sessionId}</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/assets/import/mass-imports</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/assets/import/mass-imports/assets</li>
-<li><strong>DELETE</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}</li>
-<li><strong>PUT</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}/assets</li>
-<li><strong>POST</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}/assets</li>
-<li><strong>POST</strong>   /rest/mp/v1.0/assets/import/mass-imports/{massImportId}/matches</li>
-<li><strong>POST</strong>   /rest/mp/v1.0/assets/{assetId}/_extract</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/fonts</li>
-<li><strong>GET</strong>   /rest/mp/v1.0/fonts/valid</li>
-<li><strong>POST</strong>   /rest/mp/v1.0/fonts/valid</li>
-<li><strong>POST</strong>   /rest/mp/v1.0/versions/assets/_merge</li>
-<li><strong>DELETE</strong>   /rest/mp/v1.1/assets/{assetId}/subscribers</li>
-<li><strong>GET</strong>   /rest/mp/v1.1/assets/{assetId}/subscribers</li>
-<li><strong>POST</strong>   /rest/mp/v1.1/licenses/requests</li>
-<li><strong>GET</strong>   /rest/mp/v1.1/search/config</li>
-<li><strong>POST</strong>   /rest/mp/v1.1/search/config</li>
-<li><strong>GET</strong>   /rest/mp/v1.1/users/{userId}/activity</li>
-<li><strong>POST</strong>   /rest/mp/v1.1/users/{userId}/assets</li>
-<li><strong>GET</strong>   /rest/mp/v1.1/users/{userUuid}/activity</li>
-<li><strong>POST</strong>   /rest/mp/v1.1/users/{userUuid}/assets</li>
+<li><strong>Endpoint:</strong> /rest/mp/v1.0/archive-entries/asset/{assetId}   <font color="#ff003f">Operation is now deprecated!</font></li>
 </ul>
-<h3 id="modified-(45)">Modified (45)</h3>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-attributes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.0/asset-attributes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-attributes/{id}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-attributes/{id}/nodes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PATCH</strong>   /rest/mp/v1.0/asset-attributes/{id}/nodes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-attributes/{id}/trees</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-types</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>assetTypes → orgUnitUuid   <font color="#5edc1f"><em>added</em></font><br>
-assetTypes → roleUuid   <font color="#5edc1f"><em>added</em></font><br>
-assetTypes → useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>assetTypes → orgUnitUuids   <font color="#5edc1f"><em>added</em></font><br>
-assetTypes → roleUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.0/asset-types</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>orgUnitUuids   <font color="#5edc1f"><em>added</em></font><br>
-roleUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-types/{id}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>orgUnitUuids   <font color="#5edc1f"><em>added</em></font><br>
-roleUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PUT</strong>   /rest/mp/v1.0/asset-types/{id}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>orgUnitUuids   <font color="#5edc1f"><em>added</em></font><br>
-roleUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-types/{id}/attribute-configs</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/asset-types/{id}/groups</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PATCH</strong>   /rest/mp/v1.0/asset-types/{id}/groups</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.0/assets/import/mass-imports</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>lastUploadDate   <font color="#5edc1f"><em>added</em></font><br>
-ownerName   <font color="#5edc1f"><em>added</em></font><br>
-ownerUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.0/assets/load</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/edit-schema</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>selectedApproverUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/versions/latest</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/versions/official</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/versions/upload-schema</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>selectedApproverUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/versions/{resourceVersion}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/assets/{assetId}/workflow-steps</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/previews/{previewType}/asset/{assetId}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>contentDisposition   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/search/aggregation</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.0/settings/{name}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>response: 401   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.0/versions/assets/{assetId}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>userUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/assets/{assetId}/versions/latest</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>assetSets   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/assets/{assetId}/versions/{resourceVersion}</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>assetSets   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/free-fields</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/keywords</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/organizational-units</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>OPTIONS</strong>   /rest/mp/v1.1/search</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.1/search</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>orgUnitUuid   <font color="#5edc1f"><em>added</em></font><br>
-ownerUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/search/languages/default</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>orgUnitUuid   <font color="#5edc1f"><em>added</em></font><br>
-ownerUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/users</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/users/current/asset-collections</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>lastUploadDate   <font color="#5edc1f"><em>added</em></font><br>
-ownerName   <font color="#5edc1f"><em>added</em></font><br>
-ownerUuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.1/virtual-databases/{vdbId}/workflow-steps   <font color="#fa8432">Operation is now deprecated!</font></p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>steps → approvers → uuid   <font color="#5edc1f"><em>added</em></font><br>
-steps → divisions → uuid   <font color="#5edc1f"><em>added</em></font><br>
-steps → divisions → approvers → uuid   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PATCH</strong>   /rest/mp/v1.2/assets</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.2/keywords</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.2/keywords</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.2/themes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>response: 401   <font color="#5edc1f"><em>added</em></font><br>
-name   <font color="#ff003f"><em>changed data type</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.2/themes</p>
-<blockquote>
-<p>Request Body</p>
-<blockquote>
-<p>useLanguageNamesResult   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.2/webhooks</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>vdbUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>POST</strong>   /rest/mp/v1.2/webhooks</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>vdbUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>PUT</strong>   /rest/mp/v1.2/webhooks</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>vdbUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
-<p><strong>GET</strong>   /rest/mp/v1.2/webhooks/{id}</p>
-<blockquote>
-<p>Response</p>
-<blockquote>
-<p>vdbUuids   <font color="#5edc1f"><em>added</em></font></p>
-</blockquote>
-</blockquote>
+<p><strong>Security</strong></p>
+<ul>
+<li><strong>Security Scheme:</strong> <code>&quot;BearerAuth&quot;:[]</code> has been <strong>added</strong> to the root <code>security</code> array.   <font color="#ff003f">New authentication method!</font></li>
+</ul>
+<h3 id="added-endpoints-3">Added Endpoints</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging</p>
+<ul>
+<li><strong>Description:</strong> Check the progress of the AI tagging service.</li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"currentState"</span><span class="token operator">:</span> <span class="token string">"RUNNING"</span><span class="token punctuation">,</span><br>    <span class="token property">"processedItems"</span><span class="token operator">:</span> <span class="token number">2150</span><span class="token punctuation">,</span><br>    <span class="token property">"totalItems"</span><span class="token operator">:</span> <span class="token number">2326</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/asset/{assetId}</p>
+<ul>
+<li><strong>Description:</strong> Retrieve AI tagging information for a specific asset.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/configurations</p>
+<ul>
+<li><strong>Description:</strong> Retrieve configurations for AI tagging service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/providers</p>
+<ul>
+<li><strong>Description:</strong> Retrieve available AI tagging providers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/statistics</p>
+<ul>
+<li><strong>Description:</strong> Retrieve statistics on AI tagging operations.</li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging</p>
+<ul>
+<li><strong>Description:</strong> Update the state of the AI tagging service.</li>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"state"</span><span class="token operator">:</span> <span class="token string">"RUNNING"</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+<li><strong>Response Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"currentState"</span><span class="token operator">:</span> <span class="token string">"RUNNING"</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/asset/{assetId}</p>
+<ul>
+<li><strong>Description:</strong> Force AI tagging on a single asset's current version.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/configurations/{configurationId}</p>
+<ul>
+<li><strong>Description:</strong> Add or update a configuration for AI tagging.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/providers/{providerId}</p>
+<ul>
+<li><strong>Description:</strong> Add or update an AI tagging provider.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/statistics/reset</p>
+<ul>
+<li><strong>Description:</strong> Reset AI tagging statistics.</li>
+</ul>
+</li>
+</ul>
+<p><strong>DELETE</strong></p>
+<ul>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/configurations/{configurationId}</p>
+<ul>
+<li><strong>Description:</strong> Remove an AI tagging configuration.</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoint:</strong> /rest/mp/v1.1/ai-tagging/providers/{providerId}</p>
+<ul>
+<li><strong>Description:</strong> Remove an AI tagging provider.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Added Tags</strong></p>
+<ul>
+<li><strong>Tag:</strong> AiAdministrationRestService</li>
+<li><strong>Tag:</strong> AiTaggingRestServicef</li>
+<li><strong>Tag:</strong> AiWebTracingRestService</li>
+</ul>
+<h3 id="changed-endpoints-3">Changed Endpoints</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.0/asset-attributes/{id}/nodes
+<ul>
+<li><strong>Added Query Parameter:</strong> <code>filter</code> for optionally fetching only roots or all nodes.</li>
+<li><strong>Added Query Parameter:</strong> <code>parentId</code> for fetching first-level children of a node.</li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.0/asset-attributes
+<ul>
+<li><strong>Added Query Parameter:</strong> <code>useLanguageNamesResult</code></li>
+<li><strong>Description:</strong> Provides enhanced support for internationalization by allowing language-specific results.</li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.1/assets/{assetId}
+<ul>
+<li><strong>Added Field:</strong> <code>assetSets</code></li>
+<li><strong>Description:</strong> Asset management now supports returning related asset sets in the response.</li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.2/themes
+<ul>
+<li><strong>Modified Response:</strong> Restructured for consistency, now returns an array of theme objects.</li>
+</ul>
+</li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.1/webhooks
+<ul>
+<li><strong>Enhanced Filtering:</strong> Webhooks now support filtering by <code>vdbUuids</code>.</li>
+<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"filters"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"vdbUuids"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"uuid1"</span><span class="token punctuation">,</span> <span class="token string">"uuid2"</span><span class="token punctuation">]</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="breaking-changes">Breaking Changes</h3>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /rest/mp/v1.1/virtual-databases/{vdbId}/workflow-steps
+<ul>
+<li><strong>Deprecated:</strong> This endpoint will be removed in future releases. Use <code>/rest/mp/v1.2/virtual-databases/{vdbId}/workflow-steps</code> instead.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Response Schema Updates</strong></p>
+<ul>
+<li>
+<p>Several endpoints now return UUIDs as primary identifiers. Legacy ID fields are deprecated.</p>
+<ul>
+<li><strong>Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span><br>  <span class="token property">"uuid"</span><span class="token operator">:</span> <span class="token string">"550e8400-e29b-41d4-a716-446655440000"</span><br><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoints:</strong> Various endpoints now include more comprehensive error responses with detailed descriptions.</p>
+</li>
+</ul>
+<h3 id="security-role-changes">Security Role Changes</h3>
+<ul>
+<li><strong>Role:</strong> <code>PIMEDIA_ORGANISATION_MANAGE_MP_SEARCH_CONFIGURATION</code> now required for AI administration and tagging services.</li>
+</ul>
+<h3 id="important-changes!">Important Changes!</h3>
+<h4 id="security-scheme-update">Security Scheme Update</h4>
+<p>The introduction of <code>&quot;BearerAuth&quot;:[]</code> in the root <code>security</code> array means clients must adapt to this new authentication method, potentially breaking existing authentication mechanisms if not handled properly.</p>
+<h4 id="documentation-enhancements">Documentation Enhancements</h4>
+<ul>
+<li>More detailed descriptions have been added to various endpoints, improving API documentation.</li>
+</ul>
+<h4 id="endpoint-enhancements">Endpoint Enhancements</h4>
+<ul>
+<li><strong>Endpoint:</strong> <code>/rest/mp/v1.1/web-tracing/{assetId}</code> now includes an example response, making it clearer what kind of data to expect.</li>
+</ul>
+<h2 id="review-manager">Review Manager</h2>
+<h3 id="breaking-changes-2">Breaking Changes</h3>
+<h4 id="api-component-updates">API Component Updates</h4>
+<ul>
+<li>SecurityRoles type has been modified for the following endpoints:
+<ul>
+<li><strong>GET</strong> /rm/rest/v1.0/util/reviews/{id}/_get-general-info   <font color="#ff003f">Changed from <code>REVIEW_MANAGER_MODULE_ACCESS</code> to <code>AUTHENTICATED</code></font></li>
+</ul>
+</li>
+</ul>
+<h4 id="schema-changes">Schema Changes</h4>
+<ul>
+<li>Multiple DTOs have had required fields added or modified:
+<ul>
+<li><strong>ReviewParticipantApproval</strong>: Enum values restructured and validation rules updated</li>
+<li><strong>ReviewObjectReactUIDto</strong>: Added required <code>approvedWithChangesEnabled</code> field</li>
+<li><strong>CreateReviewObjectDto</strong>: Added required <code>flagCreateJmsComment</code> field</li>
+<li><strong>ParticipantExtendedDto</strong>: Added required <code>extern</code> field</li>
+</ul>
+</li>
+</ul>
+<h3 id="new-features">New Features</h3>
+<h4 id="review-management">Review Management</h4>
+<ul>
+<li>Enhanced review object handling with new validation rules</li>
+<li>Improved participant management system with external participant tracking</li>
+<li>Added support for approval with changes functionality in review workflows</li>
+<li>Introduced flagged comment system for review objects</li>
+</ul>
+<h4 id="authentication-%26-security">Authentication &amp; Security</h4>
+<ul>
+<li>Added new authentication scheme options for more flexible security handling</li>
+<li>Extended security role definitions to support granular access control</li>
+<li>Introduced new <code>AUTHENTICATED</code> role level for specific endpoints</li>
+</ul>
+<h3 id="behavioral-changes">Behavioral Changes</h3>
+<h4 id="review-system">Review System</h4>
+<ul>
+<li>Modified review approval workflow to support multi-state approvals</li>
+<li>Enhanced participant tracking with external participant flags</li>
+<li>Updated review object creation process with additional validation steps</li>
+</ul>
+<h4 id="documentation">Documentation</h4>
+<ul>
+<li>Improved endpoint descriptions and examples</li>
+<li>Added more detailed error response documentation</li>
+<li>Enhanced schema descriptions with more precise field definitions</li>
+</ul>
+<h3 id="technical-improvements">Technical Improvements</h3>
+<h4 id="data-models">Data Models</h4>
+<ul>
+<li>Optimized DTO structures for better performance</li>
+<li>Enhanced validation patterns across multiple DTOs</li>
+<li>Improved type safety in response models</li>
+</ul>
+<h4 id="response-handling">Response Handling</h4>
+<ul>
+<li>Better error handling with more specific error codes</li>
+<li>Enhanced response structure for review-related endpoints</li>
+<li>Improved consistency in response formats</li>
+</ul>
+<h2 id="brand-template-builder">Brand Template Builder</h2>
+<h3 id="breaking-changes-(updated-endpoints)">Breaking Changes (Updated Endpoints)</h3>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /wp/rest/attachment/externalIds
+<ul>
+<li><strong>Breaking Change:</strong> API path removed without deprecation   <font color="#ff003f">Operation is now deleted!</font></li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /wp/rest/user/write/attachments
+<ul>
+<li><strong>Breaking Change:</strong> API path removed without deprecation   <font color="#ff003f">Operation is now deleted!</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="added-endpoints-4">Added Endpoints</h3>
+<p><strong>DELETE</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /wp/rest/dynamic-services/{id}/parameters
+<ul>
+<li><strong>Description:</strong> Endpoint added for parameter deletion</li>
+</ul>
+</li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /wp/rest/templates/{id}/boxes
+<ul>
+<li><strong>Breaking Change:</strong> API operation ID changed from <code>TemplateBoxesResource-GET_get</code> to <code>TemplateBoxesResource-GET_getByTemplateId</code>   <font color="#fa8432">Updated!</font></li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /wp/rest/templates/{id}/renderers
+<ul>
+<li><strong>Description:</strong> Added optional properties <code>/items/profile</code>, <code>/items/resolution</code>, and <code>/items/type</code> to the response for statuses <code>200</code>, <code>403</code>, and <code>404</code></li>
+</ul>
+</li>
+<li><strong>Endpoint:</strong> /wp/rest/templates/{id}/variables
+<ul>
+<li><strong>Description:</strong> Endpoint added for variable retrieval</li>
+</ul>
+</li>
+</ul>
+<h2 id="shop">Shop</h2>
+<h3 id="breaking-changes-(updated-endpoints)-2">Breaking Changes (Updated Endpoints)</h3>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /shop/api/rest/v1.0/search/advanced
+<ul>
+<li><strong>Breaking Changes:</strong>
+<ul>
+<li>The response's body type/format changed from <code>array</code> to <code>object</code> for statuses <code>200</code>, <code>400</code>, <code>409</code>, and <code>500</code></li>
+<li>Removed request properties:
+<ul>
+<li><code>allOf[subschema #1: AbstractSearchQueryRestDto]/conflictTypes</code></li>
+<li><code>allOf[subschema #1: AbstractSearchQueryRestDto]/orderData</code></li>
+<li><code>allOf[subschema #1: AbstractSearchQueryRestDto]/text</code></li>
+<li><code>conditions</code></li>
+<li><code>categoryId</code></li>
+<li><code>filters</code></li>
+<li><code>headerId</code></li>
+<li><code>orderListId</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
             </section>
         </main>
