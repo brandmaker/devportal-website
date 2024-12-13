@@ -134,7 +134,7 @@
         <main class="guide__mainlayout">
             <aside class="guide__aside">
                 <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#job-manager">Job Manager</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-(removed-endpoints)">Breaking Changes (Removed Endpoints)</a>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#important-change!">Important Change!</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#note-box">Note Box</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#user-identification-changes">User Identification Changes</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#updated-dtos">Updated DTOs</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#migration-notes">Migration Notes</a>		</li></ol>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#security-improvements">Security Improvements</a>		</li>
@@ -174,10 +174,10 @@ This changelog provides a detailed record of all the changes we've made to our A
 <ul>
 <li><strong>Endpoint:</strong> /dse/rest/v1.0/jobs/{ordinalNumber}/grids/{variableInstanceId}/rows/_delete   <font color="#ff003f">Operation is now deleted!</font></li>
 </ul>
-<h3 id="important-change!">Important Change!</h3>
-<p>The most substantial change in Job Manager version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now discontinued!</p>
+<h3 id="note-box">Note Box</h3>
+<p>The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!</p>
 <blockquote>
-<p>Attention:</p>
+<p><font color="#ff003f">Attention!:</p>
 <p>In some operations the old IDs have been replaced by UUIDs, and can no longer be used!</p>
 </blockquote>
 <h3 id="user-identification-changes">User Identification Changes</h3>
@@ -229,19 +229,33 @@ This changelog provides a detailed record of all the changes we've made to our A
 <li>Enhanced process type retrieval with additional metadata</li>
 </ul>
 </li>
-</ul>
-<p><strong>POST</strong></p>
+<li><strong>Endpoint:</strong> /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
 <ul>
-<li><strong>Endpoint:</strong> /dse/rest/v2.0/jobs/discussions/{discussionId}/participants/_add
-<ul>
-<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"userId"</span><span class="token operator">:</span> <span class="token string">"uuid-string-format"</span><span class="token punctuation">,</span><br>  <span class="token property">"discussionId"</span><span class="token operator">:</span> <span class="token number">12345</span><br><span class="token punctuation">}</span></code></pre>
-</li>
+<li>Retrieve list of participants for a job</li>
 </ul>
 </li>
-<li><strong>Endpoint:</strong> /dse/rest/v2/dse-object/{instanceId}/_next-hop
+</ul>
+<p><strong>PATCH</strong></p>
 <ul>
-<li><strong>Request Example:</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"decisionId"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>  <span class="token property">"comment"</span><span class="token operator">:</span> <span class="token string">"Approval comment"</span><br><span class="token punctuation">}</span></code></pre>
+<li><strong>Endpoint:</strong> /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
+<ul>
+<li>Add new participants to a job (without replacing existing ones)</li>
+</ul>
 </li>
+</ul>
+<p><strong>PUT</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants
+<ul>
+<li>Add new participants to a job (replacing existing ones)</li>
+</ul>
+</li>
+</ul>
+<p><strong>DELETE</strong></p>
+<ul>
+<li><strong>Endpoint:</strong> /dse/rest/v1/dse-object/{instanceId}/{l10nLocaleId}/participants/{userUUID}
+<ul>
+<li>Remove a specific participant from a job</li>
 </ul>
 </li>
 </ul>
