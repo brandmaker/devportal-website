@@ -10,7 +10,7 @@ main {
   display: block;
 }
 h1 {
-  font-size: 2em;
+  font-size: 1.9em;
   margin: 0.67em 0;
 }
 hr {
@@ -20,7 +20,7 @@ hr {
 }
 pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 0.9em; /* 2 */
 }
 a {
   background-color: transparent;
@@ -39,14 +39,14 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: .9em; /* 2 */
 }
 small {
-  font-size: 80%;
+  font-size: 78%;
 }
 sub,
 sup {
-  font-size: 75%;
+  font-size: 72%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -66,7 +66,7 @@ optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  font-size:100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
@@ -171,7 +171,7 @@ template {
 .hero.hero--auth .hero__header .topbar.description {
   text-align: left;
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: lighter;
   width: 100%;
   display: flex;
@@ -250,7 +250,7 @@ template {
 }
 .hero.hero--auth .mainlayout .navigation-wrapper .navigation-section .body .navigation-link .navigation-link.tag.header .navigation-linktag {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   padding: 0.25rem 0.5rem 0.25rem 0;
 }
@@ -272,14 +272,14 @@ template {
 }
 .cta {
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 32px;
-  background: #54C692;
-  background: linear-gradient(90deg, #54C692 0%, #CBED69 100%);
+  background: #2d6b4f;
+  background: linear-gradient(90deg, #43a076 0%, #a0bb50 80%);
   color: #fff;
   text-align: center;
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease-out;
 }
@@ -330,19 +330,19 @@ body.guide .hero__header {
 }
 body.guide .hero__headline {
   margin: 1rem 0;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 body.guide .hero__description {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.67rem;
 }
 .guide__mainlayout {
   color: #fff;
   max-width: 1600px;
   margin: 1rem auto;
   display: flex;
-  font-size: 1.375rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.2;
   padding: 0 1rem;
 }
 .guide__aside {
@@ -362,7 +362,7 @@ body.guide .hero__description {
   overflow: hidden;
   max-width: 100%;
   position: relative;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   margin: 2rem 0;
 }
 .guide table * {
@@ -392,7 +392,7 @@ body.guide .hero__description {
 .guide table tbody td:first-child {
   font-family: monospace;
   padding-right: 1rem;
-  font-size: 1.375rem;
+  font-size: 1.23rem;
 }
 .guide p {
   margin: 0 0 1.5rem;
@@ -411,7 +411,7 @@ body.guide .hero__description {
   line-height: 1.2;
 }
 .guide h2 {
-  font-size: 2.25rem;
+  font-size: 2.33rem;
   margin: 2rem 0 1rem;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 0.5rem;
@@ -422,34 +422,34 @@ body.guide .hero__description {
   margin: 2rem 0;
 }
 .guide h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin: 2rem 0 1rem;
 }
 .guide h4 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   margin: 1.5rem 0 0.5rem;
 }
 .guide h5 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin: 1rem 0 0.375rem;
 }
 .guide li {
   margin-bottom: 1rem;
 }
 .guide pre {
-  font-size: 1rem;
+  font-size: 0.86rem;
 }
 .guide .toc {
   position: -webkit-sticky;
   position: sticky;
   top: 50px;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   padding: 0 2rem 1rem;
   max-height: calc(100vh - 80px);
   overflow: auto;
 }
 .guide .toc__heading {
-  font-size: 1rem;
+  font-size: 0.94rem;
   text-transform: uppercase;
 }
 .guide .toc__list {
@@ -461,7 +461,7 @@ body.guide .hero__description {
   padding-left: 0.25rem;
 }
 .guide .toc__list-item .toc__list {
-  font-size: 1rem;
+  font-size: .86rem;
 }
 .guide .toc__list-item-anchor {
   text-decoration: none;
@@ -535,20 +535,20 @@ a {
   margin-bottom: 0;
 }
 .hero__headline {
-  font-size: 6rem;
+  font-size: 5.25rem;
   margin: 6rem 0 2rem;
   padding: 0 2rem;
 }
 .api .hero__headline {
   margin: 0;
   padding: 0 1rem 0 0;
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: left;
   line-height: 1;
   display: inline-block;
 }
 .inner .hero__headline {
-  font-size: 5rem;
+  font-size: 1rem;
 }
 .hero__headline a {
   color: #fff;
@@ -556,11 +556,11 @@ a {
           text-decoration-color: #CBED69;
 }
 .hero__p {
-  font-size: 1.375rem;
+  font-size: 1.2rem;
   opacity: 0.75;
   max-width: 760px;
   margin: 0 auto;
-  flex: 1 1 70%;
+  flex: 1 1 65%;
 }
 .hero__p--strong {
   font-weight: 600;
@@ -571,7 +571,7 @@ a {
   padding: 0 0 0.25rem 1rem;
 }
 .cta {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .teaser {
   padding: 2rem 1rem 0;
@@ -614,29 +614,29 @@ a {
 .teaser__contenttext {
   opacity: 0.7;
   line-height: 1.5;
-  font-size: 1.375rem;
+  font-size: 1rem;
   color: #0A2191;
 }
 .inner .hero .teaser__contenttext {
   color: #fff;
 }
 .teaser__title {
-  font-size: 5rem;
+  font-size: 3.2rem;
   margin: 0;
-  line-height: 4.5rem;
+  line-height: 1.23rem;
   margin-bottom: 1rem;
 }
 .hero .teaser__title {
   color: #fff;
 }
 .teaser__icon {
-  flex: 0 0 25%;
+  flex: 0 0 16%;
   padding: 1rem;
   align-items: flex-start;
   display: flex;
 }
 .teaser__icon img {
-  width: 100%;
+  width: 75%;
 }
 .mainnav__list {
   list-style: none;
@@ -649,7 +649,7 @@ a {
   display: flex;
   list-style: none;
   align-items: center;
-  height: 75px;
+  height: 70px;
   margin: 0;
   padding: 0;
 }
@@ -665,13 +665,14 @@ a {
   background: rgba(255,255,255,0.1);
 }
 .mainnav__listitemlink {
-  padding: 0 3.5rem;
+  padding: 0 2.5rem;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-decoration: none;
+
   display: block;
   height: 75px;
-  line-height: 75px;
+  line-height: 67px;
 }
 .mainnav__listitemlink:before {
   display: block;
@@ -742,7 +743,7 @@ a {
   opacity: 1;
 }
 .nav_pageSlots {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   padding: 0 2rem 1rem;
   max-height: calc(100vh - 80px);
   overflow: auto;
@@ -838,7 +839,7 @@ a {
 }
 .select-css {
   display: inline-block;
-  font-size: 18px;
+  font-size: 1em;
   font-family: sans-serif;
   font-weight: 700;
   color: #fff;

@@ -14,7 +14,7 @@ permalink: "guides/auth/"
 bodyClass: "guide"
 title: "Authentication"
 ---
-Prerequisits
+Prerequisites
 =============
 
 In order to authenticate a 3rd party application against your Uptempo Instance and accessing the APIs of the Uptempo Modules, you need an OAuth2 access token and a refresh token. Uptempo provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized [OAuth2 Web Flow](https://oauth.net/2/). CAS only supports the Grant-Type [Authorization Code](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow).
