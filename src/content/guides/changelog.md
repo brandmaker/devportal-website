@@ -26,7 +26,7 @@ This changelog provides a detailed record of all the changes we've made to our A
 **DELETE**
 - **Endpoint:** /dse/rest/v1.0/jobs/{ordinalNumber}/grids/{variableInstanceId}/rows/_delete &nbsp;&nbsp;<font color="#ff003f">Operation is now deleted!</font>
 
-### Note Box
+### Introduction of UUIDs
 
 The most substantial change in version 8.0 is the introduction of UUIDs (Universally Unique Identifiers) for users, replacing the previous ID system. The old functionality is now deprecated!
 
