@@ -16,19 +16,24 @@ const { callbackify } = require("util");
 const moduleFiles = fg.sync('api/**', { onlyFiles: true, deep: 5, objectMode: true });
 const moduleDicts = fg.sync('api/**', { onlyDirectories: true, deep: 5, objectMode: true });
 
-
 //const name = fg.sync('name.json', {objectMode: true});
 module.exports = function (eleventyConfig) {
-
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    
+    // Add the date plugin and custom filter
     eleventyConfig.addPlugin(pluginDate);
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("main.css");
     eleventyConfig.addPassthroughCopy("swagger");
-
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addFilter('currentDate', () => {
+        return new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    });
 
     // TOC support in MD
-
     eleventyConfig.addPlugin(eleventyPluginTOC,
         {
             tags: ['h2', 'h3', 'h4', 'h5', 'h6'],
@@ -268,7 +273,6 @@ module.exports = function (eleventyConfig) {
                 throw err
             }
             let content = JSON.parse(data)
-  
 
             if (content["components"]) {
                 if (content["security"]) {
@@ -336,16 +340,13 @@ module.exports = function (eleventyConfig) {
         });
     })
 
-
     eleventyConfig.addPassthroughCopy("api/**/*.json");
     eleventyConfig.addPassthroughCopy("api/**/**/*.json");
     eleventyConfig.addPassthroughCopy("api/**/**/**/*.json");
     eleventyConfig.addPassthroughCopy("api/**/**/**/**/*.png");
 
-
     let nunjucksEnvironment = new Nunjucks.Environment(
         new Nunjucks.FileSystemLoader("_includes")
     );
     eleventyConfig.setLibrary("njk", nunjucksEnvironment);
-
-}
+};
