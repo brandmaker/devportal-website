@@ -1,7 +1,7 @@
 ---
 layout: pages/guide.njk
 pageTitle: MBI Guide (Deprecated for 8.0)
-description: Manual (Valid up to version 7.4)
+description: Manual <span class="special-tag">Validity</span> span class="special-tag">Version 7.4</span>
 teaserText: "With Release 7.3, we delivered the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure."
 tags: ['guide']
 eleventyNavigation:
