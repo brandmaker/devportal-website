@@ -1,6 +1,6 @@
 ---
 layout: pages/guide.njk
-pageTitle: MBI Guide
+pageTitle: MBI Guide (Deprecated for 8.0)
 description: Manual
 teaserText: "With Release 7.3, we delivered the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure."
 tags: ['guide']
@@ -17,7 +17,7 @@ title: "Message Based Integration Service"
 
 ## Introduction
 
-With Release 7.3, Uptempo provides the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure.
+With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure.
 
 The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages. 
 
