@@ -1038,4 +1038,16 @@ pre[data-line] {
   z-index: 25;
 }
 
+.special-tag {
+  display: inline-block;
+  background-color: #253341;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #58a6ff;
+  border: 1px solid #394b59;
+} 
+
 /*# sourceMappingURL=main.css.map */

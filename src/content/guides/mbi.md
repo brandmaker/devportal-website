@@ -1,13 +1,15 @@
 ---
 layout: pages/guide.njk
-pageTitle: MBI Guide (Deprecated for 8.0)
-description: Manual <span class="special-tag">Validity</span> span class="special-tag">Version 7.4</span>
+pageTitle: MBI Guide (Deprecated)
+description: Manual 
+deprecated: true
+deprecatedVersion: 8.0
 teaserText: "With Release 7.3, we delivered the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure."
 tags: ['guide']
 eleventyNavigation:
     parent: "Guides"
     key: "mbi"
-    title: "Message Based Integration Service (Deprecated with version 8.0)"
+    title: "Message Based Integration Service"
     excerpt: "How to use MBI"
     order: -1
 permalink: "guides/mbi/"
@@ -15,10 +17,9 @@ bodyClass: "guide"
 title: "Message Based Integration Service"
 ---
 
-## Introduction
+## Introduction 
 
-With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure.
-
+With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure. <span class="special-tag">Validity</span> <span class="special-tag">Version 7.3</span> <span class="special-tag">Version 7.4</span> <span class="special-tag">Deprecated since</span><span class="special-tag">Version 8.0</span>
 The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages. 
 
 In this way, loose coupling of the Uptempo system and its modules with third-party applications is possible. Furthermore, the extensive APIs of the Uptempo system and its modules are available to third-party applications to read or modify further data.
