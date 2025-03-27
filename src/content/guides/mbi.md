@@ -17,7 +17,7 @@ bodyClass: "guide"
 title: "Message Based Integration Service"
 ---
 
-## Introduction 
+## Introduction to MBI
 
 With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure. <span class="special-tag">Validity</span> <span class="special-tag">Version 7.3</span> <span class="special-tag">Version 7.4</span> <span class="special-tag">Deprecated since</span><span class="special-tag">Version 8.0</span>
 The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages. 
