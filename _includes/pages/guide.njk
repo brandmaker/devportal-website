@@ -10,14 +10,16 @@
     </head>
     <body class="guide">
         {% include 'components/topbar.njk' %}
-        <section class="hero">
-            <header class="hero__header">
-                <h1 class="hero__headline">{{ title }}</h1> 
-                <div class="hero__description">
-                    {{ description }}
-                </div>
-            </header>
-        </section>
+               <section class="hero">
+  <header class="hero__header">
+    <h1 class="hero__headline">
+      {{ title }} 
+      {% if deprecated %}<span class="special-tag">Deprecated since</span>{% endif %}
+      {% if deprecatedVersion %}<span class="special-tag">Version {{ deprecatedVersion }}</span>{% endif %}
+    </h1>
+    <div class="hero__description">{{ description }}</div>
+  </header>
+</section>
         <main class="guide__mainlayout">
             <aside class="guide__aside">
                 {{ content | toc | safe }}
