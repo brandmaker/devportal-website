@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>MBI Guide (Deprecated for 8.0)</title>
+        <title>MBI Guide (Deprecated)</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -107,7 +107,7 @@
                                 </a>
                         
                             <a class="mainnav__listitemlink" href="/guides/mbi/">
-                                <span class="mainnav__listitemlinktitle">Message Based Integration Service (Deprecated with version 8.0)</span>
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
                                     <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
                                 </a>
                         
@@ -123,14 +123,16 @@
     </nav>
 </header>
 
-        <section class="hero">
-            <header class="hero__header">
-                <h1 class="hero__headline">Message Based Integration Service</h1> 
-                <div class="hero__description">
-                    Manual (Valid up to version 7.4)
-                </div>
-            </header>
-        </section>
+               <section class="hero">
+  <header class="hero__header">
+    <h1 class="hero__headline">
+      Message Based Integration Service 
+      <span class="special-tag">Deprecated since</span>
+      <span class="special-tag">Version 8</span>
+    </h1>
+    <div class="hero__description">Manual</div>
+  </header>
+</section>
         <main class="guide__mainlayout">
             <aside class="guide__aside">
                 <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#introduction">Introduction</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#terminology">Terminology</a>		</li>
@@ -161,8 +163,8 @@
             </aside>
             <article class="guide__article">
                 <h2 id="introduction">Introduction</h2>
-<p>With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure.</p>
-<p>The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages.</p>
+<p>With Release 7.3, Uptempo provided the “Message Based Integration Service” for the first time. This central service is used for the customer-side integration of the Uptempo system into the customer’s infrastructure. <span class="special-tag">Validity</span> <span class="special-tag">Version 7.3</span> <span class="special-tag">Version 7.4</span> <span class="special-tag">Deprecated since</span><span class="special-tag">Version 8.0</span><br>
+The service is based on the so-called “publish / subscribe” principle. Starting with the Job Manager module in Release 7.3, all modules in Uptempo send information about user transactions in the system to the MBI. Subscribers to the Service may receive and process these Transaction Messages.</p>
 <p>In this way, loose coupling of the Uptempo system and its modules with third-party applications is possible. Furthermore, the extensive APIs of the Uptempo system and its modules are available to third-party applications to read or modify further data.</p>
 <h3 id="terminology">Terminology</h3>
 <table>
