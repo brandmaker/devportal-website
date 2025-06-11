@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Authentification</title>
+        <title>Authentification Legacy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -96,11 +96,6 @@
                         </ul></li><li class="mainnav__listitem">
                 <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
                         <!--- only first layer -->
-                            <a class="mainnav__listitemlink" href="/guides/auth/">
-                                <span class="mainnav__listitemlinktitle">Authentication</span>
-                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
-                                </a>
-                        
                             <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
                                 <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
                                     <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
@@ -115,6 +110,16 @@
                                 <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
                                     <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
                                 </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/auth8/">
+                                <span class="mainnav__listitemlinktitle">Authentication (8.0+)</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate in Uptempo</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/auth-legacy/">
+                                <span class="mainnav__listitemlinktitle">Authentication until 7.4</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
                         </ul></li><!--- manually included link to Changelog -->
             <li class="mainnav__listitem">
                 <a class="mainnav__listitemlink" href="/guides/changelog/">Changelog</a>
@@ -122,7 +127,6 @@
         </ul>
     </nav>
 </header>
-
                <section class="hero">
   <header class="hero__header">
     <h1 class="hero__headline">
@@ -130,64 +134,74 @@
       
       
     </h1>
-    <div class="hero__description">How to Authenticate 3rd Party Applications to your Uptempo Instance</div>
+    <div class="hero__description">How to Authenticate 3rd Party Applications to your BrandMaker Instance</div>
   </header>
 </section>
         <main class="guide__mainlayout">
             <aside class="guide__aside">
-                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#required-steps">Required steps</a>		</li>
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#prerequisites">Prerequisites</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#required-steps">Required steps</a>		</li></ol>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#register-your-app">Register your App</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#client-id-and-client-secret">Client ID and Client Secret</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#client-secret">Client Secret</a>		</li></ol>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#initiate-the-oauth2">Initiate the OAuth2</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#refresh-token-and-access-token">Refresh Token and Access Token</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#get-parameters">GET Parameters</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#regarding-the-state-parameter">Regarding the state parameter</a>		</li></ol>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-request">Example Request</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#post-parameters">POST Parameters</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#response-example">Response Example</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#flow-overview">Flow Overview</a>		</li></ol>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authenticate-against-the-uptempo-apis">Authenticate against the Uptempo APIs</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authenticate-against-the-brandmaker-apis">Authenticate against the BrandMaker APIs</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#request-a-new-access-token-with-the-refresh-token">Request a New Access Token with the Refresh Token</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#post-parameters-2">POST parameters</a>		</li>
 <li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-request-curl">Example request CURL</a>		</li></ol>		</li>
-<li class="toc__list-item"><a class="toc__list-item-anchor" href="#oauth-debugger">OAuth Debugger</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-input%3A">Example input:</a>		</li></ol>		</li></ol></nav>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#oauth-debugger">OAuth Debugger</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#example-input%3A">Example input:</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#common-endpoints-(legacy-cas)">Common Endpoints (Legacy CAS)</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#troubleshooting">Troubleshooting</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#common-issues%3A">Common Issues:</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#migration-to-version-8.0%2B">Migration to Version 8.0+</a>		</li></ol></nav>
             </aside>
             <article class="guide__article">
-                <h1 id="prerequisites">Prerequisites</h1>
-<p>In order to authenticate a 3rd party application against your Uptempo Instance and accessing the APIs of the Uptempo Modules, you need an OAuth2 access token and a refresh token. Uptempo provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized <a href="https://oauth.net/2/">OAuth2 Web Flow</a>. CAS only supports the Grant-Type <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow">Authorization Code</a>.</p>
+                <h1 id="authentication-guide-(legacy---until-version-7.4)">Authentication Guide (Legacy - until version 7.4)</h1>
+<blockquote>
+<p><strong>Notice:</strong> This guide applies to BrandMaker versions up to 7.4. For version 8.0 and later, please refer to the <a href="/guides/auth8/">OAuth Authentication Guide for Uptempo 8.0</a>.</p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>In order to authenticate a 3rd party application against your BrandMaker Instance and accessing the APIs of the BrandMaker Modules, you need an OAuth2 access token and a refresh token. BrandMaker provides a centralized authentication system for all customers (Centralized Authentication Service - CAS), which implements the standardized <a href="https://oauth.net/2/">OAuth2 Web Flow</a>. CAS only supports the Grant-Type <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow">Authorization Code</a>.</p>
 <h3 id="required-steps">Required steps</h3>
-<p>The following steps need to be done in order to register your app and<br>
-authenticate and authorize an application user:</p>
+<p>The following steps need to be done in order to register your app and authenticate and authorize an application user:</p>
 <ol>
-<li>Make sure, your Uptempo Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our <a href="https://www.brandmaker.com/contact/support-ticket/">Support Team</a></li>
-<li><a href="#register-your-app">Register your App</a> through the administration in your Uptempo Instance</li>
+<li>Make sure, your BrandMaker Instance is registered as Resource Server on the CAS. On questions regarding this, please contact our <a href="https://www.brandmaker.com/contact/support-ticket/">Support Team</a></li>
+<li><a href="#register-your-app">Register your App</a> through the administration in your BrandMaker Instance</li>
 <li><a href="#initiate-the-oauth2">Initiate the OAuth2</a> flow to authenticate a user for your application</li>
 <li>Store your client ID and Client Secret provided in step 2 in a safe place, we are not able to recover the secret at any later time!</li>
 <li>Store the access token and refresh token provided in step 3 along with your app</li>
-<li><a href="#authenticate-against-the-brandmaker-apis">Use the tokens</a> in order to access any of the Uptempo APIs</li>
+<li><a href="#authenticate-against-the-brandmaker-apis">Use the tokens</a> in order to access any of the BrandMaker APIs</li>
 <li>Check the expiration time of your access token and <a href="#request-a-new-access-token-with-the-refresh-token">retrieve a new one with the refresh token</a> once it is close to expire</li>
 </ol>
-<p>All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your Uptempo Instance.</p>
+<p>All necessary end-point URLs for the flow will be provided in step 2 above. This information is always available in the administration in your BrandMaker Instance.</p>
 <h2 id="register-your-app">Register your App</h2>
 <h3 id="client-id-and-client-secret">Client ID and Client Secret</h3>
-<p>In order to connect your application via OAuth2 you will need a client<br>
-ID and a client secret. You get access to these the following way:</p>
+<p>In order to connect your application via OAuth2 you will need a client ID and a client secret. You get access to these the following way:</p>
 <ol>
-<li>Log in to your Uptempo or legacy BrandMaker system.</li>
+<li>Log in to your BrandMaker system.</li>
 <li>Navigate to your Administration space</li>
 <li>Depending on the version, navigate (on the left) to Registered Apps:
 <ul>
 <li>for version ≥ 6.8: <em>System Configuration</em> =&gt; Registered Apps</li>
-<li>for version &gt; 7.0: <em>Fusion</em> =&gt; Registered Apps</li>
+<li>for version ≤ 7.4: <em>Fusion</em> =&gt; Registered Apps</li>
 </ul>
 </li>
-<li>There you can register a new app. <img src="/assets/guides/auth/clientsecret.png" alt=""></li>
-<li>After you have successfully registered your app, you will be shown a<br>
-screen with your client ID and client secret</li>
+<li>There you can register a new app.</li>
+</ol>
+<p><img src="/assets/guides/auth/clientsecret.png" alt="Register App Interface"></p>
+<ol start="5">
+<li>After you have successfully registered your app, you will be shown a screen with your client ID and client secret</li>
 </ol>
 <h3 id="client-secret">Client Secret</h3>
-<p>The client secret is only shown immediately after the registration of a client in step 2 above and cannot be recovered afterwards. If the secret is lost, you need to de-register and re-register the app again and all provided tokens are invalidated!</p>
-<p><img src="/assets/guides/auth/clientsecretid.png" alt=""></p>
+<p>The client secret is only shown immediately after the registration of a client in step 2 above and cannot be recovered afterwards. If the secret is lost, you need to deactivate and re-register the app again and all provided tokens are invalidated!</p>
+<p><img src="/assets/guides/auth/clientsecretid.png" alt="Client ID and Secret Display"></p>
 <h2 id="initiate-the-oauth2">Initiate the OAuth2</h2>
 <h3 id="refresh-token-and-access-token">Refresh Token and Access Token</h3>
 <p>Now that you have obtained your client ID and client secret, your application will have to acquire an access token and a refresh token.</p>
 <p>In order to acquire your first access token and refresh token, your need an OAuth2.0 authorization code. In order to acquire this OAuth2.0 authorization code, your app will need to send the client ID and client secret to the following CAS-URL via GET:</p>
+<pre><code>https://cas.brandmaker.com/api/v1.1/authorization
+</code></pre>
 <p>Your user will also be prompted with a login challenge at this point.</p>
 <h3 id="get-parameters">GET Parameters</h3>
 <table>
@@ -219,9 +233,9 @@ screen with your client ID and client secret</li>
 <td>true</td>
 </tr>
 <tr>
-<td>response_mode</td>
+<td>scope</td>
 <td>String</td>
-<td>&quot;query&quot;</td>
+<td>&quot;openid&quot;</td>
 <td>true</td>
 </tr>
 <tr>
@@ -233,25 +247,31 @@ screen with your client ID and client secret</li>
 </tbody>
 </table>
 <h4 id="regarding-the-state-parameter">Regarding the state parameter</h4>
-<p>The state parameter is usually a random String of at least 8 characters. This String can be generated before you make the request and cached within your OAuth2.0 client application. <br>
+<p>The state parameter is usually a random String of at least 8 characters. This String can be generated before you make the request and cached within your OAuth2.0 client application.<br>
 It can then be validated when the client is redirected to your <code>redirect_url</code>. This redirect will contain the same value for the <code>state</code> parameter that was initially provided. You can also include state information regarding the request.<br>
 For more information visit <a href="https://auth0.com/docs/protocols/state-parameters">https://auth0.com/docs/protocols/state-parameters</a>.</p>
 <h3 id="example-request">Example Request</h3>
-<pre class="language-xquery"><code class="language-xquery">curl <span class="token string">"https://cas.brandmaker.com/oauth2/auth?<br>    client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;<br>    redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug&amp;<br>    response_type=code&amp;<br>    response_mode=query&amp;<br>    state=12345678"</span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token string">"https://cas.brandmaker.com/api/v1.1/authorization?<br>    client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;<br>    redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug&amp;<br>    response_type=code&amp;<br>    scope=openid&amp;<br>    state=12345678"</span></code></pre>
 <p>After your application has successfully acquired an oAuth 2.0 authorization code, you can now acquire your refresh token and access token from this CAS-URL via POST:</p>
+<pre><code>https://cas.brandmaker.com/api/v1.1/token
+</code></pre>
 <h3 id="post-parameters">POST Parameters</h3>
-<pre class="language-xquery"><code class="language-xquery">curl -d <span class="token string">"code=oauth2_authorization_code&amp;\<br>   client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;\<br>   client_secret=your_client_secret&amp;\<br>   grant_type=authorization_code&amp;\<br>   redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug%0D%0A"</span> -X POST <span class="token string">"https://cas.brandmaker.com/api/v1.1/token"</span></code></pre>
-<p>Now that your application has acquired its access token and refresh token, it can now make requests to the Uptempo APIs. In order to access such a Uptempo resource you need to include your access token in each request in the header &quot;authorization&quot;. The token must be prefixed with the keyword &quot;bearer &quot; (with whitespace). For more information regarding bearer tokens you can visit the following <a href="https://tools.ietf.org/html/rfc6750">site</a>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-d</span> <span class="token string">"code=oauth2_authorization_code&amp;\<br>    client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;\<br>    client_secret=your_client_secret&amp;\<br>    grant_type=authorization_code&amp;\<br>    redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug"</span> <span class="token punctuation">\</span><br>    <span class="token parameter variable">-X</span> POST <span class="token string">"https://cas.brandmaker.com/api/v1.1/token"</span></code></pre>
+<h3 id="response-example">Response Example</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"your_access_token"</span><span class="token punctuation">,</span><br>  <span class="token property">"refresh_token"</span><span class="token operator">:</span> <span class="token string">"your_refresh_token"</span><span class="token punctuation">,</span><br>  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span><br>  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span><br>  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"openid"</span><br><span class="token punctuation">}</span></code></pre>
+<p>Now that your application has acquired its access token and refresh token, it can now make requests to the BrandMaker APIs. In order to access such a BrandMaker resource you need to include your access token in each request in the header &quot;authorization&quot;. The token must be prefixed with the keyword &quot;bearer &quot; (with whitespace). For more information regarding bearer tokens you can visit the following <a href="https://tools.ietf.org/html/rfc6750">site</a>.</p>
 <h3 id="flow-overview">Flow Overview</h3>
-<p><img src="/assets/guides/auth/flowoverview.png" alt=""></p>
-<h2 id="authenticate-against-the-uptempo-apis">Authenticate against the Uptempo APIs</h2>
-<p>In order to authenticate your application against any Uptempo API, use the given authentication token from step 3 above.</p>
+<p><img src="/assets/guides/auth/flowoverview.png" alt="OAuth2 Flow Overview"></p>
+<h2 id="authenticate-against-the-brandmaker-apis">Authenticate against the BrandMaker APIs</h2>
+<p>In order to authenticate your application against any BrandMaker API, use the given authentication token from step 3 above.</p>
 <p>The token must be put into an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">Authorization header</a> in the according request:</p>
-<p><strong>Authorization Header in Request to Uptempo API</strong></p>
-<pre class="language-xquery"><code class="language-xquery">Authorization<span class="token punctuation">:</span> Bearer <span class="token number">98</span>w7n98wvetr98vern9t87vq9tz <span class="token operator">..</span><span class="token operator">.</span> c9n4837590nv8eorfpocrw74n87c</code></pre>
+<p><strong>Authorization Header in Request to BrandMaker API</strong></p>
+<pre class="language-bash"><code class="language-bash">Authorization: Bearer 98w7n98wvetr98vern9t87vq9tz <span class="token punctuation">..</span>. c9n4837590nv8eorfpocrw74n87c</code></pre>
 <p>If the token has expired, an according error message is sent back, which may differ depending on which internal system you are trying to access. The response's http status code is always 403.</p>
 <h2 id="request-a-new-access-token-with-the-refresh-token">Request a New Access Token with the Refresh Token</h2>
-<p>In order to request a new access token with the refresh token, issue a request against the token refresh endpoint given in step 2 above:</p>
+<p>In order to request a new access token with the refresh token, issue a request against the token refresh endpoint:</p>
+<pre><code>https://cas.brandmaker.com/api/v1.1/token
+</code></pre>
 <h3 id="post-parameters-2">POST parameters</h3>
 <table>
 <thead>
@@ -290,12 +310,57 @@ For more information visit <a href="https://auth0.com/docs/protocols/state-param
 </tbody>
 </table>
 <h3 id="example-request-curl">Example request CURL</h3>
-<pre class="language-xquery"><code class="language-xquery">curl -d <span class="token string">"client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;\<br>   client_secret=your_client_secret&amp;\<br>   grant_type=refresh_token&amp;\<br>   refresh_token=your_refresh_token"</span> -X POST <span class="token string">"https://cas.brandmaker.com/api/v1.1/token"</span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-d</span> <span class="token string">"client_id=6274aa2f-a93f-479c-a3b3-62850f8322bd&amp;\<br>    client_secret=your_client_secret&amp;\<br>    grant_type=refresh_token&amp;\<br>    refresh_token=your_refresh_token"</span> <span class="token punctuation">\</span><br>    <span class="token parameter variable">-X</span> POST <span class="token string">"https://cas.brandmaker.com/api/v1.1/token"</span></code></pre>
 <p>If you request a new token with the refresh token, you are automatically issued a completely new pair of tokens. The old refresh token expires.</p>
 <h2 id="oauth-debugger">OAuth Debugger</h2>
 <p>You can test the OAuth2.0 flow on <a href="https://oauthdebugger.com/">https://oauthdebugger.com/</a></p>
 <h3 id="example-input%3A">Example input:</h3>
-<p><img src="/assets/guides/auth/oauth2.png" alt=""></p>
+<p><img src="/assets/guides/auth/oauth2.png" alt="OAuth Debugger Example"></p>
+<h2 id="common-endpoints-(legacy-cas)">Common Endpoints (Legacy CAS)</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>https://cas.brandmaker.com/api/v1.1/authorization</code></td>
+<td>GET</td>
+<td>Authorization endpoint</td>
+</tr>
+<tr>
+<td><code>https://cas.brandmaker.com/api/v1.1/token</code></td>
+<td>POST</td>
+<td>Token endpoint</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues%3A">Common Issues:</h3>
+<p><strong>403 Forbidden Responses:</strong></p>
+<ul>
+<li>Token may be expired - try refreshing the token</li>
+<li>Verify your client credentials are correct</li>
+<li>Ensure your BrandMaker instance is properly registered with CAS</li>
+</ul>
+<p><strong>Invalid Client Errors:</strong></p>
+<ul>
+<li>Double-check your client ID and secret</li>
+<li>Verify the redirect URI matches exactly what was registered</li>
+</ul>
+<p><strong>Scope Errors:</strong></p>
+<ul>
+<li>Ensure you're requesting appropriate scopes for your application</li>
+<li>Contact support if you need additional permissions</li>
+</ul>
+<h2 id="migration-to-version-8.0%2B">Migration to Version 8.0+</h2>
+<blockquote>
+<p><strong>Important:</strong> Starting with BrandMaker 8.0 (now Uptempo), the authentication system has been completely redesigned. The CAS-based system described in this guide is no longer supported.</p>
+</blockquote>
+<p>For new integrations or when upgrading to version 8.0+, please refer to the <a href="/guides/auth8/">OAuth Authentication Guide for Uptempo 8.0</a> which covers the new Keycloak-based authentication system.</p>
 
             </section>
         </main>

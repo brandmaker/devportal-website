@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Authentification 8.0</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#f95b02">
+<meta name="msapplication-TileColor" content="#0c0f28">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="rMB12-YRyfvSNc_gvIcO_1I5X1zE8N1lzfUQj2Oj-Pg" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3128286-9"></script>
+        <script>
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+             //gtag('set', 'dimension1', <Name der ausgewählten API>);
+             //gtag('set', 'dimension2', "Authentication");
+
+             gtag('config', 'UA-3128286-9');
+
+        </script>
+
+
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" type="text/css" href="../../../../swagger/swagger-ui.css?v=2" >
+    </head>
+    <body class="guide">
+        <!--- topbar with navigation -->
+<header class="topbar">
+    <a class="hero__logolink" href="/">
+        <img src="/assets/logo-green.svg" alt="Uptempo Company Logo">
+    </a>
+    <nav class="mainnav">
+        
+        
+        <ul class="mainnav__list__main">
+            <!--- eleventy navigation --><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/api/">API</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/changelog/">
+                                <span class="mainnav__listitemlinktitle">API Changelog</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Latest changes and updates to our REST API</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Administration/">
+                                <span class="mainnav__listitemlinktitle">Administration</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">User Service</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/JobManager/">
+                                <span class="mainnav__listitemlinktitle">Job Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Central Platform for Collaboration</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MAPS/">
+                                <span class="mainnav__listitemlinktitle">Marketing Planner</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">No more spreadsheets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/MediaPool/">
+                                <span class="mainnav__listitemlinktitle">Media Pool</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Store and manage digital assets</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/ReviewManager/">
+                                <span class="mainnav__listitemlinktitle">Review Manager</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Review created content</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Shop/">
+                                <span class="mainnav__listitemlinktitle">Shop</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">The eShop to control marketing materials and services</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/Web-to-Publish/">
+                                <span class="mainnav__listitemlinktitle">Brand Template Builder</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Brand Management worldwide</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheCore/">
+                                <span class="mainnav__listitemlinktitle">WebCache Core</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Core is the central server side application for SEW and MPM</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/api/WebCacheEngage/">
+                                <span class="mainnav__listitemlinktitle">WebCache Engage</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">WebCache Engage is the central server side application for SEW and MPM</span>
+                                </a>
+                        </ul></li><li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/">Guides</a><ul class="mainnav__list">
+                        <!--- only first layer -->
+                            <a class="mainnav__listitemlink" href="/guides/fusion-ux-logic/">
+                                <span class="mainnav__listitemlinktitle">Fusion UX Logic Guide</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Integrate custom components into your system.</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/mbi/">
+                                <span class="mainnav__listitemlinktitle">Message Based Integration Service</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to use MBI</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/webhook-push-api/">
+                                <span class="mainnav__listitemlinktitle">Media Pool Webhook Push API</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">Connect your application with MediaPool events</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/auth8/">
+                                <span class="mainnav__listitemlinktitle">Authentication (8.0+)</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate in Uptempo</span>
+                                </a>
+                        
+                            <a class="mainnav__listitemlink" href="/guides/auth-legacy/">
+                                <span class="mainnav__listitemlinktitle">Authentication until 7.4</span>
+                                    <span class="mainnav__listitemlinktitle mainnav__listitemlinktitle--sub">How to authenticate</span>
+                                </a>
+                        </ul></li><!--- manually included link to Changelog -->
+            <li class="mainnav__listitem">
+                <a class="mainnav__listitemlink" href="/guides/changelog/">Changelog</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+               <section class="hero">
+  <header class="hero__header">
+    <h1 class="hero__headline">
+      Authentication 
+      
+      
+    </h1>
+    <div class="hero__description">Complete guide for OAuth authentication in Uptempo 8.0 using Keycloak-based flows for modern application development</div>
+  </header>
+</section>
+        <main class="guide__mainlayout">
+            <aside class="guide__aside">
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#breaking-changes-in-version-8.0">Breaking Changes in Version 8.0</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#architecture-changes-in-8.0">Architecture Changes in 8.0</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#supported-oauth-flows">Supported OAuth Flows</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#client-credentials-flow">Client Credentials Flow</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authorization-code-flow">Authorization Code Flow</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#prerequisites-%26-setup">Prerequisites & Setup</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#system-requirements">System Requirements</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#oauth-client-registration">OAuth Client Registration</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#testing-oauth-flows">Testing OAuth Flows</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#client-credentials-flow-testing">Client Credentials Flow Testing</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#request-access-token%3A">Request Access Token:</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#expected-response%3A">Expected Response:</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#authorization-code-flow-testing">Authorization Code Flow Testing</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#step-1%3A-get-authorization-code">Step 1: Get Authorization Code</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#step-2%3A-exchange-code-for-token">Step 2: Exchange Code for Token</a>		</li></ol>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#api-integration-examples">API Integration Examples</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#making-authenticated-api-calls">Making Authenticated API Calls</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#for-client-credentials-flow-(system-context)%3A">For Client Credentials Flow (System Context):</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#for-authorization-code-flow-(user-context)%3A">For Authorization Code Flow (User Context):</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#token-refresh">Token Refresh</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#common-api-endpoints">Common API Endpoints</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#troubleshooting-%26-debugging">Troubleshooting & Debugging</a><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#check-authentication-service-logs">Check Authentication Service Logs</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#verify-etcd-configuration">Verify ETCD Configuration</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#test-service-routing">Test Service Routing</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#validate-token-format">Validate Token Format</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#common-error-messages">Common Error Messages</a>		</li></ol>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#testing-tools-%26-resources">Testing Tools & Resources</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#migration-notes-from-legacy-versions">Migration Notes from Legacy Versions</a>		</li></ol></nav>
+            </aside>
+            <article class="guide__article">
+                <hr>
+<h1 id="oauth-authentication-guide-for-uptempo-8.0">OAuth Authentication Guide for Uptempo 8.0</h1>
+<h2 id="breaking-changes-in-version-8.0">Breaking Changes in Version 8.0</h2>
+<blockquote>
+<p><strong>Important:</strong> The OAuth authentication system has been completely redesigned in Uptempo 8.0. The legacy CAS-based system is no longer valid. You must update your authentication implementation to use the new Keycloak-based OAuth flows.</p>
+</blockquote>
+<h2 id="architecture-changes-in-8.0">Architecture Changes in 8.0</h2>
+<p><strong>Key architectural improvements:</strong></p>
+<ul>
+<li><strong>Spring-based services</strong> with enhanced authentication logic</li>
+<li><strong>Keycloak integration</strong> replacing the legacy CAS system</li>
+<li><strong>Multi-tenant realm support</strong> for better isolation</li>
+<li><strong>Enhanced header requirements</strong> for proper user context</li>
+</ul>
+<h2 id="supported-oauth-flows">Supported OAuth Flows</h2>
+<h3 id="client-credentials-flow">Client Credentials Flow</h3>
+<ul>
+<li><strong>Use case:</strong> System-to-system communication</li>
+<li><strong>Headers required:</strong> None (system user context)</li>
+<li><strong>Best for:</strong> API integrations, background services, automated processes</li>
+</ul>
+<h3 id="authorization-code-flow">Authorization Code Flow</h3>
+<ul>
+<li><strong>Use case:</strong> User authentication</li>
+<li><strong>Headers required:</strong> <code>X-User-Login</code> or <code>X-CurrentUser</code></li>
+<li><strong>Best for:</strong> Web applications, mobile apps, user-facing interfaces</li>
+</ul>
+<h2 id="prerequisites-%26-setup">Prerequisites &amp; Setup</h2>
+<h3 id="system-requirements">System Requirements</h3>
+<ol>
+<li><strong>Authentication Service:</strong> Must be running and properly configured</li>
+<li><strong>ETCD Configuration Service:</strong> Contains correct database URLs with credentials</li>
+<li><strong>Redis Connection:</strong> For caching and session management</li>
+<li><strong>Kafka Messaging:</strong> For user/permissions monitoring and cache updates</li>
+</ol>
+<h3 id="oauth-client-registration">OAuth Client Registration</h3>
+<ol>
+<li>Log in to your <strong>Uptempo 8.0 system as Administrator</strong></li>
+<li>Navigate to: <code>Administration → Fusion → Registered Apps</code></li>
+<li>Click <strong>&quot;Register New App&quot;</strong></li>
+<li>Fill in the required information:
+<ul>
+<li>Application name</li>
+<li>Redirect URIs (for authorization code flow)</li>
+<li>Permissions/scopes</li>
+</ul>
+</li>
+<li><strong>Important:</strong> Copy the <strong>Client Secret</strong> immediately, as it is only shown once.</li>
+</ol>
+<blockquote>
+<p><strong>Security Note:</strong> Store your Client ID and Client Secret securely. The Client Secret cannot be recovered and you'll need to re-register if it's lost.</p>
+</blockquote>
+<h2 id="testing-oauth-flows">Testing OAuth Flows</h2>
+<h3 id="client-credentials-flow-testing">Client Credentials Flow Testing</h3>
+<p>Use this flow for system-to-system authentication where no user context is required.</p>
+<h4 id="request-access-token%3A">Request Access Token:</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://YOUR_8.0_DOMAIN/access/realms/YOUR_TENANT/protocol/openid-connect/token"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_id=YOUR_CLIENT_ID"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_secret=YOUR_CLIENT_SECRET"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"grant_type=client_credentials"</span></code></pre>
+<h4 id="expected-response%3A">Expected Response:</h4>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br> <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."</span><span class="token punctuation">,</span><br> <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span><br> <span class="token property">"refresh_expires_in"</span><span class="token operator">:</span> <span class="token number">1800</span><span class="token punctuation">,</span><br> <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span><br> <span class="token property">"not-before-policy"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br> <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"profile email"</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="authorization-code-flow-testing">Authorization Code Flow Testing</h3>
+<p>Use this flow for user authentication in web applications and mobile apps.</p>
+<h4 id="step-1%3A-get-authorization-code">Step 1: Get Authorization Code</h4>
+<p>Direct users to this URL in their browser:</p>
+<pre><code>https://YOUR_8.0_DOMAIN/access/realms/YOUR_TENANT/protocol/openid-connect/auth?
+ client_id=YOUR_CLIENT_ID&amp;
+ redirect_uri=YOUR_REDIRECT_URI&amp;
+ response_type=code&amp;
+ scope=openid profile email&amp;
+ state=RANDOM_STRING
+</code></pre>
+<h4 id="step-2%3A-exchange-code-for-token">Step 2: Exchange Code for Token</h4>
+<p>After user consent, exchange the authorization code for tokens:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://YOUR_8.0_DOMAIN/access/realms/YOUR_TENANT/protocol/openid-connect/token"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_id=YOUR_CLIENT_ID"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_secret=YOUR_CLIENT_SECRET"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"grant_type=authorization_code"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"code=AUTHORIZATION_CODE"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"redirect_uri=YOUR_REDIRECT_URI"</span></code></pre>
+<h2 id="api-integration-examples">API Integration Examples</h2>
+<h3 id="making-authenticated-api-calls">Making Authenticated API Calls</h3>
+<p>When calling Uptempo APIs, you must include the proper headers:</p>
+<h4 id="for-client-credentials-flow-(system-context)%3A">For Client Credentials Flow (System Context):</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_ACCESS_TOKEN"</span> <span class="token punctuation">\</span><br>     <span class="token parameter variable">-H</span> <span class="token string">"X-Tenant-Id: your-tenant-id"</span> <span class="token punctuation">\</span><br>     <span class="token string">"https://YOUR_8.0_DOMAIN/your-service/rest/api/endpoint"</span></code></pre>
+<h4 id="for-authorization-code-flow-(user-context)%3A">For Authorization Code Flow (User Context):</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_ACCESS_TOKEN"</span> <span class="token punctuation">\</span><br>     <span class="token parameter variable">-H</span> <span class="token string">"X-User-Login: username@domain.com"</span> <span class="token punctuation">\</span><br>     <span class="token parameter variable">-H</span> <span class="token string">"X-CurrentUser: username@domain.com"</span> <span class="token punctuation">\</span><br>     <span class="token parameter variable">-H</span> <span class="token string">"X-Tenant-Id: your-tenant-id"</span> <span class="token punctuation">\</span><br>     <span class="token string">"https://YOUR_8.0_DOMAIN/your-service/rest/api/endpoint"</span></code></pre>
+<h3 id="token-refresh">Token Refresh</h3>
+<p>Refresh expired access tokens using the refresh token:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://YOUR_8.0_DOMAIN/access/realms/YOUR_TENANT/protocol/openid-connect/token"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_id=YOUR_CLIENT_ID"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"client_secret=YOUR_CLIENT_SECRET"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"grant_type=refresh_token"</span> <span class="token punctuation">\</span><br> <span class="token parameter variable">-d</span> <span class="token string">"refresh_token=YOUR_REFRESH_TOKEN"</span></code></pre>
+<h2 id="common-api-endpoints">Common API Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+<th>Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/access/realms/{tenant}/protocol/openid-connect/token</code></td>
+<td>POST</td>
+<td>Get access token</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>/access/realms/{tenant}/protocol/openid-connect/auth</code></td>
+<td>GET</td>
+<td>Authorization endpoint</td>
+<td>Authorization Code</td>
+</tr>
+<tr>
+<td><code>/user-service/rest/v1/users</code></td>
+<td>GET</td>
+<td>Get user information</td>
+<td>Authorization Code</td>
+</tr>
+<tr>
+<td><code>/spend-service/rest/v1/budgets</code></td>
+<td>GET</td>
+<td>Get budget data</td>
+<td>Both</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting-%26-debugging">Troubleshooting &amp; Debugging</h2>
+<h3 id="check-authentication-service-logs">Check Authentication Service Logs</h3>
+<pre class="language-bash"><code class="language-bash">kubectl logs <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>auth-platform <span class="token parameter variable">-n</span> YOUR_NAMESPACE <span class="token parameter variable">--since</span><span class="token operator">=</span>10m</code></pre>
+<h3 id="verify-etcd-configuration">Verify ETCD Configuration</h3>
+<p>Ensure database URLs contain proper credentials:<br>
+<code>https://USER:PASS@DBHOST/DBNAME</code></p>
+<h3 id="test-service-routing">Test Service Routing</h3>
+<p>Verify all endpoints are accessible and check the <code>up.auth.sso.custom-integration.root-context</code> setting</p>
+<h3 id="validate-token-format">Validate Token Format</h3>
+<p>Ensure tokens are valid JWT format and not expired. Check issuer claim matches your tenant realm.</p>
+<h3 id="common-error-messages">Common Error Messages</h3>
+<p><strong>&quot;Unknown JWT format is provided!&quot;</strong><br>
+Check that the issuer claim in your token matches your tenant realm URL.</p>
+<p><strong>&quot;failed validating keycloak token, probably not configured&quot;</strong><br>
+Verify your Keycloak configuration and ensure the auth-platform service can reach the token validation endpoint.</p>
+<p><strong>HTTP 401 Unauthorized</strong><br>
+Token may be expired or invalid. Try refreshing the token or re-authenticating.</p>
+<h2 id="testing-tools-%26-resources">Testing Tools &amp; Resources</h2>
+<ul>
+<li><strong><a href="https://oauthdebugger.com/">OAuth Debugger</a>:</strong> An interactive tool to test OAuth flows</li>
+<li><strong><a href="https://www.postman.com/">Postman</a>/<a href="https://insomnia.rest/">Insomnia</a>:</strong> API testing and automation tools</li>
+<li><strong>Browser Developer Tools:</strong> Useful for debugging the authorization code flow and inspecting network requests</li>
+<li><strong><a href="https://jwt.io/">JWT.io</a>:</strong> A resource for decoding and inspecting JWT tokens</li>
+<li><strong><a href="https://curl.se/">curl</a>/<a href="https://httpie.io/">HTTPie</a>:</strong> Command-line tools for making HTTP requests</li>
+</ul>
+<h2 id="migration-notes-from-legacy-versions">Migration Notes from Legacy Versions</h2>
+<p><strong>Key differences from pre-8.0 versions:</strong></p>
+<ul>
+<li><strong>Base URL change:</strong> <code>/access/realms/{tenant}/</code> instead of <code>/access/</code></li>
+<li><strong>New headers required:</strong> <code>X-User-Login</code> or <code>X-CurrentUser</code> for user context</li>
+<li><strong>Keycloak endpoints:</strong> Standard OpenID Connect/OAuth 2.0 endpoints</li>
+<li><strong>Token format:</strong> Standard JWT tokens instead of proprietary format</li>
+<li><strong>Tenant isolation:</strong> Separate realms per tenant for better security</li>
+</ul>
+
+            </section>
+        </main>
+        <!--- footer with navigation -->
+<footer class="dp_footer">
+    <div class="dp_footer__wrapper">
+        <div class="dp_footer__left">
+            <a href="https://uptempo.io" target="_blank" class="dp_footer__homelink">&copy;Uptempo</a>
+        </div>
+        <div class="dp_footer__right">
+            <nav>
+                <ul class="dp_footer__navlist">
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/imprint/">Legal Notice</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/terms-conditions-of-use/">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="dp_footer__navlistitem">
+                        <a target="_blank" class="dp_footer__navlistitemlink" href="https://www.uptempo.io/contact-us/">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
