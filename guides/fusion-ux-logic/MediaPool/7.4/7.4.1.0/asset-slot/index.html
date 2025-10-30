@@ -21,7 +21,7 @@
              gtag('js', new Date());
 
              //gtag('set', 'dimension1', <Name der ausgewählten API>);
-             //gtag('set', 'dimension2', "");
+             //gtag('set', 'dimension2', "asset-slot");
 
              gtag('config', 'UA-3128286-9');
 
@@ -30,7 +30,7 @@
 
         <link rel="stylesheet" href="/main.css">
     </head>
-    <body class="home">
+    <body class="guide">
         <!--- topbar with navigation -->
 <header class="topbar">
     <a class="hero__logolink" href="/">
@@ -127,133 +127,137 @@
     </nav>
 </header>
         <section class="hero">
-            <section class="hero__slogan">
-                <div class="hero__text">
-                    <h1 class="hero__headline">Explore Our <a href="api">APIs</a></h1>
-                    <p class="hero__p">Transform your Tech Ecosystem with Uptempo Work Management 8.0 – Say goodbye to standalone tools! With our robust RESTful APIs, programmers and technical professionals can rapidly weave Uptempo modules into your existing marketing and technology frameworks. Tailor functionalities with unparalleled ease to fine-tune your workflow precisely to your specifications.</p>
-                    <!-- <p class="hero__p hero__p--strong"></p> -->
-                    
-                        <a class="cta" href="/api">Discover Our APIs</a>
-                    
+            <header class="hero__header">
+                <h1 class="hero__headline">asset-slot</h1> 
+                <div class="hero__description">
+                    Available in the module 'Media Pool' for Version '7.4'
                 </div>
-            </section>
+            </header>
         </section>
-        <ul class="teaser">
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Media Pool</h3>
-                    <div class="teaser__contenttext">
-                        Media Pool delivers a central place to store and manage digital assets in any format, for any device, and for any purpose. Within the Uptempo marketing stack, Media Pool can be used in conjunction with almost every other module.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/MediaPool">Discover Media Pool API</a>
+        <main class="guide__mainlayout">
+            <aside class="guide__aside">
+            <div class="stick" style="position: sticky;top: 50px;">
+                <nav class="toc" role="navigation" aria-labelledby="toc"><h2 class="toc__heading" id="toc">Table of contents</h2><ol class="toc__list"><li class="toc__list-item"><a class="toc__list-item-anchor" href="#location">Location</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#ui-specifics">UI specifics</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#slot-attributes">Slot attributes</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#callback-functions">Callback functions</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#error-states">Error states</a>		</li>
+<li class="toc__list-item"><a class="toc__list-item-anchor" href="#other-specifics-or-annotations">Other specifics or annotations</a>		</li></ol></nav>
+                <nav class="nav_pageSlots" role="navigation">
+    
+    <script type="text/javascript">
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function handleSelect(elm) {
+            console.log(elm)
+            for (var i = 0; i < elm.options.length; i++) {
+                document.getElementById(elm.options[i].value).style.height = '0';
+                document.getElementById(elm.options[i].value).style.opacity = '0';
+            }
+            await sleep(150);
+            document.getElementById(elm.value).style.height = '100%';
+            document.getElementById(elm.value).style.opacity = '1';
+        }
+    </script>
+    <h2 class="nav_pageSlots__header">Page Slot Definitions</h2>
+    <div class="nav_pageSlots__list"><div class="nav_pageSlots__list_elem">
+            <div class="nav_pageSlots__list_elem_header">
+                Marketing Planner
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_Marketing Planner" class="select-css nav_pageSlots__select">
+                        <optgroup label="7.1" class="nav_pageSlots__select_optgroup"><option value="MAPS/7.1/7.1.0.0" class="nav_pageSlots__select_option" selected>
+                                    7.1.0.0
+                                </option></select>
                 </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_mediapool.svg" alt="Logo Media Pool">
-                    </div>
-                
             </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Administration</h3>
-                    <div class="teaser__contenttext">
-                        Explore the User Management including Single Sign-On for secure and simplified access. Administer Roles and Permissions, Addresses, User Groups and Org Units, Login Requests, Calendars, and more.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/Administration">Discover Administration API</a>
+            <div class="nav_pageSlots__list_elem_body"><div class="nav_pageSlots__list_elem_body_section" id="MAPS/7.1/7.1.0.0" style="height: 100%; opacity: 1;">
+                                <a href="/guides/fusion-ux-logic/MAPS/7.1/7.1.0.0/timeline-slot/">timeline-slot</a></div></div>
+        </div><div class="nav_pageSlots__list_elem">
+            <div class="nav_pageSlots__list_elem_header">
+                Media Pool
+                <div class="nav_pageSlots__list_elem_header_inner">
+                    <label>Version: </label>
+                    <select onchange="javascipt:handleSelect(this)" id="FUX_pageSlots_Media Pool" class="select-css nav_pageSlots__select">
+                        <optgroup label="7.4" class="nav_pageSlots__select_optgroup"><option value="MediaPool/7.4/7.4.1.0" class="nav_pageSlots__select_option" selected>
+                                    7.4.1.0
+                                </option></select>
                 </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_userservice.svg" alt="Logo Administration">
-                    </div>
-                
             </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Brand Template Builder</h3>
-                    <div class="teaser__contenttext">
-                        Brand Template Builder enables the CD-compliant design, adaption, and localization of marketing assets, such as advertisements, brochures, business cards, or posters, without using special applications.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/Web-to-Publish">Discover Brand Template Builder API</a>
-                </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_brandportal.svg" alt="Logo Brand Template Builder">
-                    </div>
-                
+            <div class="nav_pageSlots__list_elem_body"><div class="nav_pageSlots__list_elem_body_section" id="MediaPool/7.4/7.4.1.0" style="height: 100%; opacity: 1;">
+                                <a href="/guides/fusion-ux-logic/MediaPool/7.4/7.4.1.0/asset-slot/">asset-slot</a></div></div>
+        </div><p>Last updated: October 30, 2025</p>
+    </div>
+</nav>
             </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Job Manager</h3>
-                    <div class="teaser__contenttext">
-                        Job Manager streamlines project management and collaboration, with all jobs and workflows transparently managed, controlled, and processed – no matter whether marketing projects, budget releases or purchase orders.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/JobManager">Discover Job Manager API</a>
-                </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_jobmanager.svg" alt="Logo Job Manager">
-                    </div>
-                
-            </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Marketing Planner</h3>
-                    <div class="teaser__contenttext">
-                        With Marketing Planner, you gain full visibility and control over all campaigns, financial planning, and performance measurement. It thus provides a comprehensive platform for all stakeholders.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/MAPS">Discover Marketing Planner API</a>
-                </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_marketingplanner.svg" alt="Logo Marketing Planner">
-                    </div>
-                
-            </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Review Manager</h3>
-                    <div class="teaser__contenttext">
-                        With the Review Manager module you coordinate interactively and centrally with colleagues in the production workflow. The Review Manager can be used to seamlessly document and organize annotations and updates of your layout files, images, and texts, for example.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/ReviewManager">Discover Review Manager API</a>
-                </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_reviewmanager.svg" alt="Logo Review Manager">
-                    </div>
-                
-            </div>
-        </li>
-        <li class="teaser__item">
-            <div class="teaser__wrapper">
-                <div class="teaser__content">
-                    <h3 class="teaser__title">Shop</h3>
-                    <div class="teaser__contenttext">
-                        With the Shop module, you can efficiently handle ordering and delivery processes in advertising materials logistics. The module offers all the functions you need to quickly and transparently provide advertising materials for your employees, branches, and partners.
-                    </div>
-                    <a class="cta cta--teaser" href="/api/Shop">Discover Shop API</a>
-                </div>
-                
-                    <div class="teaser__icon"> 
-                        <img src="/assets/logo_shop.svg" alt="Logo Shop">
-                    </div>
-                
-            </div>
-        </li>
-        <p>Last updated: October 30, 2025</p>
-    </ul>
-    <!--- footer with navigation -->
+            </aside>
+            <article class="guide__article">
+                <p><img src="/api/MediaPool/7.4/7.4.1.0/asset-slot/screenshot.png" alt=""></p>
+                <h2 id="location">Location</h2>
+<p>The location of this slot is a custom tab in the Asset Details view of any asset in Media Planner. The tab is displayed in a preset position among the other tabs in this view. When the custom tab is selected, a Fusion UX component is rendered in the tab's content area.</p>
+<h2 id="ui-specifics">UI specifics</h2>
+<p>All styling is optional.</p>
+<h2 id="slot-attributes">Slot attributes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Purpose</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left"><code>fux-asset-id</code></td>
+<td style="text-align:left">Specifies the unique id of an asset</td>
+<td style="text-align:left"><code>NUMBER</code></td>
+<td style="text-align:left">none</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left"><code>fux-custom-tab-title</code></td>
+<td style="text-align:left">Specifies the text label of the custom tab in the Asset Details view</td>
+<td style="text-align:left"><code>STRING</code></td>
+<td style="text-align:left">none</td>
+</tr>
+</tbody>
+</table>
+<p>With the help of these two variables, data can be fetched through a provided API. After the successful gathering of the data, the component will render, displaying the received information from the response.<br>
+Other attributes of the component, like styles or the HTML code, are encapsulated within the Fusion UX App.</p>
+<p>The variables are not watched and will not be picked up by the caller later again.</p>
+<h2 id="callback-functions">Callback functions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th>Purpose</th>
+<th style="text-align:left">Synopsis</th>
+<th style="text-align:left">Return values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"></td>
+<td>no callback functions provided</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-states">Error states</h2>
+<p>There are no error states or error messages provided.</p>
+<p>If the component does not render anything, the slot will be left empty. Since this behavior is normal and expected, the display from the rest of the tooltip remains unaffected.</p>
+<h2 id="other-specifics-or-annotations">Other specifics or annotations</h2>
+<p>None</p>
+
+            </section>
+        </main>
+        <!--- footer with navigation -->
 <footer class="dp_footer">
     <div class="dp_footer__wrapper">
         <div class="dp_footer__left">
